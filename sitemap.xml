@@ -8,8 +8,6 @@
   </url><url>
     <loc>https://drectio.github.io/aboutus/</loc>
   </url><url>
-    <loc>https://drectio.github.io/estimator/</loc>
-  </url><url>
     <loc>https://drectio.github.io/categories/</loc>
   </url><url>
     <loc>https://drectio.github.io/contact/</loc>
@@ -19,5 +17,7 @@
     <loc>https://drectio.github.io/terms-conditions/</loc>
   </url><url>
     <loc>https://drectio.github.io/tags/</loc>
+  </url><url>
+    <loc>https://drectio.github.io/estimator/</loc>
   </url>
 </urlset>
