@@ -261,8 +261,6 @@
     color: #444444;
   }
 
-   
-
   .category {
     border-radius: 10px;
     font-size: 15px;
@@ -288,25 +286,21 @@
     padding: 0px;
   }
 
+  
   .category:hover {
+    border: 1px solid var(--company-color-light);
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
   }
 
-  .category:hover:not(.active) {
-    border: 1px solid var(--company-color-light);
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-    color: var(--card-selected);
-  }
+   
+  
 
   .category.selected {
     background-color: var(--company-color-extra-light);
      
   }
 
-  .category.active {
-    background-color: var(--company-color);
-    color: white;
-  }
+   
 
   .usecase {
     font-size: 13px;
@@ -323,9 +317,14 @@
   }
 
   .usecase.selected {
-    background-color: var(--grey-extra-light);
-    color: var(--company-color-dark);
+    background-color: var(--company-color);
+    color: white;
   }
+
+  .usecase.selected .summary {
+    color: white;
+  }
+
 
   .usecase:hover {
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
@@ -1352,23 +1351,9 @@
     updateDisplay(null);
   }
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  function generateReport() {
+      
+  }
 
   function openCategory(cat, forceOpen) {
     closeAdder(true);
@@ -1391,10 +1376,7 @@
       for (let i = 0; i < data.length; i++) {
         $("div#usecases #" + data[i]["category"]).append(
           '<div class="usecase clickable ' +
-            data[i]["category"] +
-            " " +
-            (data[i]["category"] == cat ? "" : "hidden") +
-            '"' +
+            data[i]["category"] + '"' +
             ' id="case-' +
             i +
             '" onclick="openAdder(' +
@@ -1997,6 +1979,7 @@
     
     
   }
+
 </script>
 
 
