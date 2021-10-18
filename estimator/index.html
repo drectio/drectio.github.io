@@ -113,7 +113,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
       <a class="navbar-brand" href="https://drectio.github.io/">
         
-        <img width="200px" class="img-fluid" src="/images/logo.svg" alt="D-Rectio - Data Workloads in Kubernetes made easy ">
+        <img width="200px" class="img-fluid" src="/images/logo.png" alt="D-Rectio - Data Workloads in Kubernetes made easy ">
         
       </a>
       <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation" aria-label="menu">
@@ -175,6 +175,7 @@
     --grey-light: #f0f0f0;
     --grey-mid: #e0e0e0;
     --grey-dark: #e0e0e0;
+    --grey-extra-dark: #808080;
     --green: #44aa44;
     --green-light: #eaffea;
     --red: #931621;
@@ -190,18 +191,12 @@
     scroll-behavior: smooth;
   }
 
-   
-
   body {
     line-height: 1.2;
     font-family: lato, sans-serif;
     -webkit-font-smoothing: antialiased;
     font-size: 16px;
-    color: #777;
-  }
-
-  .hidden:not(.selected) {
-    display: none;
+    color: #777777;
   }
 
   .huge-icon {
@@ -218,6 +213,28 @@
     color: #000000;
   }
 
+  .content .resume * {
+    margin-bottom: 0px;
+  }
+
+  .genreport {
+    margin: 0px 5%;
+  }
+
+  .genreport {
+    margin: 0px 5%;
+  }
+
+  .genreport #report {
+    margin: 0px 0px;
+    padding: 0px 0px;
+  }
+
+  .genreport i {
+    margin-bottom: 0px;
+  }
+
+
   #pos-left {
     display: inline;
   }
@@ -231,7 +248,7 @@
     border: 0.5px solid var(--grey-light);
     width: 90%;
     min-height: 50px;
-    padding: 30px;
+    padding: 30px 20px;
     margin: 0 5%;
     border-radius: 5px;
     box-shadow: 0 12px 24px -6px rgb(45 67 121 / 10%);
@@ -265,42 +282,29 @@
     border-radius: 10px;
     font-size: 15px;
     background-color: #ffffff;
-    border: 0.5px solid var(--grey-light);
+    border: 0.5px solid rgba(85, 12, 161, 0.25);
     box-sizing: border-box;
-    width: 150px;
+    width: 100%;
     height: 130px;
     padding: 10px;
+    margin-bottom: 5px;
     text-align: center;
-    vertical-align: middle;
-    display: table-cell;
-    transition: 0.25s;
-    box-shadow: 0 12px 24px -6px rgba(45, 67, 121, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .category:after {
+    content: "";
+    display: table;
+    clear: both;
   }
 
   .card-body i {
     font-size: 30px;
     margin-bottom: 10px;
+    color: var(--company-color);
   }
-
-  .card-body {
-    padding: 0px;
-  }
-
-  
-  .category:hover {
-    border: 1px solid var(--company-color-light);
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-  }
-
-   
-  
-
-  .category.selected {
-    background-color: var(--company-color-extra-light);
-     
-  }
-
-   
 
   .usecase {
     font-size: 13px;
@@ -308,23 +312,18 @@
     border: 0.5px solid var(--grey-mid);
     box-sizing: border-box;
     width: 100%;
-    min-height: 80px;
+    height: 80px;
     padding: 10px;
     text-align: center;
     vertical-align: middle;
+    display: table-cell;
     transition: 0.25s;
-    margin-bottom: 10px;
   }
 
   .usecase.selected {
-    background-color: var(--company-color);
-    color: white;
+    background-color: var(--grey-light);
+    color: var(--company-color-dark);
   }
-
-  .usecase.selected .summary {
-    color: white;
-  }
-
 
   .usecase:hover {
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
@@ -335,19 +334,11 @@
     border: 1px solid var(--company-color);
   }
 
-  .category img {
-    box-sizing: border-box;
-    width: 80px;
-    height: 80x;
-    margin: 10px 0 0 0;
-  }
-
   .wrapper {
-    margin: 1%;
+    width: 100%;
     padding: 5px;
-    float: left;
     box-sizing: border-box;
-    width: 31%;
+    display: table;
   }
 
   #usecases,
@@ -355,7 +346,6 @@
     margin: 0 auto;
     width: 480px;
     margin: 0 auto;
-    margin-bottom: 20px;
   }
 
   #usecases:after,
@@ -366,16 +356,12 @@
   }
 
   #display {
-     
-     
     box-sizing: border-box;
+    padding: 5px;
     margin: 0 auto;
-
-     
     width: 50%;
-    max-width: 600px;
+    max-width: 480px;
     float: left;
-     
   }
 
   #form {
@@ -385,7 +371,7 @@
   }
 
   #estimator {
-    max-width: 1140px;
+    max-width: 980px;
     margin: 0 auto;
   }
 
@@ -396,84 +382,9 @@
   }
 
   @media screen and (max-width: 960px) {
-    .wrapper {
-      width: 50%;
-    }
-    #usecases,
-    #categories {
-      width: 320px;
-    }
-    #form {
-      width: 320px;
-    }
-  }
-
-  @media screen and (max-width: 680px) {
-    .wrapper {
-      width: 33%;
-    }
-    #usecases,
-    #categories {
-      width: 480px;
-    }
-    #form {
-      width: 480px;
-    }
     #form,
     #display {
       width: 100%;
-    }
-    #pos-left {
-      display: none;
-    }
-    #pos-above {
-      display: inline;
-    }
-  }
-
-  @media screen and (max-width: 480px) {
-    .wrapper {
-      width: 50%;
-    }
-    #usecases,
-    #categories {
-      width: 320px;
-    }
-    #form {
-      width: 320px;
-    }
-    #form,
-    #display {
-      width: 100%;
-    }
-    #pos-left {
-      display: none;
-    }
-    #pos-above {
-      display: inline;
-    }
-  }
-
-  @media screen and (max-width: 320px) {
-    .wrapper {
-      width: 100%;
-    }
-    #usecases,
-    #categories {
-      width: 160px;
-    }
-    #form {
-      width: 160px;
-    }
-    #form,
-    #display {
-      width: 100%;
-    }
-    #pos-left {
-      display: none;
-    }
-    #pos-above {
-      display: inline;
     }
   }
 
@@ -483,16 +394,8 @@
 
   #adder {
     font-size: 14px;
-     
-     
     padding: 20px;
     background-color: #ffffff;
-     
-     
-     
-     
-     
-     
     display: none;
     opacity: 0;
   }
@@ -522,7 +425,6 @@
     font-family: lato, sans-serif;
     color: var(--company-color);
     padding: 5px;
-     
     text-align: center;
   }
 
@@ -549,7 +451,6 @@
 
   .complexity:hover:not(.selected),
   .complexity.selected {
-     
     background-color: var(--grey-light);
   }
 
@@ -589,19 +490,16 @@
     opacity: 0;
   }
 
-  .button_div button {
+  button,
+  input[type="submit"] {
     font-family: Helvetica, sans-serif;
     border: none;
-    border-radius: 10px;
+    border-radius: 5%;
     padding: 10px;
-    background-color: #8512a1;
-    color: #fff;
-    border-color: #8512a1;
-    margin-bottom: 0px;
-  }
-
-  .button_div button i {
-    margin-bottom: 0px;
+    background-color: var(--company-color);
+    color: #ffffff;
+    border-color: var(--company-color);
+    cursor: pointer;
   }
 
   .button_div {
@@ -614,14 +512,25 @@
     font-style: italic;
   }
 
+  .overview {
+    opacity: 0;
+    color: var(--company-color);
+    font-style: italic;
+    font-size: 13px;
+    transition: 0.25s;
+    padding: 2px 10px;
+  }
+
   #aggregated .c2 i {
     font-size: 30px;
-     
+    color: var(--company-color);
   }
 
   .column {
+    padding: var(--p, 0);
     float: left;
-    width: 50%;
+    box-sizing: border-box;
+    width: var(--w, 50%);
   }
 
   .row:after {
@@ -660,11 +569,10 @@
   }
 
   .bar.before {
-    background-color: var(--red);
+    background-color: var(--grey-extra-dark);
   }
 
   .bar.after {
-     
     background-color: var(--company-color);
   }
 
@@ -701,6 +609,63 @@
     animation: spin 1.5s linear infinite;
   }
 
+  #overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(40, 40, 40, 0.5);
+    z-index: 2;
+    opacity: 0;
+    transition: 0.25s;
+  }
+
+  #popup {
+    position: fixed;
+    top: 5%;
+    padding: 20px;
+    background-color: #ffffff;
+    width: 90%;
+    max-width: 500px;
+    max-height: 90%;
+    overflow: auto;
+    border: 1px solid var(--grey-mid);
+    z-index: 3;
+    display: none;
+    opacity: 0;
+    transition: 0.25s;
+  }
+
+  #popup {
+    border-radius: 10px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  #popup h2 {
+    color: var(--company-color);
+  }
+
+  #popup form {
+    border: 0.5px solid rgba(85, 12, 161, 0.25);
+    border-radius: 10px;
+    padding: 10px;
+  }
+
+  #popup form input[type="text"],
+  #popup form input[type="email"] {
+    min-width: 250px;
+    width: 90%;
+  }
+
+  #reportviewer {
+    transform: scale(1);
+    animation: pulse 2s infinite;
+  }
+
   @-webkit-keyframes spin {
     0% {
       -webkit-transform: rotate(0deg);
@@ -718,131 +683,171 @@
       transform: rotate(360deg);
     }
   }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(0.9);
+      box-shadow: 0 0 0 0 rgba(38, 109, 147, 0.7);
+    }
+
+    70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 10px rgba(38, 109, 147, 0);
+    }
+
+    100% {
+      transform: scale(0.9);
+      box-shadow: 0 0 0 0 rgba(38, 109, 147, 0);
+    }
+  }
 </style>
 
+<br /><br />
+
+<div id="overlay" onclick="closePopup();"></div>
+<div id="popup">
+  <div id="inforeq">
+    <h2>Your details</h2>
+    <p>To request a report, please enter the following information.</p>
+    <br />
+    
+    <form id="usrinfo" onsubmit="generateReport_step2(); return false;">
+      <label for="company">Company</label><br />
+      <input type="text" id="company" name="company" required /><br /><br />
+
+      <label for="name">Name</label><br />
+      <input type="text" id="name" name="name" required /><br /><br />
+
+      <label for="role">Job role</label><br />
+      <input type="text" id="role" name="role" required /><br /><br />
+
+      <label for="name">Email address (your report will be sent here)</label><br />
+      <input type="email" id="email" name="email" required /><br /><br />
+
+      <input type="submit" value="Submit" />
+    </form>
+  </div>
+  <div id="reportloading" style="display: none">
+    <div class="loader"></div>
+    <em>Generating report...</em>
+  </div>
+  <div id="reportdone" style="display: none">
+    <p>Thank you!</p>
+    <p>Your report will be in your inbox shortly.</p>
+    
+  </div>
+  <div id="reporterror" style="display: none">
+    <p>There was an error and your report could not be generated. Please press below to try again.</p>
+    <button onclick="generateReport_step2();"><i class="fas fa-redo-alt"></i> Try again</button>
+  </div>
+</div>
 
 <div id="infobox"></div>
 
-<br />
-<br />
-
 <div id="estimator">
   <div id="form">
-    <div id="categories">
-      <div class="row">
-        <div class="col-4">
-          <div class="category clickable" id="cat-sust" onclick="openCategory('sust')">
-            <div class="card-body text-center">
-              <br />
-              <i class="fas fa-leaf" aria-hidden="true"></i>
-              <div class="">Sustainability</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="category clickable" id="cat-oper" onclick="openCategory('oper')">
-            <div class="card-body text-center">
-              <br />
-              <i class="fas fa-money-check-alt" aria-hidden="true"></i>
-              <div class="">Operational Costs</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="category clickable" id="cat-prod" onclick="openCategory('prod')">
-            <div class="card-body text-center">
-              <br />
-              <i class="fas fa-rocket" aria-hidden="true"></i>
-              <div class="">Productivity</div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div id="usecases">
+      
     </div>
-
-    <div id="usecases"></div>
-
-    <div id="adder"></div>
+    <div id="adder">
+      
+    </div>
   </div>
 
   <div id="display">
-    
-
     <div id="ptv" class="resume">
-      <span class="title">Potential Total Value</span>
-      <p class="v">$<span id="ptv-figure">0</span></p>
-      <span class="note">(Annualised No.)</span>
-      <div class="note" id="cost_per_fte">
-        Average cost per FTE: $<span id="cpfte"></span> <span id="edit-cpfte"><i onclick="editCostPerFTE();" class="clickable fas fa-pencil-alt"></i></span>
-      </div>
+      <span class="title">Potential Cost Saving</span>
       <br />
-      <div class="note">All numbers calculated are estimations based on the user's input</div>
+      <table>
+        <tr>
+          <td style="padding-right: 10px; width: 20%; font-size: 13px">per annum:</td>
+          <td style="width: 60%">
+            <p class="v">$<span id="ptv-figure">0</span></p>
+          </td>
+          <td style="width: 80%"></td>
+        </tr>
+      </table>
+      <div class="note" id="cost_per_fte">
+        Average daily cost per FTE: $<span id="cpfte"></span>
+        <span id="edit-cpfte"><i onclick="editCostPerFTE();" class="clickable fas fa-pencil-alt"></i></span>
+      </div>
     </div>
 
     <br />
-
-    <div class="content_estimator">
-      
-      
+    <div class="content">
       <div id="aggregated" class="resume">
         <div class="row">
-          <div class="column c2">
+          <div class="column col-2 c2">
             <i class="fas fa-leaf" aria-hidden="true"></i>
           </div>
-          <div class="column c1 bars">
-            <div id="b-bars-sust"></div>
-            <div id="a-bars-sust"></div>
+          <div class="column col-10 c1 bars" id="bars-sust">
+            <div class="b-bars" id="b-bars-sust"></div>
+            <div class="a-bars" id="a-bars-sust"></div>
           </div>
+        </div>
+        <div class="row">
+          <div class="col-2"></div>
+          <div class="overview col-10" id="ov-sust"><span></span>% of Sustainability costs saved</div>
         </div>
         <br />
 
         <div class="row">
-          <div class="column c2">
+          <div class="column col-2 c2">
             <i class="fas fa-money-check-alt" aria-hidden="true"></i>
           </div>
-          <div class="column c1 bars">
-            <div id="b-bars-oper"></div>
-            <div id="a-bars-oper"></div>
+          <div class="column col-10 c1 bars" id="bars-oper">
+            <div class="b-bars" id="b-bars-oper"></div>
+            <div class="a-bars" id="a-bars-oper"></div>
           </div>
+        </div>
+        <div class="row">
+          <div class="col-2"></div>
+          <div class="overview col-10" id="ov-oper"><span></span>% of Operatianl Costs saved</div>
         </div>
         <br />
 
         <div class="row">
-          <div class="column c2">
+          <div class="column col-2 c2">
             <i class="fas fa-rocket" aria-hidden="true"></i>
           </div>
-          <div class="column c1 bars">
-            <div id="b-bars-prod"></div>
-            <div id="a-bars-prod"></div>
+          <div class="column col-10 c1 bars" id="bars-prod">
+            <div class="b-bars" id="b-bars-prod"></div>
+            <div class="a-bars" id="a-bars-prod"></div>
           </div>
+        </div>
+        <div class="row">
+          <div class="col-2"></div>
+          <div class="overview col-10" id="ov-prod"><span></span>% of Productivity time saved</div>
         </div>
         <br />
 
         <div class="row">
           <div class="column">
-            <p><i class="fas fa-square" style="color: var(--red)"></i> Cost before</p>
+            <p><i class="fas fa-square" style="color: var(--grey-extra-dark)"></i> Cost before</p>
           </div>
           <div class="column">
-            <p><i class="fas fa-square" style="color: var(--company-color)"></i> Cost with DRectio</p>
+            <p><i class="fas fa-square" style="color: var(--company-color)"></i> Cost with D.Rectio</p>
           </div>
         </div>
+
+        
       </div>
-      <br />
-      <div class="button_div">
-        <button type="button" onclick="resetEstimator();"><i class="fas fa-redo-alt"></i> Reset estimator</button>
-        <span id="report">
-          <button disabled id="report" type="button" onclick="generateReport();"><i class="fas fa-file-pdf"></i> Generate report</button>
-        </span>
+      <div style="font-size: 13px; margin: 5px 5%;  text-align: right;" class="note">Powered by DWORX.</div>
+
+      <div id="genreport" class="genreport">
+        <br />
+        <div class="btn btn-primary">
+          <button id="report" type="button" onclick="generateReport();"><i class="fas fa-file-pdf"></i> Generate report</button>
+        </div>
+        <br />
+        <p style="font-size: 13px" class="note">For your personalised report, click "Generate report".</p>
+        <br />
       </div>
     </div>
   </div>
 </div>
 
-<br />
-<br />
-<br />
-<br />
-<br />
+<br /><br />
 
 <script>
   "use strict";
@@ -856,6 +861,9 @@
   }
 
   function zeroPad(num, numZeros) {
+    
+    
+
     let x = num.toString();
     while (x.length < numZeros) {
       x = "0" + x;
@@ -864,11 +872,17 @@
   }
 
   function minsToFTEs(mins) {
+    
+    
+
     const ftes = Math.ceil(mins / (60 * 5));
     return ftes;
   }
 
   function formatNumber(number, unit) {
+    
+    
+
     const x = number.toString();
     let num = "";
     let count = 0;
@@ -901,7 +915,10 @@
     throw "Not a valid complexity label: " + complexity_label;
   }
 
-  function getTimesForUsecase(id, num_months) {
+  function getTimesForUsecase(id) {
+    
+    
+
     let before = 0;
     let after = 0;
     if (data[id]["base"] == "time") {
@@ -913,7 +930,7 @@
         for (let mf = 0; mf < num_mfs; mf++) {
           let local_factor = usecases[id][complexity][mf];
           if (data[id]["mfs"][mf]["monthly"]) {
-            local_factor *= num_months;
+            local_factor *= 12;
           }
           factor *= local_factor;
         }
@@ -932,91 +949,124 @@
     return { before: before, after: after };
   }
 
-  function getCostsForUsecase(id, num_months) {
+  function getCostsForUsecase(id) {
+    
+    
+
     if (data[id]["base"] == "time") {
-      let times = getTimesForUsecase(id, current_timescale * 12);
+      let times = getTimesForUsecase(id);
       const time_before = minsToFTEs(times["before"]);
       const time_after = minsToFTEs(times["after"]);
       return { before: time_before * cost_per_fte, after: time_after * cost_per_fte };
     } else {
-      return { before: usecases[id], after: usecases[id] * (1 - data[id]["value"]["discounting_factor"]) };
+      return { before: usecases[id], after: Math.round(usecases[id] * (1 - data[id]["value"]["discounting_factor"])) };
     }
   }
+
+  function getCostsForCategory(cat) {
+    
+    
+
+    let before = [];
+    let after = [];
+    let case_indices = [];
+    for (let i = 0; i < data.length; i++) {
+      if (data[i]["category"] == cat) {
+        const costs = getCostsForUsecase(i);
+        before.push(costs["before"]);
+        after.push(costs["after"]);
+        case_indices.push(i);
+      }
+    }
+    return { before: before, after: after, indices: case_indices };
+  }
+
+  
+  
+
+  
+  
+  
 
   let data = [
     {
       name: "Integration",
       category: "prod",
       base: "time",
+      ESC: false,
       description: "Time effort is estimated taking into consideration the development and change management of the integration with third-party systems.",
+      pretext: "Time effort is estimated taking into consideration the development and change management of the integration with third-party systems.",
+      posttext:
+        "The complexity of Infrastructure and the knowledge required to change & maintain, increases the dependency on key and valued human resources, with the uplift in associated governance overhead and time-dependency, to enable and approve the change needed to generate the required transactions, due to the complexity.",
       mfs: [
         {
           name: "Volume of systems to integrate",
           short: "systems",
           monthly: false,
           default: 5,
+          step: 5,
         },
       ],
       levels: {
         low: {
           example: "Integrate with third-party systems MS Teams, Slack, etc.",
           times: {
-            "project manager": { before: 120, after: 40 },
-            "sw developer": { before: 720, after: 240 },
-            "devops engineer": { before: 120, after: 40 },
-            "q/a engineer": { before: 360, after: 120 },
-            architect: { before: 90, after: 30 },
-            "business analyst": { before: 90, after: 30 },
-            "change manager": { before: 30, after: 0 },
-            "release manager": { before: 30, after: 0 },
-            "risk manager": { before: 30, after: 0 },
-            "security manager": { before: 120, after: 60 },
-            "db admin": { before: 60, after: 0 },
-            "data engineer": { before: 90, after: 30 },
-            "infra engineer": { before: 120, after: 60 },
-            "business user": { before: 240, after: 30 },
-            "service manager": { before: 60, after: 15 },
+            "Project Manager": { before: 120, after: 40 },
+            "SW Developer": { before: 720, after: 240 },
+            "Devops Engineer": { before: 120, after: 40 },
+            "Q/A Engineer": { before: 360, after: 120 },
+            Architect: { before: 90, after: 30 },
+            "Business Analyst": { before: 90, after: 30 },
+            "Change Manager": { before: 30, after: 0 },
+            "Release Manager": { before: 30, after: 0 },
+            "Risk Manager": { before: 30, after: 0 },
+            "Security Manager": { before: 120, after: 60 },
+            "DB Admin": { before: 60, after: 0 },
+            "Data Engineer": { before: 90, after: 30 },
+            "Infrastructure Engineer": { before: 120, after: 60 },
+            "Business User": { before: 240, after: 30 },
+            "Service Manager": { before: 60, after: 15 },
           },
         },
         medium: {
           example: "Integrate with third-party systems through REST API, email, FTP, etc.",
           times: {
-            "project manager": { before: 180, after: 60 },
-            "sw developer": { before: 1080, after: 360 },
-            "devops engineer": { before: 180, after: 60 },
-            "q/a engineer": { before: 540, after: 180 },
-            architect: { before: 180, after: 60 },
-            "business analyst": { before: 180, after: 60 },
-            "change manager": { before: 90, after: 30 },
-            "release manager": { before: 90, after: 30 },
-            "risk manager": { before: 90, after: 30 },
-            "security manager": { before: 120, after: 60 },
-            "db admin": { before: 60, after: 60 },
-            "data engineer": { before: 180, after: 60 },
-            "infra engineer": { before: 120, after: 60 },
-            "business user": { before: 600, after: 30 },
-            "service manager": { before: 80, after: 20 },
+            "Project Manager": { before: 180, after: 60 },
+            "SW Developer": { before: 1080, after: 360 },
+            "Devops Engineer": { before: 180, after: 60 },
+            "Q/A Engineer": { before: 540, after: 180 },
+            Architect: { before: 180, after: 60 },
+            "Business Analyst": { before: 180, after: 60 },
+            "Change Manager": { before: 90, after: 30 },
+            "Release Manager": { before: 90, after: 30 },
+            "Risk Manager": { before: 90, after: 30 },
+            "Security Manager": { before: 120, after: 60 },
+            "DB Admin": { before: 60, after: 60 },
+            "Data Engineer": { before: 180, after: 60 },
+            "Infrastructure Engineer": { before: 120, after: 60 },
+            "Business User": { before: 600, after: 30 },
+            "Service Manager": { before: 80, after: 20 },
           },
         },
         high: {
           example: "Integrate with major Front-, Middle-, and Back-Office systems such as SDFC, ERP, POS, Finance, etc.",
           times: {
-            "project manager": { before: 720, after: 240 },
-            "sw developer": { before: 2160, after: 240 },
-            "devops engineer": { before: 360, after: 120 },
-            "q/a engineer": { before: 1800, after: 600 },
-            architect: { before: 360, after: 120 },
-            "business analyst": { before: 360, after: 120 },
-            "change manager": { before: 180, after: 60 },
-            "release manager": { before: 180, after: 60 },
-            "risk manager": { before: 180, after: 60 },
-            "security manager": { before: 120, after: 60 },
-            "db admin": { before: 120, after: 120 },
-            "data engineer": { before: 120, after: 120 },
-            "infra engineer": { before: 240, after: 60 },
-            "business user": { before: 1200, after: 60 },
-            "data protection officer": { before: 60, after: 30 },
-            "service manager": { before: 90, after: 30 },
+            "Project Manager": { before: 720, after: 240 },
+            "SW Developer": { before: 2160, after: 240 },
+            "Devops Engineer": { before: 360, after: 120 },
+            "Q/A Engineer": { before: 1800, after: 600 },
+            Architect: { before: 360, after: 120 },
+            "Business Analyst": { before: 360, after: 120 },
+            "Change Manager": { before: 180, after: 60 },
+            "Release Manager": { before: 180, after: 60 },
+            "Risk Manager": { before: 180, after: 60 },
+            "Security Manager": { before: 120, after: 60 },
+            "DB Admin": { before: 120, after: 120 },
+            "Data Engineer": { before: 120, after: 120 },
+            "Infrastructure Engineer": { before: 240, after: 60 },
+            "Business User": { before: 1200, after: 60 },
+            "Data Protection Officer": { before: 60, after: 30 },
+            "Service Manager": { before: 90, after: 30 },
           },
         },
       },
@@ -1026,80 +1076,86 @@
       name: "Business User Effort",
       category: "prod",
       base: "time",
+      ESC: true,
       description: "Business Users' current time and effort to define and rework their own data pipelines and work with IT on their development.",
+      pretext: "Business Users' current time and effort to define and rework their own data pipelines and work with IT on their development.",
+      posttext:
+        "Working on and understanding how to define, create, run and maintain changes to existing data pipleines and how to generate new one is currently a multi-way interaction that requires the Business User to start to understand the complexity of the IT Infrastructure world, taking time and effort away from their core-competance of understanding the business problem, the processes required to deliver the daily operations and the data required to be derived to produce the outcome required to enable the analysis to be completed and subsequent decisions and actions underttaken to improve business performance.",
       mfs: [
         {
           name: "Volume of Data Workloads",
           short: "Data Workloads",
           monthly: false,
           default: 5,
+          step: 5,
         },
         {
           name: "Estimated Frequency of executions (per month)",
           short: "monthly executions",
           monthly: true,
           default: 5,
+          step: 5,
         },
       ],
       levels: {
         low: {
           example: "Data Workload for Stock Reconciliation, Compliance Reporting, etc.",
           times: {
-            "project manager": { before: 180, after: 90 },
-            "sw developer": { before: 360, after: 360 },
-            "devops engineer": { before: 270, after: 90 },
-            "q/a engineer": { before: 180, after: 180 },
-            architect: { before: 90, after: 45 },
-            "business analyst": { before: 90, after: 90 },
-            "change manager": { before: 10, after: 10 },
-            "release manager": { before: 10, after: 10 },
-            "risk manager": { before: 10, after: 10 },
-            "security manager": { before: 10, after: 10 },
-            "db admin": { before: 60, after: 60 },
-            "data engineer": { before: 60, after: 60 },
-            "infra engineer": { before: 480, after: 30 },
-            "business user": { before: 20, after: 20 },
-            "service manager": { before: 60, after: 20 },
+            "Project Manager": { before: 180, after: 90 },
+            "SW Developer": { before: 360, after: 360 },
+            "Devops Engineer": { before: 270, after: 90 },
+            "Q/A Engineer": { before: 180, after: 180 },
+            Architect: { before: 90, after: 45 },
+            "Business Analyst": { before: 90, after: 90 },
+            "Change Manager": { before: 10, after: 10 },
+            "Release Manager": { before: 10, after: 10 },
+            "Risk Manager": { before: 10, after: 10 },
+            "Security Manager": { before: 10, after: 10 },
+            "DB Admin": { before: 60, after: 60 },
+            "Data Engineer": { before: 60, after: 60 },
+            "Infrastructure Engineer": { before: 480, after: 30 },
+            "Business User": { before: 20, after: 20 },
+            "Service Manager": { before: 60, after: 20 },
           },
         },
         medium: {
           example: "Generic Data Workload for traditional ETL/ELT",
           times: {
-            "project manager": { before: 240, after: 120 },
-            "sw developer": { before: 480, after: 480 },
-            "devops engineer": { before: 360, after: 120 },
-            "q/a engineer": { before: 240, after: 240 },
-            architect: { before: 90, after: 60 },
-            "business analyst": { before: 120, after: 120 },
-            "change manager": { before: 30, after: 30 },
-            "release manager": { before: 30, after: 30 },
-            "risk manager": { before: 30, after: 30 },
-            "security manager": { before: 30, after: 30 },
-            "db admin": { before: 60, after: 60 },
-            "data engineer": { before: 60, after: 60 },
-            "infra engineer": { before: 480, after: 60 },
-            "business user": { before: 30, after: 30 },
-            "service manager": { before: 60, after: 30 },
+            "Project Manager": { before: 240, after: 120 },
+            "SW Developer": { before: 480, after: 480 },
+            "Devops Engineer": { before: 360, after: 120 },
+            "Q/A Engineer": { before: 240, after: 240 },
+            Architect: { before: 90, after: 60 },
+            "Business Analyst": { before: 120, after: 120 },
+            "Change Manager": { before: 30, after: 30 },
+            "Release Manager": { before: 30, after: 30 },
+            "Risk Manager": { before: 30, after: 30 },
+            "Security Manager": { before: 30, after: 30 },
+            "DB Admin": { before: 60, after: 60 },
+            "Data Engineer": { before: 60, after: 60 },
+            "Infrastructure Engineer": { before: 480, after: 60 },
+            "Business User": { before: 30, after: 30 },
+            "Service Manager": { before: 60, after: 30 },
           },
         },
         high: {
           example: "Data Workload for profit margin reconciliation, sales forecast report, etc.",
           times: {
-            "project manager": { before: 240, after: 120 },
-            "sw developer": { before: 960, after: 960 },
-            "devops engineer": { before: 920, after: 240 },
-            "q/a engineer": { before: 480, after: 480 },
-            architect: { before: 360, after: 120 },
-            "business analyst": { before: 240, after: 240 },
-            "change manager": { before: 60, after: 60 },
-            "release manager": { before: 60, after: 60 },
-            "risk manager": { before: 60, after: 60 },
-            "security manager": { before: 60, after: 60 },
-            "db admin": { before: 90, after: 90 },
-            "data engineer": { before: 90, after: 90 },
-            "infra engineer": { before: 1600, after: 120 },
-            "business user": { before: 30, after: 30 },
-            "service manager": { before: 60, after: 30 },
+            "Project Manager": { before: 240, after: 120 },
+            "SW Developer": { before: 960, after: 960 },
+            "Devops Engineer": { before: 920, after: 240 },
+            "Q/A Engineer": { before: 480, after: 480 },
+            Architect: { before: 360, after: 120 },
+            "Business Analyst": { before: 240, after: 240 },
+            "Change Manager": { before: 60, after: 60 },
+            "Release Manager": { before: 60, after: 60 },
+            "Risk Manager": { before: 60, after: 60 },
+            "Security Manager": { before: 60, after: 60 },
+            "DB Admin": { before: 90, after: 90 },
+            "Data Engineer": { before: 90, after: 90 },
+            "Infrastructure Engineer": { before: 1600, after: 120 },
+            "Business User": { before: 30, after: 30 },
+            "Service Manager": { before: 60, after: 30 },
           },
         },
       },
@@ -1109,40 +1165,46 @@
       name: "Data Workload Execution",
       category: "prod",
       base: "time",
+      ESC: true,
       description: "Time taken for Change, Advisory, and Query request interaction with IT to enable a Data Workload to be executed.",
+      pretext: "Time taken for Change, Advisory, and Query request interaction with IT to enable a Data Workload to be executed.",
+      posttext:
+        "The rightly required rigor of pre & post execution time to enable changes and introductions into the live IT Infratsructure and Business Applications, to run the needed business governane and performance improvement reports. This effort currently generates and ever increasing time-to-execution, due to needing to understand the impact of chnage, from budget to technical services to requried SLAs, all whlist looking to leverage key kknowledge holders, whose focus is also eneviatiably on major innovation and collaboration projects, which creates a time-bottleneck and adverse pressure on the individuals involved, who ultimately seek to eliviate their situation by looking to move to a new role at best or worse, leave the company.",
       mfs: [
         {
           name: "Volume of execution",
           short: "Data Workloads",
           monthly: false,
           default: 5,
+          step: 5,
         },
         {
           name: "Frequency of execution (per month)",
           short: "monthly executions",
           monthly: true,
           default: 5,
+          step: 5,
         },
       ],
       levels: {
         low: {
           example: "The execution of a Data Workload to deliver a compliance report",
           times: {
-            "data engineer": { before: 240, after: 0 },
-            "business user": { before: 30, after: 10 },
+            "Data Engineer": { before: 240, after: 0 },
+            "Business User": { before: 30, after: 10 },
           },
         },
         medium: {
           example: "The execution of a Data Workload to ingest a new feed of data sources",
           times: {
-            "data engineer": { before: 360, after: 0 },
-            "business user": { before: 30, after: 10 },
+            "Data Engineer": { before: 360, after: 0 },
+            "Business User": { before: 30, after: 10 },
           },
         },
         high: {
           example: "The execution of a Data Workload for Governance, Compliance, and Risk control, analysis, and reporting",
           times: {
-            "data engineer": { before: 360, after: 10 },
+            "Data Engineer": { before: 360, after: 10 },
           },
         },
       },
@@ -1152,78 +1214,84 @@
       name: "Engineering Effort",
       category: "prod",
       base: "time",
+      ESC: false,
       description:
         "Man-days Effort estimated for end-to-end development, inclusive of factors such as Design, Build, Test, Release, Change Management, etc., and enablement for current and future innovations such as Cloud Adoption and complex application refactoring.",
+      pretext:
+        "Man-days Effort estimated for end-to-end development, inclusive of factors such as Design, Build, Test, Release, Change Management, etc.and enablement for current and future innovations such as Cloud Adoption and complex application refactoring.",
+      posttext:
+        "The time-effort required to adhere to the change goverance lifecycle, whilst undertaking complex interactions with the Business User, who will be using a different contect and understanding to try to explain their requirements, creates multiple and often wasted interactions points, with iterative re-working, that is often repeated as their is no continuity of process or individuals involved, so in essence, the interaction and development work is being started-from-scratch each time, leading to frustration with the process and individuals, as often the Engineering effort can't be validated until the Business User has recieved the outcome before realising that it wasn't what as requested or needed in the first place.",
       mfs: [
         {
           name: "Volume of pipelines to be developed/refactored",
           short: "pipelines",
           monthly: false,
           default: 36,
+          step: 10,
         },
       ],
       levels: {
         low: {
           example: "Refactoring and/or Developing a new Data Workload, such as Data Warehouse Modelling",
           times: {
-            "project manager": { before: 240, after: 120 },
-            "sw developer": { before: 480, after: 360 },
-            "devops engineer": { before: 240, after: 120 },
-            "q/a engineer": { before: 240, after: 180 },
-            architect: { before: 60, after: 60 },
-            "business analyst": { before: 120, after: 120 },
-            "change manager": { before: 30, after: 15 },
-            "release manager": { before: 30, after: 15 },
-            "risk manager": { before: 30, after: 15 },
-            "security manager": { before: 30, after: 15 },
-            "db admin": { before: 60, after: 60 },
-            "data engineer": { before: 120, after: 60 },
-            "infra engineer": { before: 480, after: 60 },
-            "business user": { before: 60, after: 60 },
-            "service manager": { before: 60, after: 15 },
+            "Project Manager": { before: 240, after: 120 },
+            "SW Developer": { before: 480, after: 360 },
+            "Devops Engineer": { before: 240, after: 120 },
+            "Q/A Engineer": { before: 240, after: 180 },
+            Architect: { before: 60, after: 60 },
+            "Business Analyst": { before: 120, after: 120 },
+            "Change Manager": { before: 30, after: 15 },
+            "Release Manager": { before: 30, after: 15 },
+            "Risk Manager": { before: 30, after: 15 },
+            "Security Manager": { before: 30, after: 15 },
+            "DB Admin": { before: 60, after: 60 },
+            "Data Engineer": { before: 120, after: 60 },
+            "Infrastructure Engineer": { before: 480, after: 60 },
+            "Business User": { before: 60, after: 60 },
+            "Service Manager": { before: 60, after: 15 },
           },
         },
         medium: {
           example:
             "Refactoring, Cloud Adoption, and/or Developing a critical Data Procesing Pipeline for a complex Business Activity, such as a Company Merger, Acquisition, or Business Unit Spinoff",
           times: {
-            "project manager": { before: 240, after: 120 },
-            "sw developer": { before: 480, after: 360 },
-            "devops engineer": { before: 240, after: 120 },
-            "q/a engineer": { before: 240, after: 180 },
-            architect: { before: 60, after: 60 },
-            "business analyst": { before: 120, after: 120 },
-            "change manager": { before: 60, after: 30 },
-            "release manager": { before: 60, after: 30 },
-            "risk manager": { before: 60, after: 30 },
-            "security manager": { before: 60, after: 30 },
-            "db admin": { before: 120, after: 120 },
-            "data engineer": { before: 180, after: 90 },
-            "infra engineer": { before: 480, after: 60 },
-            "business user": { before: 60, after: 60 },
-            "service manager": { before: 60, after: 15 },
+            "Project Manager": { before: 240, after: 120 },
+            "SW Developer": { before: 480, after: 360 },
+            "Devops Engineer": { before: 240, after: 120 },
+            "Q/A Engineer": { before: 240, after: 180 },
+            Architect: { before: 60, after: 60 },
+            "Business Analyst": { before: 120, after: 120 },
+            "Change Manager": { before: 60, after: 30 },
+            "Release Manager": { before: 60, after: 30 },
+            "Risk Manager": { before: 60, after: 30 },
+            "Security Manager": { before: 60, after: 30 },
+            "DB Admin": { before: 120, after: 120 },
+            "Data Engineer": { before: 180, after: 90 },
+            "Infrastructure Engineer": { before: 480, after: 60 },
+            "Business User": { before: 60, after: 60 },
+            "Service Manager": { before: 60, after: 15 },
           },
         },
         high: {
           example:
             "Developing a new Data Workload for activities such as Off-loading, thereby bypassing Processing Consumption, and/or utilisation of Edge technologies and services",
           times: {
-            "project manager": { before: 480, after: 120 },
-            "sw developer": { before: 960, after: 360 },
-            "devops engineer": { before: 480, after: 120 },
-            "q/a engineer": { before: 480, after: 180 },
-            architect: { before: 180, after: 60 },
-            "business analyst": { before: 240, after: 120 },
-            "change manager": { before: 90, after: 90 },
-            "release manager": { before: 90, after: 90 },
-            "risk manager": { before: 90, after: 90 },
-            "security manager": { before: 90, after: 90 },
-            "db admin": { before: 240, after: 60 },
-            "data engineer": { before: 240, after: 60 },
-            "infra engineer": { before: 480, after: 60 },
-            "business user": { before: 60, after: 60 },
-            "data protection officer": { before: 60, after: 60 },
-            "service manager": { before: 120, after: 60 },
+            "Project Manager": { before: 480, after: 120 },
+            "SW Developer": { before: 960, after: 360 },
+            "Devops Engineer": { before: 480, after: 120 },
+            "Q/A Engineer": { before: 480, after: 180 },
+            Architect: { before: 180, after: 60 },
+            "Business Analyst": { before: 240, after: 120 },
+            "Change Manager": { before: 90, after: 90 },
+            "Release Manager": { before: 90, after: 90 },
+            "Risk Manager": { before: 90, after: 90 },
+            "Security Manager": { before: 90, after: 90 },
+            "DB Admin": { before: 240, after: 60 },
+            "Data Engineer": { before: 240, after: 60 },
+            "Infrastructure Engineer": { before: 480, after: 60 },
+            "Business User": { before: 60, after: 60 },
+            "Data Protection Officer": { before: 60, after: 60 },
+            "Service Manager": { before: 120, after: 60 },
           },
         },
       },
@@ -1233,42 +1301,47 @@
       name: "Governance",
       category: "sust",
       base: "time",
+      ESC: false,
       description: "Total elapsed time and effort for the end-to-end Change Management Lifecycle of Business and IT.",
+      pretext: " Total elapsed time and effort for the end-to-end Change Management Lifecycle of Business and IT.",
+      posttext:
+        "The time-effort required to adhere to the change goverance lifecycle, whilst undertaking change impact assessments, covering architecture design, configuration bild, implementation impact for operational services, service mnagement acceptance, required managerial approvals, revisions of current solutions, services and required documentation and final release into production sevices.",
       mfs: [
         {
           name: "Frequency of developing and governing services and Data Workloads",
           short: "services/workloads",
           monthly: false,
           default: 22,
+          step: 5,
         },
       ],
       levels: {
         low: {
           example: "Refactoring or developing technical services that require some data processing, e.g. recoding pipelines VS codeless pipeline development",
           times: {
-            architect: { before: 30, after: 0 },
-            "infra engineer": { before: 240, after: 15 },
-            "data protection officer": { before: 30, after: 15 },
-            "service manager": { before: 90, after: 15 },
+            Architect: { before: 30, after: 0 },
+            "Infrastructure Engineer": { before: 240, after: 15 },
+            "Data Protection Officer": { before: 30, after: 15 },
+            "Service Manager": { before: 90, after: 15 },
           },
         },
         medium: {
           example: "Refactoring or developing technical services or data pipelines that require some data processing, e.g. recoding VS codeless development",
           times: {
-            architect: { before: 60, after: 0 },
-            "infra engineer": { before: 480, after: 30 },
-            "data protection officer": { before: 60, after: 30 },
-            "service manager": { before: 180, after: 30 },
+            Architect: { before: 60, after: 0 },
+            "Infrastructure Engineer": { before: 480, after: 30 },
+            "Data Protection Officer": { before: 60, after: 30 },
+            "Service Manager": { before: 180, after: 30 },
           },
         },
         high: {
           example:
             "Refactoring or developing services that require some data processing, e.g. recoding VS codeless development and mapping, migrations, recoding for Cloud and Hybrid Cloud Adoption",
           times: {
-            architect: { before: 120, after: 0 },
-            "infra engineer": { before: 960, after: 60 },
-            "data protection officer": { before: 120, after: 60 },
-            "service manager": { before: 360, after: 60 },
+            Architect: { before: 120, after: 0 },
+            "Infrastructure Engineer": { before: 960, after: 60 },
+            "Data Protection Officer": { before: 120, after: 60 },
+            "Service Manager": { before: 360, after: 60 },
           },
         },
       },
@@ -1278,11 +1351,16 @@
       name: "Infrastructure Consumption",
       category: "oper",
       base: "money",
+      ESC: false,
       description: "The Consumption of current contracts and licences spend of existing and changed infrastructure.",
+      pretext: "The amount of current spend on Infratsructure Hardware & Software Contracts per annum and the related saving due to using D.Rectio.",
+      posttext:
+        "The method used to produce the volume of future infrastructure requirement is calculated, on a relational term, with the growth of Data Production, whose current year-on-year is calculated as 23% as an average capacity management growth metric.",
       value: {
         label: "Software and hardware costs, CAPEX & OPEX per year ($)",
-        short: "Costs",
+        short: "Costs per annum",
         default: 100000,
+        step: 50000,
         discounting_factor: 0.72,
       },
     },
@@ -1291,13 +1369,60 @@
       name: "Regulatory Compliance Risk",
       category: "sust",
       base: "money",
-      description: "",
+      ESC: false,
+      description: "Risk exposure reduced by replacement of manual processes with automation.",
+      pretext:
+        "By controlling the probability of Incidence, through increasing the footprint of Controlled Group from Uncontrolled Group by 60%, the coverage of process Automated by the Solution.",
+      posttext:
+        "The method used to produce the calculation is Relative Risk. This can be defined as a metric that is taken into use for the measurement of risk-taking place in a particular group and comparing the results obtained from the same with the results of the measurement of a similar risk-taking place in another group.",
       value: {
         label: "Average industry fine ($)",
         short: "Avg. industry fine",
         default: 35000000,
-        discounting_factor: 0.1,
+        step: 5000000,
+        discounting_factor: 0.6,
       },
+    },
+
+    {
+      name: "Future Spend Optimisation",
+      category: "sust",
+      base: "money",
+      ESC: false,
+      description: "",
+      pretext: "Relational saving on the current spend on the Infrastructure, not required, due to 54% uplift in utilisation of the existing assets.",
+      posttext:
+        "The method used to produce the volume of future infrastructure requirement is calculated, on a relational term, with the growth of Data Production, whose current year-on-year is calculated as 23% as an average capacity management growth metric.",
+      value: {
+        label: "Current infrastructure spend per year ($)",
+        short: "Infra. costs per annum",
+        default: 500000,
+        step: 50000,
+        discounting_factor: 0.957,
+      },
+    },
+  ];
+
+  
+  
+
+  
+
+  const cats = [
+    {
+      short: "sust",
+      name: "Sustainability",
+      icon: "fas fa-leaf",
+    },
+    {
+      short: "oper",
+      name: "Operational Costs",
+      icon: "fas fa-money-check-alt",
+    },
+    {
+      short: "prod",
+      name: "Productivity",
+      icon: "fas fa-rocket",
     },
   ];
 
@@ -1305,6 +1430,8 @@
   
   
   
+  
+
   let usecases = [];
   for (let i = 0; i < data.length; i++) {
     if (data[i]["base"] == "time") {
@@ -1321,26 +1448,53 @@
     }
   }
 
-  const default_cost_per_fte = 660;
+  const default_cost_per_fte = 660; 
   let cost_per_fte = default_cost_per_fte;
+  const min_bar_widths = { before: 30, after: 10 }; 
 
-  const starting_max_ftes = { sust: 250, oper: 250, prod: 250 };
-  let min_ftes = { sust: 0, oper: 0, prod: 0 };
-  let max_ftes = { sust: 250, oper: 250, prod: 250 };
+  const bar_animation_time = 1500; 
+  const fading_animation_time = 250; 
+  
 
-  const display_animation_time = 1500;
-  let current_timescale = 1;
-  let infoboxShown = false;
 
-  $(document).ready(() => {
+  
+  
+  
+  
+  
+
+  function loadingTasks() {
     $("#cpfte").html(formatNumber(cost_per_fte));
     $("#adder")
       .css("max-height", "" + $(window).height() * 0.9 + "px")
       .css("max-width", "" + Math.min($(window).width() * 0.9, 750) + "px");
-  });
+
+    
+
+    let c = "<div class='row'>";
+    for (let i = 0; i < cats.length; i++) {
+      c += "<div class='column' id='" + cats[i]["short"] + "-usecases' style='--w: 33%; --p: 5px'>";
+      c += "<div class='category' id='cat-" + cats[i]["short"] + "'>";
+      c += "<div class='card-body'>";
+      c += "<i class='" + cats[i]["icon"] + "' aria-hidden='true'></i>";
+      c += "<br />";
+      c += cats[i]["name"];
+      c += "</div>";
+      c += "</div>";
+      for (let j = 0; j < data.length; j++) {
+        if (data[j]["category"] == cats[i]["short"]) {
+          c +=
+            '<div class="wrapper"><div class="usecase clickable"' + ' id="case-' + j + '" onclick="openAdder(' + j + ');">' + data[j]["name"] + "</div></div>";
+        }
+      }
+      c += "</div>";
+    }
+    c += "</div>";
+    $("div#usecases").html(c);
+  }
 
   function editCostPerFTE() {
-    $("#cpfte").html('<input id="new-cpfte" type="number" value="' + cost_per_fte + '" />');
+    $("#cpfte").html('<input id="new-cpfte" type="number" step="100" value="' + cost_per_fte + '" />');
     $("#edit-cpfte").html('<i onclick="setCostPerFTE();" class="clickable fas fa-check"></i>');
   }
 
@@ -1351,53 +1505,58 @@
     updateDisplay(null);
   }
 
+  function closePopup() {
+    $("#overlay, #popup").hide().css("opacity", 0);
+  }
+
   function generateReport() {
+    
+
+    $("#overlay, #popup").show().css("opacity", 1);
+    const top = ($(window).height() - $("#popup").outerHeight()) / 2;
+    $("#popup").css("top", top + "px");
+    const left = ($(window).width() - $("#popup").outerWidth()) / 2;
+    $("#popup").css("left", left + "px");
+  }
+
+  function generateReport_step2() {
+    
+    
+
+    $("#inforeq, #reportdone, #reporterror").hide(1000);
+    $("#reportloading").show(1000);
+
+    $.ajax({
+      type: "POST",
       
-  }
-
-  function openCategory(cat, forceOpen) {
-    closeAdder(true);
-
-    if (typeof forceOpen !== "undefined") {
-      if (forceOpen) {
-        $(".category").removeClass("active");
-      }
-    }
-    $("div#usecases").html("<div class='row'><div class='col-4' id='sust'></div><div class='col-4' id='oper'></div><div class='col-4' id='prod'></div></div>");
-
-    if ($("#cat-" + cat).hasClass("active")) {
-      $(".category").removeClass("active");
-    } else {
-      $(".category").removeClass("active");
-      $("#cat-" + cat).addClass("active");
-
-      let c = "<hr />";
-      const num_per_row = 3;
-      for (let i = 0; i < data.length; i++) {
-        $("div#usecases #" + data[i]["category"]).append(
-          '<div class="usecase clickable ' +
-            data[i]["category"] + '"' +
-            ' id="case-' +
-            i +
-            '" onclick="openAdder(' +
-            i +
-            ');">' +
-            data[i]["name"] +
-            "</div>"
-        );
-      }
-    }
-
-    updateDisplay(null, true);
-  }
-
-  function selectTimescale(num_years) {
-    if (num_years != current_timescale) {
-      $(".timescalePicker span").removeClass("picked");
-      $("#timescale-" + num_years).addClass("picked");
-      current_timescale = num_years;
-      updateDisplay(null);
-    }
+      url: "https://drectio-estimator-reports.herokuapp.com/report",
+      data: {
+        company: $("#usrinfo #company").val(),
+        name: $("#usrinfo #name").val(),
+        role: $("#usrinfo #role").val(),
+        email: $("#usrinfo #email").val(),
+        ftecost: cost_per_fte,
+        usecases: JSON.stringify(usecases),
+      },
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      success: (data2, status, jqXHR) => {
+        $("#reportloading").hide(1000);
+        $("#reportdone").show(1000);
+      },
+      error: (xhr, ajaxOptions, thrownError) => {
+        $("#reportloading").hide(1000);
+        $("#reportdone").show(1000);
+      },
+    });
   }
 
   function closeAdder(fast) {
@@ -1438,61 +1597,21 @@
     }
   }
 
-  function resetEstimator() {
-    usecases = [];
-    for (let i = 0; i < data.length; i++) {
-      if (data[i]["base"] == "time") {
-        usecases.push([]);
-        for (let j = 0; j < 3; j++) {
-          usecases[i].push([]);
-          const num_mfs = data[i]["mfs"].length;
-          for (let k = 0; k < num_mfs; k++) {
-            usecases[i][j].push(0);
-          }
-        }
-      } else {
-        usecases.push(0);
-      }
-    }
+  function showInfoBox(num, marker) {
     
-    openCategory("oper");
-    openCategory("sust");
-    openCategory("sust");
-    cost_per_fte = default_cost_per_fte;
-    $("#cpfte").html(formatNumber(default_cost_per_fte));
-    updateDisplay(null);
-  }
 
-  function resetDisplay() {
-    min_ftes = 0;
-    max_ftes = 500;
-    $(".usecase, .category").removeClass("selected");
-    min_ftes = { sust: 0, oper: 0, prod: 0 };
-    max_ftes = { sust: 250, oper: 250, prod: 250 };
-  }
-
-  function showCaseSummary(num, marker) {
-    const costs = getCostsForUsecase(num, current_timescale * 12);
+    const costs = getCostsForUsecase(num);
     const cost_before = costs["before"];
     const cost_after = costs["after"];
-    const saving_abs = cost_before - cost_after;
-    const saving_rel = "" + Math.round(100 * (saving_abs / cost_before)) + "%";
 
     let c = '<p class="title">' + data[num]["name"] + "</p>";
-    c += "<p>Cost before: $" + formatNumber(cost_before) + "</p>";
-    c += "<p>Cost with DRectio: $" + formatNumber(cost_after) + "</p>";
-    c += "<p><b>Saving:</b> $" + formatNumber(saving_abs) + " (" + saving_rel + ")</p>";
-    $("#infobox").html(c);
-    if (!infoboxShown) {
-      $("#infobox").show();
-      $("#infobox").animate(
-        {
-          opacity: 1,
-        },
-        50
-      );
-      infoboxShown = true;
+    if (marker == "b") {
+      c += "<p>Cost before: $" + formatNumber(cost_before) + "</p>";
+    } else {
+      c += "<p>Cost with D.Rectio: $" + formatNumber(cost_after) + "</p>";
     }
+    $("#infobox").html(c);
+    $("#infobox").show().css("opacity", 1);
 
     const offset = $("#" + marker + "-" + num).offset();
     let top = 0;
@@ -1501,21 +1620,34 @@
     } else {
       top = offset["top"] + $("#" + marker + "-" + num).outerHeight() + 5;
     }
-    const left = offset["left"] + 5;
+    const left1 = offset["left"] + 5;
+    const left2 = $(window).width() - 5 - $("#infobox").outerWidth();
+    const left = Math.min(left1, left2);
+
     $("#infobox").css("top", top + "px");
     $("#infobox").css("left", left + "px");
   }
 
-  function getNumPart(id) {
+  function getBarIDParts(id) {
+    
+    
+    
+    
+
+    const marker = id.slice(0, 1);
     const numPart = id.slice(2);
-    return numPart;
+    return { marker: marker, num: numPart };
   }
 
   function updateDisplay(num, casesOnly) {
+    
+    
+
     let costs_before = [];
     let costs_after = [];
 
-    $(".category").removeClass("selected");
+    
+    
 
     for (let i = 0; i < usecases.length; i++) {
       
@@ -1528,11 +1660,7 @@
             $("#case-" + i).addClass("selected");
             $("#cat-" + data[i]["category"]).addClass("selected");
             const comp = Object.keys(data[i]["levels"])[j];
-            c += capitaliseFirstLetter(comp) + " complexity: ";
-            for (let k = 0; k < usecases[i][j].length; k++) {
-              c += "<em>" + usecases[i][j][k] + " " + data[i]["mfs"][k]["short"] + "</em>, ";
-            }
-            c = c.slice(0, -2);
+            c += capitaliseFirstLetter(comp) + " complexity";
             c += "<br />";
           }
         }
@@ -1542,7 +1670,7 @@
           
           $("#case-" + i).addClass("selected");
           $("#cat-" + data[i]["category"]).addClass("selected");
-          c += data[i]["value"]["short"] + ": $" + formatNumber(usecases[i]);
+          c += data[i]["value"]["short"]; 
         }
       }
       c += "</span>";
@@ -1555,14 +1683,14 @@
 
       
       if (data[i]["base"] == "time") {
-        let times = getTimesForUsecase(i, current_timescale * 12);
+        let times = getTimesForUsecase(i);
         const time_before = minsToFTEs(times["before"]);
         const time_after = minsToFTEs(times["after"]);
         costs_before.push(time_before * cost_per_fte);
         costs_after.push(time_after * cost_per_fte);
       } else {
         costs_before.push(usecases[i]);
-        costs_after.push(usecases[i] * (1 - data[i]["value"]["discounting_factor"]));
+        costs_after.push(Math.round(usecases[i] * (1 - data[i]["value"]["discounting_factor"])));
       }
     }
 
@@ -1572,15 +1700,14 @@
       }
     }
 
-    console.log(costs_before);
-    console.log(costs_after);
+    
+    
 
     const total_cost_before = costs_before.reduce((a, b) => a + b, 0);
     const total_cost_after = costs_after.reduce((a, b) => a + b, 0);
     const total_value = total_cost_before - total_cost_after;
 
     console.log("$" + formatNumber(total_value));
-
     $(".v").css("opacity", 0);
     $("#ptv-figure").html(formatNumber(total_value));
     $(".v").animate(
@@ -1589,6 +1716,25 @@
       },
       1000
     );
+
+    
+
+    for (let i = 0; i < cats.length; i++) {
+      const cat_costs = getCostsForCategory(cats[i]["short"]);
+      const cat_cost_before = cat_costs["before"].reduce((a, b) => a + b, 0);
+      if (cat_cost_before > 0) {
+        const cat_cost_after = cat_costs["after"].reduce((a, b) => a + b, 0);
+        const cat_cost_saved = cat_cost_before - cat_cost_after;
+        const cat_saved_per = Math.round((100 * cat_cost_saved) / cat_cost_before);
+        $("#ov-" + cats[i]["short"] + ".overview span").html(cat_saved_per);
+        $("#ov-" + cats[i]["short"] + ".overview").css("opacity", 1);
+      } else {
+        $("#ov-" + cats[i]["short"] + ".overview").css("opacity", 0);
+      }
+    }
+
+    
+    
 
     $("html, body").animate(
       {
@@ -1602,228 +1748,225 @@
     updateBars(num, costs_before, costs_after, total_cost_before, total_cost_after);
   }
 
-  function updateBars(num, costs_before, costs_after, total_cost_before, total_cost_after) {
-    
-
-
+  function updateBars(num) {
     
     
     
 
-    updateBars_step1(num, costs_before, costs_after, total_cost_before, total_cost_after);
-  }
-
-  function updateBars_step1(num, costs_before, costs_after, total_cost_before, total_cost_after) {
-    
     
 
-    const cats = [];
-    if (num != null) {
-      cats.push(data[num]["category"]);
-    } else {
-      cats.push("sust");
-      cats.push("oper");
-      cats.push("prod");
-    }
+    for (let i = 0; i < cats.length; i++) {
+      const cat = cats[i]["short"];
+      const bar_widths = getTargetBarSizes(cat, num);
 
-    for (let cat_count = 0; cat_count < cats.length; cat_count++) {
-      const cat = cats[cat_count];
-
-      
-      if (total_cost_before > max_ftes[cat] * cost_per_fte) {
+      if (num == null || typeof num === "undefined") {
         
-        while (total_cost_before > max_ftes[cat] * cost_per_fte) {
-          min_ftes[cat] = max_ftes[cat];
-          max_ftes[cat] *= 1.5;
-        }
-        const max_width = $("#aggregated").width() - $(".c2").width();
-        const px_per_dollar = max_width / (max_ftes[cat] * cost_per_fte);
-
         
-        $(".bar").css("opacity", 0);
-        for (let i = 0; i < usecases.length; i++) {
-          if ($("#b-" + i).length > 0) {
-            $("#b-" + i).css("width", px_per_dollar * costs_before[i] + "px");
-            $("#a-" + i).css("width", px_per_dollar * costs_after[i] + "px");
-          }
-        }
-        $(".bar").animate(
-          {
-            opacity: 1,
-          },
-          1000,
-          "swing",
-          () => {
-            if (cat_count == cats.length - 1) {
-              updateBars_step2(num, costs_before, costs_after, total_cost_before, total_cost_after);
+        rescaleBars(cat, bar_widths);
+      } else {
+        if (cat == data[num]["category"]) {
+          if ($("#b-" + num).length == 0) {
+            
+            
+            addBars(cat, num);
+            rescaleBars(cat, bar_widths, num, () => {
+              animateBars(num, bar_widths);
+            });
+          } else {
+            const index = bar_widths["indices"].indexOf(num);
+            if ($("#b-" + num).width() < bar_widths["before"][index]) {
+              
+              rescaleBars(cat, bar_widths, num, () => {
+                animateBars(num, bar_widths);
+              });
+            } else {
+              
+              animateBars(num, bar_widths, () => {
+                rescaleBars(cat, bar_widths);
+              });
             }
           }
-        );
-      } else if (cat_count == cats.length - 1) {
-        updateBars_step2(num, costs_before, costs_after, total_cost_before, total_cost_after);
+        }
       }
     }
   }
 
-  function updateBars_step2(num, costs_before, costs_after, total_cost_before, total_cost_after) {
+  function addBars(cat, num) {
+    
+
+    const newBar_before = '<div class="bar before" id="b-' + num + '" onclick="openAdder(' + num + ');"></div>';
+    const newBar_after = '<div class="bar after" id="a-' + num + '" onclick="openAdder(' + num + ');"></div>';
+    $("#b-bars-" + cat).html($("#b-bars-" + cat).html() + newBar_before);
+    $("#a-bars-" + cat).html($("#a-bars-" + cat).html() + newBar_after);
+
+    
+
+    $(".bar").hover(
+      () => {
+        const parts = getBarIDParts(event.target.id);
+        const i = parts["num"];
+        const m = parts["marker"];
+        const selectedBars = "#" + m + "-" + i;
+        $(selectedBars).addClass("selected-bar");
+        showInfoBox(i, event.target.id.slice(0, 1));
+      },
+      () => {
+        const parts = getBarIDParts(event.target.id);
+        const i = parts["num"];
+        const m = parts["marker"];
+        const selectedBars = "#" + m + "-" + i;
+        $(selectedBars).removeClass("selected-bar");
+      }
+    );
+    $(".bars").hover(
+      () => {},
+      () => {
+        $("#infobox").css("opacity", 0);
+      }
+    );
+  }
+
+  function removeVanishedBars(num, width_before, functionAfterAnimation) {
     
     
-    if (num != null) {
-      const cat = data[num]["category"];
 
-      
-      if ($("#b-" + num).length == 0) {
-        const newBar_before = '<div class="bar before" id="b-' + num + '" onclick="openAdder(' + num + ', true);"></div>';
-        const newBar_after = '<div class="bar after" id="a-' + num + '" onclick="openAdder(' + num + ', true);"></div>';
-        $("#b-bars-" + cat).html($("#b-bars-" + cat).html() + newBar_before);
-        $("#a-bars-" + cat).html($("#a-bars-" + cat).html() + newBar_after);
-
-        $(".bars").hover(
-          () => {
-            $(".bar").hover(
-              () => {
-                const i = getNumPart(event.target.id);
-                const selectedBars = "#b-" + i + ", #a-" + i;
-                $(selectedBars).addClass("selected-bar");
-                $(".bar:not(" + selectedBars + ")").addClass("unselected-bar");
-                
-                
-                showCaseSummary(i, event.target.id.slice(0, 1));
-              },
-              () => {
-                const i = getNumPart(event.target.id);
-                const selectedBars = "#b-" + i + ", #a-" + i;
-                $(selectedBars).removeClass("selected-bar");
-                $(".bar:not(" + selectedBars + ")").removeClass("unselected-bar");
-                
-                
-              }
-            );
-          },
-          () => {
-            infoboxShown = false;
-            $("#infobox").animate(
-              {
-                opacity: 0,
-              },
-              50,
-              () => {
-                $("#infobox").hide();
-                $("#infobox").html("");
-              }
-            );
-          }
-        );
-      }
-
-      
-      const max_width = $("#aggregated").width() - $(".c2").width();
-      const px_per_dollar = max_width / (max_ftes[cat] * cost_per_fte);
-
-      $("#b-" + num).animate(
-        {
-          width: px_per_dollar * costs_before[num] + "px",
-        },
-        display_animation_time
-      );
-      $("#a-" + num).animate(
-        {
-          width: px_per_dollar * costs_after[num] + "px",
-        },
-        display_animation_time,
-        "swing",
-        () => {
-          if (costs_before[num] == 0) {
-            $("#b-" + num + ", #a-" + num).remove();
-          }
-          updateBars_step3(num, costs_before, costs_after, total_cost_before, total_cost_after);
-        }
-      );
-    } else {
-      const max_width = $("#aggregated").width() - $(".c2").width();
-
-      $(".bar").css("opacity", 0);
-      for (let i = 0; i < usecases.length; i++) {
-        const cat = data[i]["category"];
-        const px_per_dollar = max_width / (max_ftes[cat] * cost_per_fte);
-        $("#b-" + i).animate(
-          {
-            width: px_per_dollar * costs_before[i] + "px",
-          },
-          0
-        );
-        $("#a-" + i).animate(
-          {
-            width: px_per_dollar * costs_after[i] + "px",
-          },
-          0,
-          "swing",
-          () => {
-            if (costs_before[i] == 0) {
-              $("#b-" + i + ", #a-" + i).remove();
-            }
-          }
-        );
-      }
-      $(".bar").animate(
-        {
-          opacity: 1,
-        },
-        1000,
-        "swing",
-        () => {
-          updateBars_step3(num, costs_before, costs_after, total_cost_before, total_cost_after);
-        }
-      );
+    if (width_before == 0) {
+      $("#b-" + num + ", #a-" + num).remove();
+    }
+    if (typeof functionAfterAnimation !== "undefined") {
+      functionAfterAnimation();
     }
   }
 
-  function updateBars_step3(num, costs_before, costs_after, total_cost_before, total_cost_after) {
-    const cats = [];
-    if (num != null) {
-      cats.push(data[num]["category"]);
-    } else {
-      cats.push("sust");
-      cats.push("oper");
-      cats.push("prod");
+  function animateBars(num, bar_widths, functionAfterAnimation) {
+    
+    
+
+    const index = bar_widths["indices"].indexOf(num);
+    const width_before = bar_widths["before"][index];
+    const width_after = bar_widths["after"][index];
+
+    $("#b-" + num).animate(
+      {
+        width: width_before + "px",
+      },
+      bar_animation_time
+    );
+    $("#a-" + num).animate(
+      {
+        width: width_after + "px",
+      },
+      bar_animation_time,
+      "swing",
+      () => {
+        removeVanishedBars(num, width_before, functionAfterAnimation);
+      }
+    );
+  }
+
+  function rescaleBars(cat, bar_widths, num, functionAfterAnimation) {
+    
+    
+    
+
+    const bar_widths_before = JSON.parse(JSON.stringify(bar_widths["before"]));
+    const bar_widths_after = JSON.parse(JSON.stringify(bar_widths["after"]));
+    const bar_indices = JSON.parse(JSON.stringify(bar_widths["indices"]));
+
+    if (typeof num !== "undefined") {
+      const index = bar_indices.indexOf(num);
+      bar_widths_before.splice(index, 1);
+      bar_widths_after.splice(index, 1);
+      bar_indices.splice(index, 1);
     }
 
-    for (let cat_count = 0; cat_count < cats.length; cat_count++) {
-      
-      const cat = cats[cat_count];
-      if (total_cost_before < min_ftes[cat] * cost_per_fte) {
-        
-        while (total_cost_before < min_ftes[cat] * cost_per_fte) {
-          max_ftes[cat] = min_ftes[cat];
-          min_ftes[cat] /= 1.5;
-        }
-        if (min_ftes[cat] < starting_max_ftes[cat]) {
-          min_ftes[cat] = 0;
-          max_ftes[cat] = starting_max_ftes[cat];
-        }
+    if (bar_indices.length == 0) {
+      if (typeof functionAfterAnimation === "undefined") return;
+      functionAfterAnimation();
+      return;
+    }
 
-        const max_width = $("#aggregated").width() - $(".c2").width();
-        const px_per_dollar = max_width / (max_ftes[cat] * cost_per_fte);
-
-        
-        $(".bar").css("opacity", 0);
-        for (let i = 0; i < usecases.length; i++) {
-          if ($("#b-" + i).length > 0) {
-            $("#b-" + i).css("width", px_per_dollar * costs_before[i] + "px");
-            $("#a-" + i).css("width", px_per_dollar * costs_after[i] + "px");
-          }
+    $("#bars-" + cat).animate(
+      {
+        opacity: 0,
+      },
+      fading_animation_time,
+      "swing",
+      () => {
+        for (let i = 0; i < bar_widths_before.length; i++) {
+          const bar_num = bar_indices[i];
+          $("#b-" + bar_num).css("width", bar_widths_before[i] + "px");
+          $("#a-" + bar_num).css("width", bar_widths_after[i] + "px");
         }
-        $(".bar").animate(
-          {
-            opacity: 1,
-          },
-          1000
-        );
+        if (typeof functionAfterAnimation === "undefined") {
+          $("#bars-" + cat).animate(
+            {
+              opacity: 1,
+            },
+            fading_animation_time
+          );
+        } else {
+          $("#bars-" + cat).animate(
+            {
+              opacity: 1,
+            },
+            fading_animation_time,
+            functionAfterAnimation
+          );
+        }
+      }
+    );
+  }
+
+  function getTargetBarSizes(cat, num) {
+    
+
+    
+
+    const cat_costs = getCostsForCategory(cat);
+    const cat_costs_before = cat_costs["before"];
+    const cat_costs_after = cat_costs["after"];
+    const cat_indices = cat_costs["indices"];
+    let bar_indices = [];
+    let bar_widths_before = [];
+    let bar_widths_after = [];
+    let bar_costs_before = [];
+    let bar_costs_after = [];
+    for (let i = 0; i < cat_indices.length; i++) {
+      if (cat_costs_before[i] > 0 || cat_indices[i] == num) {
+        bar_indices.push(cat_indices[i]);
+        bar_widths_before.push(min_bar_widths["before"]);
+        bar_costs_before.push(cat_costs_before[i]);
+        bar_costs_after.push(cat_costs_after[i]);
       }
     }
+
+    
+    
+
+    const total_width_before = ($("#aggregated").width() - $(".c2").width()) * 0.99;
+    const current_width_before = bar_widths_before.reduce((a, b) => a + b, 0);
+    const width_delta = total_width_before - current_width_before;
+    console.assert(width_delta >= 0);
+    const cat_cost_before = cat_costs_before.reduce((a, b) => a + b, 0);
+    for (let i = 0; i < bar_widths_before.length; i++) {
+      if (bar_costs_before[i] > 0) {
+        bar_widths_before[i] += (bar_costs_before[i] / cat_cost_before) * width_delta;
+        bar_widths_after.push(Math.max(min_bar_widths["after"], (bar_costs_after[i] / bar_costs_before[i]) * bar_widths_before[i]));
+      } else {
+        
+        bar_widths_before[i] = 0;
+        bar_widths_after.push(0);
+      }
+    }
+
+    return { before: bar_widths_before, after: bar_widths_after, indices: bar_indices };
   }
 
   function addCase(num) {
+    
+    
+
     if (data[num]["base"] == "time") {
       for (let comp = 0; comp < 3; comp++) {
         const checked = $("#sel-" + num + "-" + comp).is(":checked");
@@ -1845,17 +1988,12 @@
     closeAdder();
   }
 
-  function openAdder(num, forceCatOpen) {
+  function openAdder(num) {
+    
+
     if ($("#case-" + num).hasClass("active")) {
       return closeAdder();
     }
-
-    if (typeof forceCatOpen !== "undefined") {
-      openCategory(data[num]["category"], forceCatOpen);
-    }
-
-    
-
 
     $(".usecase").removeClass("active");
     $("#case-" + num).addClass("active");
@@ -1864,7 +2002,7 @@
       c += '    <p class="title">' + data[num]["name"] + "</p>";
       c += "    <p>" + data[num]["description"] + "</p>";
 
-      c += '    <p class="prompt">Select your complexity level(s) for this use-case, ' + "and the given usage amount at each level.</p>";
+      c += '    <p class="prompt">Select your complexity level(s) for this use-case, and the given usage amount at each level.</p>';
       c += '    <div class="complexities">';
       const complexity_labels = Object.keys(data[num]["levels"]);
       const mfs = data[num]["mfs"];
@@ -1906,8 +2044,9 @@
             '">' +
             capitaliseFirstLetter(mfs[mf]["name"]) +
             ": </span><br />" +
-            '<input disabled style="max-width: 80px;" type="number" min=1 ' +
-            'id="mf-' +
+            '<input disabled style="max-width: 80px;" type="number" step="' +
+            mfs[mf]["step"] +
+            '" min=1 id="mf-' +
             num +
             "-" +
             complexity +
@@ -1926,7 +2065,7 @@
       c += "    </div>";
 
       c += '    <div class="button_div">';
-      c += '        <button type="button" class="cancel_button"' + 'onclick="closeAdder();"><i class="fas fa-window-close"></i> Cancel</button>';
+      c += '        <button type="button" class="cancel_button" onclick="closeAdder();"><i class="fas fa-window-close"></i> Cancel</button>';
       c += '        <button type="button" class="add_button" onclick="addCase(' + num + ');">Save <i class="fas fa-plus"></i></button>';
       c += "    </div>";
 
@@ -1951,11 +2090,18 @@
 
       c += '    <div class="complexity">';
       c += '        <label for="mf-' + num + '">' + data[num]["value"]["label"] + ": </label><br />";
-      c += '        <input style="max-width: 80px;" type="number" min=0 ' + 'id="mf-' + num + '" value="' + data[num]["value"]["default"] + '" />';
+      c +=
+        '        <input style="max-width: 80px;" type="number" min=0 id="mf-' +
+        num +
+        '" step="' +
+        data[num]["value"]["step"] +
+        '" value="' +
+        data[num]["value"]["default"] +
+        '" />';
       c += "    </div>";
 
       c += '    <div class="button_div">';
-      c += '        <button type="button" class="cancel_button"' + 'onclick="closeAdder();"><i class="fas fa-window-close"></i> Cancel</button>';
+      c += '        <button type="button" class="cancel_button" onclick="closeAdder();"><i class="fas fa-window-close"></i> Cancel</button>';
       c += '        <button type="button" class="add_button" onclick="addCase(' + num + ');">Save <i class="fas fa-plus"></i></button>';
       c += "    </div>";
 
@@ -1967,19 +2113,18 @@
       }
     }
 
-    $("#overlay, #adder").show();
-    $("#overlay, #adder").animate(
+    $("#adder").show();
+    $("#adder").animate(
       {
         opacity: 1,
       },
       250
     );
-    
-    
-    
-    
   }
 
+  window.addEventListener("load", function () {
+    loadingTasks();
+  });
 </script>
 
 
@@ -2026,7 +2171,7 @@
       <div class="col-md-3 col-sm-6 mb-5">
         <a class="d-block h3 mb-3" href="https://drectio.github.io/">
           
-          <img width="200px" class="img-fluid" src="/images/logo.svg" alt="D-Rectio - Data Workloads in Kubernetes made easy ">
+          <img width="200px" class="img-fluid" src="/images/logo.png" alt="D-Rectio - Data Workloads in Kubernetes made easy ">
           
         </a>
         <p class="mb-4"></p>
