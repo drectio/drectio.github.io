@@ -349,14 +349,68 @@ textarea {
 }
 
 .estimator {
-  padding: 0px 10vw 0px 10vw;
   position: relative;
+  padding: 100px 10vw 100px 10vw;
   background-color: white;
-  color: #092168;
-  text-align: center;
-  font-size: 60px;
-  line-height: 200px;
 }
+
+.estimator img {
+  width: 40vw;
+  position: absolute;
+  top: 40px;
+  right: 0px;
+
+}
+
+.estimator .estimatortext {
+  width: 40vw;
+  margin: 50px 0px 50px 0px;
+}
+
+.estimator .estimatortext1 {
+  font-family: lora-italic;
+  font-size: 40px;
+  color: #092168;
+}
+.estimator .estimatortext2 {
+  font-family: lora-italic;
+  font-size: 40px;
+  color: #e84249;
+}
+
+.estimator .estimatortext3 {
+  font-family: graphik-regular;
+  font-size: 20px;
+  color: #222;
+}
+
+.estimator .navestimator {
+  width: 150px;
+  text-align: center;
+  font-size: 16px;
+  padding: 10px 30px 10px 30px;
+  font-family: graphik-regular;
+  border-radius: 20px;
+  background-color: #e84249;
+  color: white;
+}
+
+.estimator .navestimator a {
+color: white;
+}
+
+.estimator .estimatorbuttonwrapper {
+  margin-top: 40px;
+}
+
+.estimator .estimatorcontactslink {
+  margin-top: 150px;
+  text-align: center;
+  font-family: graphik-regular;
+  font-size: 20px;
+  color: #222;
+}
+
 
 .questions {
   position: relative;
