@@ -1,2 +1,2 @@
 # drectio.github.io
-Valluu Website
+Valluu Website - only desktop
