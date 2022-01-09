@@ -281,6 +281,7 @@ textarea {
   background-color: white;
   float: right;
   margin-top: 15px;
+
 }
 
 .about {
@@ -300,14 +301,14 @@ textarea {
 
 .about img {
   position: absolute;
-  top: 10px;
+  top: 120px;
   left: 8vw;
   width: 50vw;
   max-width: 900px;
 }
 
 .about .abouttext {
-  padding: 100px 0px 100px 50vw;
+  padding: 200px 0px 100px 50vw;
   max-width: 40vw;
 }
 
@@ -356,15 +357,16 @@ textarea {
 
 .estimator img {
   width: 40vw;
+  max-width: 600px;
   position: absolute;
   top: 40px;
   right: 0px;
-
 }
 
 .estimator .estimatortext {
   width: 40vw;
-  margin: 50px 0px 50px 0px;
+  margin: 50px 0px 40px 0px;
+  max-width: 800px;
 }
 
 .estimator .estimatortext1 {
@@ -392,6 +394,17 @@ textarea {
   font-family: graphik-regular;
   border-radius: 20px;
   background-color: #e84249;
+  color: white;
+}
+
+.estimator .estimatorcontactslink a {
+  width: 150px;
+  text-align: center;
+  font-size: 14px;
+  padding: 8px 20px 8px 20px;
+  font-family: graphik-regular;
+  border-radius: 20px;
+  background-color: #092168;
   color: white;
 }
 
