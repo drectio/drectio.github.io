@@ -82,19 +82,313 @@
   }
 }
 
-/* Smartphones (portrait and landscape) ----------- */
-@media only screen and (min-width: 320px) and (max-width: 480px) {
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width: 320px) {
   /* Styles */
 }
 
-/* Smartphones (landscape) ----------- */
-@media only screen and (min-width: 321px) {
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-width: 321px) and (max-width: 480px) {
   /* Styles */
+
+  .intro {
+    position: relative;
+    background-color: #e84249;
+    height: 100vh;
+  }
+
+  .intro .logo img {
+    height: 20vw;
+  }
+
+  .intro .introdesc {
+    position: absolute;
+    left: 10%;
+    top: 40%;
+  }
+
+  .intro .introdesc .title {
+    font-family: lora-italic;
+    color: #092168;
+    width: 80vw;
+    max-width: 600px;
+    font-size: calc(10vw);
+  }
+
+  .intro .introdesc .navigation {
+    font-family: graphik-regular;
+    width: 200px;
+    height: 80px;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    margin: 10px 0px 10px 0px;
+  }
+
+  .intro .introdesc a {
+    margin: 10px 0px 10px 0px;
+  }
+
+  .intro .introdesc .button {
+    border-radius: 20px;
+    background-color: white;
+    padding: 10px 30px;
+  }
+
+  .intro .introdesc .navabout {
+    background-color: #092168;
+    color: white;
+  }
+
+  .intro .introdesc .navestimator {
+    background-color: white;
+  }
+
+  .intro .databasecloud img {
+    height: 70vw;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+
+  .intro .arrow img {
+    position: absolute;
+    left: 20%;
+    bottom: 10px;
+  }
+
+  .arrowdown {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #e84249;
+    position: absolute;
+    left: 20%;
+  }
+
+  .about {
+    text-align: center;
+  }
+
+  .about img {
+    display: none;
+  }
+
+  .about .abouttext {
+    padding: 120px 20px 80px 20px;
+    max-width: 100%;
+  }
+
+  .about .abouttext1 {
+    font-family: lora;
+    font-size: calc(10vw);
+    color: #092168;
+  }
+
+  .about .abouttext2 {
+    font-family: lora-italic;
+    font-size: 20px;
+    background-color: #092168;
+    color: white;
+    padding: 20px 20px;
+  }
+
+  .about .abouttext3,
+  .about .abouttext4 {
+    font-family: graphik-regular;
+    font-size: 14px;
+    padding-top: 10px;
+  }
+
+  .about .abouttext5 {
+    font-family: graphik-regular;
+    font-size: 10px;
+    padding-top: 10px;
+  }
+
+  .salesdeck {
+    padding: 20px 20px 20px 20px;
+    line-height: 40px;
+    font-size: 30px;
+  }
+
+  .estimator {
+    position: relative;
+    padding: 20px 20px 20px 20px;
+    background-color: white;
+    text-align: center;
+  }
+
+  .estimator img {
+    width: 90vw;
+    max-width: 90vw;
+    position: relative;
+  }
+
+  .estimator .estimatortext {
+    width: 100%;
+    padding: 20px 20px 20px 00px;
+    margin: 0px 0px;
+    max-width: 800px;
+  }
+
+  .estimator .estimatortext1 {
+    font-family: lora-italic;
+    font-size: 40px;
+    color: #092168;
+  }
+  .estimator .estimatortext2 {
+    font-family: lora-italic;
+    font-size: 40px;
+    color: #e84249;
+  }
+
+  .estimator .estimatortext3 {
+    font-family: graphik-regular;
+    font-size: 20px;
+    color: #222;
+  }
+
+  .estimator .navestimator {
+    width: 150px;
+    text-align: center;
+    font-size: 16px;
+    padding: 10px 30px 10px 30px;
+    font-family: graphik-regular;
+    border-radius: 20px;
+    background-color: #e84249;
+    color: white;
+  }
+
+  .estimator .estimatorcontactslink {
+    max-width: 90vw;
+  }
+
+  .estimator .estimatorcontactslink a {
+    width: 150px;
+    text-align: center;
+    font-size: 14px;
+    padding: 8px 20px 8px 20px;
+    font-family: graphik-regular;
+    border-radius: 20px;
+    background-color: #092168;
+    color: white;
+  }
+
+  .estimator .navestimator a {
+    color: white;
+  }
+
+  .estimator .estimatorbuttonwrapper {
+    margin-top: 30px;
+  }
+
+  .estimator .estimatorcontactslink {
+    margin-top: 60px;
+    text-align: center;
+    font-family: graphik-regular;
+    font-size: 20px;
+    color: #222;
+  }
+
+  .questions {
+    position: relative;
+    background-color: #62bda4;
+    text-align: center;
+    height: 100%;
+  }
+
+  .questions img {
+    display: none;
+    position: relative;
+  }
+
+  .questions .questionsform {
+    padding: 0px 10vw 0px 10vw;
+    padding-top: 60px;
+    max-width: none;
+  }
+
+  .questions .questionstext1 {
+    font-family: lora;
+    font-size: 40px;
+    color: #092168;
+  }
+
+  .questions .questionstext2 {
+    font-family: lora-italic;
+    font-style: italic;
+    font-size: 30px;
+    color: white;
+  }
+
+  .questions form {
+    font-family: graphik-regular;
+    font-size: 12px;
+    margin-top: 40px;
+  }
+
+  .questions input {
+    border: none; /* <-- This thing here */
+    border: solid 1px white;
+    border-radius: 20px;
+    padding: 10px 10px;
+    margin: 10px 0px;
+  }
+
+  .questions input#firstname,
+  .questions input#lastname,
+  .questions input#phone {
+    width: 75vw;
+  }
+
+  .questions input#email {
+    width: 75vw;
+  }
+
+  .questions textarea {
+    width: 75vw;
+    border: solid 1px white;
+    border-radius: 15px;
+    padding: 10px 10px;
+    margin: 10px 0px;
+    resize: none;
+  }
+
+  .questions button {
+    width: 75vw;
+    background-color: #092168;
+    color: white;
+    padding: 10px 0px;
+    resize: none;
+    border: none; /* <-- This thing here */
+    border: solid 1px none;
+    border-radius: 15px;
+    margin-bottom: 50px;
+  }
+
+  .footer {
+    padding: 20px 10vw 20px 10vw;
+  }
+  
+  .footer img {
+    display: none;
+  }
+
+  .footer .footerlinks {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+  }
 }
 
 /* Smartphones (portrait) ----------- */
 @media only screen and (max-width: 320px) {
   /* Styles */
+
 }
 
 /* iPads (portrait and landscape) ----------- */
