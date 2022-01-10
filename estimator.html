@@ -1,52 +1,156 @@
 <!DOCTYPE html>
 <html class="no-js" lang="">
-  <head>
-    <meta charset="utf-8" />
-    <title></title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <meta property="og:title" content="Valluu - Data Workload Democratization in Kubernetes" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://drectio.github.io/index.html" />
-    <meta property="og:image" content="https://drectio.github.io/img/estimatorss.png" />
-    <meta property="og:description" content="75% of employees are restricted when working with data (The Human impact of Data Literacy - Report 2020 - Accenture), Valluu eliminates these barriers and provides instant major returns on the direct bottom line." />
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="icon" href="/favicon.png" sizes="any" />
+  <meta property="og:title" content="Valluu - Data Workload Democratization in Kubernetes" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://drectio.github.io/index.html" />
+  <meta property="og:image" content="https://drectio.github.io/img/estimatorss.png" />
+  <meta property="og:description"
+    content="75% of employees are restricted when working with data (The Human impact of Data Literacy - Report 2020 - Accenture), Valluu eliminates these barriers and provides instant major returns on the direct bottom line." />
 
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/mediastyle.css" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/mediastyle.css" />
+  <!--
     <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    -->
+  <link rel="stylesheet" href="css/estimator.css" />
 
-    <link rel="manifest" href="site.webmanifest" />
-    <meta name="theme-color" content="#fafafa" />
+  <link rel="manifest" href="site.webmanifest" />
+  <meta name="theme-color" content="#fafafa" />
 
-    <link
-      rel="stylesheet"
-      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
-      crossorigin="anonymous"
-    />
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
-    <script src="js/vendor/modernizr-3.11.8.min.js"></script>
-  </head>
+  <link rel="stylesheet" href="https://use.typekit.net/oov2wcw.css" />
 
-  <body>
+  <script src="js/vendor/modernizr-3.11.8.min.js"></script>
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- Estimates in JSON format, plus some auxiliary functions -->
+  <script src="js/estimates.js">
+  </script>
+</head>
 
-     <section id="introheader" class="introheader">
-          <div id="introheadercontent" class="content show">
-            <span class="logo">
-              <image src="img/valluu.svg"> </image>
-            </span>
-            <a class="button navestimator" href="index.html"><span>Back to home</span></a>
+<body>
+  <section id="introheader" class="introheader">
+    <div id="introheadercontent" class="content show">
+      <span class="logo">
+        <image src="img/valluu.svg"> </image>
+      </span>
+      <a class="navestimator" href="index.html"><span>Back to home</span></a>
+    </div>
+  </section>
+
+  <div id="cont">
+    <div id="a"></div>
+    <div id="b"></div>
+  </div>
+
+  <div id="overlay" onclick="closePopup();">
+  </div>
+  <div id="popup">
+    <div id="inforeq">
+      <h2>Your details</h2>
+      <p>To request a report, please enter the following information.</p>
+      <br />
+      <!-- This overlay is used for capturing user information before generating the report -->
+      <form id="usrinfo" onsubmit="generateReport_step2(); return false;">
+        <label for="company">Company</label><br />
+        <input type="text" id="company" name="company" required /><br /><br />
+
+        <label for="name">Name</label><br />
+        <input type="text" id="name" name="name" required /><br /><br />
+
+        <label for="role">Job role</label><br />
+        <input type="text" id="role" name="role" required /><br /><br />
+
+        <label for="name">Email address (your report will be sent here)</label><br />
+        <input type="email" id="email" name="email" required /><br /><br />
+
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+    <div id="reportloading" style="display: none;">
+      <div class="loader"></div><em>Generating report...</em>
+    </div>
+    <div id="reportdone" style="display: none;">
+      <p>Thank you!</p>
+      <p>Your report will be in your inbox shortly.</p>
+      <!-- <p>Your report is ready to view!</p>
+      <br />
+      <button id="reportviewer"><i class="fas fa-file-pdf"></i> View report</button> -->
+    </div>
+    <div id="reporterror" style="display: none;">
+      <p>There was an error and your report could not be generated. Please press below to try again.</p>
+      <button onclick="generateReport_step2();"><i class="fas fa-redo-alt"></i> Try again</button>
+    </div>
+  </div>
+
+  <div id="infobox">
+  </div>
+
+  <br /><br /><br /><br /><br /><br /><br /><br />
+
+  <div id="main">
+
+    <!-- <div id="top-bar">
+  </div> -->
+
+    <div id="estimator">
+      <div id="usecases">
+      </div>
+      <div id="adder">
+      </div>
+      <div id="display">
+        <div id="overview">
+          <p class="header">Potential Cost Saving:</p>
+          <p class="v">$<span id="ptv-figure">0</span></p>
+          <p class="note">per annum</p>
+          <div id="bars">
+            <!-- Script inserts bars here -->
           </div>
-        </section>
+          <div class="note" id="cost_per_fte">
+            Average daily cost per FTE: $<span id="cpfte"></span> <span id="edit-cpfte"><i onclick="editCostPerFTE();"
+                class="clickable fas fa-pencil-alt"></i></span>
+          </div>
+        </div>
+        <div>
+          <div id="welcome-note">
+            <br />
+            <h3 style="color: var(--vred);">Getting Started</h3>
+            <p>Begin by selecting the categories relevant to your business and follow the simple steps to estimate how
+              much Valluu can save you.</p>
+          </div>
+          <div id="finish-buttons" class="button-group">
+            <div id="reset-button" class="button">
+              <img src="img/reset.svg" onclick="" />
+              <span>Reset</span>
+            </div>
+            <div id="report-button" class="button" style="--c: #16296C; --t: #ffffff;">
+              <img src="img/pdf.svg" onclick="" />
+              <span>Generate Report</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-     <section id="salesdeck" class="salesdeck">
-          <div>Estimator Placeholder</div>
-     </section>
+    <!-- <div id="foot-bar">
+  </div> -->
 
-  </body>
+  </div>
+
+
+</body>
 
 </html>
