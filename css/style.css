@@ -374,6 +374,7 @@ textarea {
   font-family: lora-italic;
   font-size: 40px;
   color: #092168;
+
 }
 .estimator .estimatortext2 {
   font-family: lora-italic;
@@ -453,6 +454,7 @@ color: white;
   font-family: lora;
   font-size: calc(3vw);
   color: #092168;
+  line-height: 5px;
 }
 
 .introvideo .introvideotext2 {
