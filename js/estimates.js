@@ -729,8 +729,7 @@ function generateReport_step2() {
 
     $.ajax({
         type: "POST",
-        url: "/report",
-        // url: "https://drectio-estimator-reports.herokuapp.com/report",
+        url: "https://drectio-estimator-reports.herokuapp.com/report",
         data: {
             "company": $("#usrinfo #company").val(),
             "name": $("#usrinfo #name").val(),
