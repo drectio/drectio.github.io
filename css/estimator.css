@@ -762,8 +762,13 @@ input[type="number"]:disabled {
     gap: 25px;
   }
 
+  .v {
+    font-size: 40px;
+  }
+
   #welcome-note {
     max-width: 340px;
+    margin: 0 auto 60px auto;
   }
 
   .button-group {
