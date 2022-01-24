@@ -16,6 +16,7 @@
 
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
+  <link rel="stylesheet" href="css/generic.css" />
   <link rel="stylesheet" href="css/normalize.css" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/mediastyle.css" />
@@ -32,35 +33,46 @@
 
 <body>
 
+  <!-- Intro  -->
+
   <section id="intro" class="intro">
     <div class="databasecloud ">
-      <image src="img/databasecloud.svg"> </image>
+      <image src="img/databasecloud.svg"></image>
     </div>
     <div class="introdesc">
       <div class="logo">
-        <image src="img/valluu.svg"> </image>
+        <image src="img/valluu.svg"></image>
       </div>
       <div class="title">Data Workload Democratization in Kubernetes</div>
 
       <div class="navigation">
-        <a href="#about"><span class="button navabout"><i class="fas fa-angle-down"></i> What is valluu?</span></a>
-        <a href="/estimator.html"><span class="button navestimator">Valluu estimator <i
-              class="fas fa-angle-right"></i></span></a>
+        <a href="#about">
+          <span class="button navabout">
+            <i class="fas fa-angle-down"></i> What is valluu?</span>
+        </a>
+        <a href="/estimator.html">
+          <span class="button navestimator">Valluu estimator <i class="fas fa-angle-right"></i>
+          </span>
+        </a>
       </div>
     </div>
     <div class="arrow">
       <a href="#about">
-        <image src="img/arrowdown.svg"> </image>
+        <image src="img/arrowdown.svg"></image>
       </a>
     </div>
   </section>
 
+  <!-- Intro Bar Header  -->
+
   <section id="introheader" class="introheader">
-    <div id="introheadercontent" class="content">
+    <div class="content">
       <span class="logo">
-        <image src="img/valluu.svg"> </image>
+        <image src="img/valluu.svg"></image>
       </span>
-      <a class="button navestimator" href="#estimator"><span>Valluu estimator</span></a>
+      <a class="navestimator" href="#estimator">
+        <span class="button">Valluu estimator</span>
+      </a>
     </div>
   </section>
 
@@ -68,86 +80,461 @@
     <div class="arrowdown"></div>
   </section>
 
-  <section id="about" class="about">
-    <div class="abouttext">
-      <div class="abouttext1 reveal fade-bottom">
-        75% of employees are restricted when working with data*
-      </div>
-      <div class="abouttext2 reveal fade">
-        <p>Data Democratisation in Kubernetes</p>
-        <p>Valluu eliminates the restrictions, provides instant business value generation capability and direct cost &
-          efficiency savings.</p>
-      </div>
-      <div class="abouttext3 reveal fade-bottom">
+  <!-- About  -->
+
+  <section id="about" class="pagesection">
+
+    <div class="container reveal fade-bottom">
+      <div class="content">
+        <div class="visuals">
+          <image class="reveal fade" src="img/confusingdata.svg"></image>
+        </div>
+        <div class="descriptions">
+          <div class="title">
+            75% of employees are restricted when working with data*
+          </div>
+          <div class="bluebox">
+            <p>Data Democratisation in Kubernetes</p>
+            <p>Valluu eliminates the restrictions, provides instant business value generation capability and direct cost
+              &
+              efficiency savings.</p>
+          </div>
+          <div class="text">
+            Valluu is for Data Democratization in Kubernetes. Anyone can use data
+            at anytime, to enabe business decisions, by removing complex barriers
+            of access and understanding.
+          </div>
+          <div class="text">
+            Every business function works off a fragment of the big picture and
+            lacks the ability to fully benefit from data pipeline management
+            functionality on Cloud & Kubernetes. Valluu provides the full picture,
+            reducing Time-To-Value by 75%.
+          </div>
+          <div class="notes">
+            <p>*Currently, every business function works off a fragment of the big picture and lacks the ability to
+              fully
+              benefit from data pipeline management functionality on Cloud & Kubernetes.</p>
+            <p>*The Human impact of Data Literacy - Report 2020 - Accenture</p>
+          </div>
+        </div>
 
       </div>
-      <div class="abouttext3 reveal fade-bottom">
-        Valluu is for Data Democratization in Kubernetes. Anyone can use data
-        at anytime, to enabe business decisions, by removing complex barriers
-        of access and understanding.
-      </div>
-      <div class="abouttext4 reveal fade-left">
-        Every business function works off a fragment of the big picture and
-        lacks the ability to fully benefit from data pipeline management
-        functionality on Cloud & Kubernetes. Valluu provides the full picture,
-        reducing Time-To-Value by 75%.
-      </div>
-      <div class="abouttext5 reveal fade-left">
-        <p>*Currently, every business function works off a fragment of the big picture and lacks the ability to fully
-          benefit from data pipeline management functionality on Cloud & Kubernetes.</p>
-        <p>*The Human impact of Data Literacy - Report 2020 - Accenture</p>
-      </div>
     </div>
-    <image class="reveal fade" src="img/confusingdata2.svg"> </image>
+
   </section>
 
-  <section id="salesdeck" class="salesdeck reveal fade">
-    <div>Sales Deck Placeholder</div>
+  <!-- Video  -->
+
+  <section id="introvideo" class="pagesection introvideo">
+
+    <div class="container">
+      <div class="content">
+        <div class="visuals">
+          <video controls class="reveal fade-right">
+            <source src="videos/introvideo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="descriptions">
+          <div class="title reveal fade-left">
+            <p>What is your next <br> best action?</p>
+          </div>
+          <div class="subtitle reveal fade-rigth">
+            Watch our short video
+          </div>
+        </div>
+      </div>
+    </div>
+
   </section>
 
-  <section id="introvideo" class="introvideo">
-    <div class="introvideotext">
-      <div class="introvideotext1 reveal fade-left">
-        <p>What is your next</p>
-         <p>best action?</p>
+  <!-- Estimator  -->
+
+  <section id="estimator" class="pagesection reveal fade">
+
+    <div class="estimator container">
+      <div class="content">
+        <div class="descriptions">
+          <div class="title">
+            Real value
+          </div>
+          <div class="subtitle">
+            Startes here
+          </div>
+          <div class="highlight">
+            To discover the full benefits Valluu will deliver to your business complete the Value estimator.
+          </div>
+          <div class="estimatorlink">
+            <a href="/estimator.html">
+              <span class="button">
+                Estimate Savings </span>
+            </a>
+          </div>
+        </div>
+        <div class="visuals">
+          <div id="overview">
+            <p class="header">Potential Cost Saving:</p>
+            <p class="costsaving">$ <span id="ptv-figure">51.5m *</span>
+            </p>
+            <p class="note">per annum</p>
+            <div id="bars">
+              <img src="../img/icon-prod.svg" style="width:20px;">
+              <div class="bar-container" style="--c: #DD454B;">
+                <div class="bar1" style="--c: #DD454B;"></div>
+                <div class="bar2" id="bar-prod" style="--c: #DD454B; width: 80%;"></div>
+                <span class="saving-perc">
+                  <span id="per-prod">80</span>% Productivity Costs Saved</span>
+              </div>
+              <img src="../img/icon-sust.svg" style="width:20px;">
+              <div class="bar-container" style="--c: #72BDA4;">
+                <div class="bar1" style="--c: #72BDA4;"></div>
+                <div class="bar2" id="bar-sust" style="--c: #72BDA4; width: 85%;"></div>
+                <span class="saving-perc">
+                  <span id="per-sust">85</span>% Sustainability Costs Saved</span>
+              </div>
+              <img src="../img/icon-oper.svg" style="width:20px;">
+              <div class="bar-container" style="--c: #16296C;">
+                <div class="bar1" style="--c: #16296C;"></div>
+                <div class="bar2" id="bar-oper" style="--c: #16296C; width: 40%;"></div>
+                <span class="saving-perc">
+                  <span id="per-oper">40</span>% Operational Costs Saved</span>
+              </div>
+            </div>
+            <div class="note" id="cost_per_fte">
+              Average daily cost per FTE: $<span id="cpfte">660</span>
+              <span id="edit-cpfte">
+                <i onclick="editCostPerFTE();" class="clickable fas fa-pencil-alt"></i>
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="introvideotext2 reveal fade-rigth">
-        Watch our short video
+      <div class="container reveal fade-left">
+
+        <div class="contactlink">
+          <p>Any further questions?</p>
+          <a class="button estimatorcontact" href="#questions"> Contact Us.</a>
+        </div>
+
       </div>
-    </div>
-    <div class="introvideoplayer">
-      <video controls class="reveal fade-right">
-        <source src="videos/introvideo.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    </div>
   </section>
 
-  <section id="estimator" class="estimator reveal fade">
-    <div class="estimatortext">
-      <div class="estimatortext1 reveal fade-bottom">
-        Real value
+  <!-- Sales Deck  -->
+
+  <section id="section-1" class="pagesection reveal fade">
+
+    <div class="subtitle">
+      Democratisation of data workloads
+    </div>
+    <div class="cfs-wrapper">
+      <div class="cfs">
+        <div class="cfs-logo">
+          <i class="fa fa-user"></i>
+          <div class="cfs-abr">CRO</div>
+        </div>
+        <div class="cfs-text">CHIEF REVENUE OFFICER</div>
       </div>
-      <div class="estimatortext2 reveal fade">
-        Starts here
+      <div class="cfs">
+        <div class="cfs-logo">
+          <i class="fa fa-user"></i>
+          <div class="cfs-abr">CFO</div>
+        </div>
+        <div class="cfs-text">CHIEF FINANCE
+          OFFICER</div>
       </div>
-      <div class="estimatortext3 reveal fade-bottom">
-        To discover the full benefits Valluu will deliver to your business complete the Value estimator.
+      <div class="cfs">
+        <div class="cfs-logo">
+          <i class="fa fa-user"></i>
+          <div class="cfs-abr">CDO</div>
+        </div>
+        <div class="cfs-text">CHIEF DATA
+          OFFICER
+        </div>
       </div>
-      <div class="estimatorbuttonwrapper">
-        <a href="/estimator.html"><span class="button navestimator">
-            Estimate Savings </span>
-        </a>
+      <div class="cfs">
+        <div class="cfs-logo">
+          <i class="fa fa-user"></i>
+          <div class="cfs-abr">CMO</div>
+        </div>
+        <div class="cfs-text">CHIEF MARKETING
+          OFFICER
+        </div>
+      </div>
+      <div class="cfs">
+        <div class="cfs-logo">
+          <i class="fa fa-user"></i>
+          <div class="cfs-abr">COO</div>
+        </div>
+        <div class="cfs-text">CHIEF OPERATIONS
+          OFFICER
+        </div>
+      </div>
+      <div class="cfs">
+        <div class="cfs-logo">
+          <i class="fa fa-user"></i>
+          <div class="cfs-abr">BA</div>
+        </div>
+        <div class="cfs-text">BUSINESS
+          ANALYST
+        </div>
+      </div>
+      <div class="cfs">
+        <div class="cfs-logo">
+          <i class="fa fa-user"></i>
+          <div class="cfs-abr">DS</div>
+        </div>
+        <div class="cfs-text">DATA
+          SCIENTIST
+        </div>
+      </div>
+      <div class="cfs">
+        <div class="cfs-logo">
+          <i class="fa fa-user"></i>
+          <div class="cfs-abr">CISO</div>
+        </div>
+        <div class="cfs-text">CHIEF INFORMATION SECURITY OFFICER
+        </div>
+      </div>
+      <div class="cfs">
+        <div class="cfs-logo">
+          <i class="fa fa-user"></i>
+          <div class="cfs-abr">CIO</div>
+        </div>
+        <div class="cfs-text">CHIEF INFORMATION
+          OFFICER</div>
+      </div>
+      <div class="cfs">
+        <div class="cfs-logo">
+          <i class="fa fa-user"></i>
+          <div class="cfs-abr">CTO</div>
+        </div>
+        <div class="cfs-text">CHIEF TECHNOLOGY OFFICER
+        </div>
       </div>
     </div>
-    <image class="estimatorss reveal fade" src="img/estimatorss.png"> </image>
-    <div class="estimatorcontactslink">
-      <div class="estimatorcontactslink1 reveal fade-left">
-        <p>Any further questions?</p> <a class="button estimatorcontact" href="#questions"> Contact Us.</a>
-      </div>
-    </div>
+
   </section>
 
+  <section id="section-2" class="pagesection reveal fade">
+
+
+    <div class="containarization container">
+
+      <div class="content">
+        <div class="descriptions">
+          <div class="subtitle">
+            Applications in containers
+          </div>
+          <div class="highlight">
+            Gartner predicts that by 2022, more than 75% of global organizations will be running Containerized
+            Applications
+            in Kubernetes for Production Services, up from less than 30% today
+          </div>
+          <div class="text">
+            Whether you are still about to start your journey to the Cloud , are part-way-through or trying to work out
+            how
+            to optimize your new container based environment in Kubernetes, to reduce the time-to-value from Data
+            exploitation, Valluu has addressed a key prohibitor, Data Workload Management.
+          </div>
+        </div>
+        <div class="visuals">
+          <img src="/img/containersgrowth.svg" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="section-3" class="pagesection reveal fade">
+
+    <div class="democratization container">
+      <div class="content">
+        <div class="visuals">
+          <div class="timeline">
+            <div class="tlcontainer">
+              <div class="cards">
+                <div class="card">
+                  <div>Location Data</div>
+                  <i class="fa fa-truck-moving"></i>
+                </div>
+                <div class="card mid">
+                  <div>Order Cancellations</div>
+                  <i class="fa fa-truck-moving"></i>
+                </div>
+                <div class="card mid">
+                  <div>New Orders</div>
+                  <i class="fa fa-truck-moving"></i>
+                </div>
+                <div class="card">
+                  <div>New Routings</div>
+                  <i class="fa fa-truck-moving"></i>
+                </div>
+                <div class="card">
+                  <div>Aditional Revenue</div>
+                  <i class="fas fa-money-bill-alt"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="descriptions">
+          <div class="title">
+            User Case
+          </div>
+          <div class="subtitle">
+            The Motor Insurance Underwritter
+          </div>
+          <div class="highlight">
+            The Motor Insurance Underwriter needs understand the changes in Claim profile of accidents, relative to the
+            distance from home since the COVID pandemic, to be able to increase or decrease the premiums to improve
+            renewal rates at the right risk & profit points.
+          </div>
+          <div class="text">
+            Having defined the business challenge and understood the outcome goals, the Underwriter and Data Scientist
+            worked together to defined the data criteria and created the codeless data workload. In Microsoft Team, the
+            Underwriter scheduled the automated execution of the data workload, at 6PM on Friday, when the
+            weekend-price-status is set. The Underwriter then received a notification to say the data workload was run,
+            and the workload was automatically stored in the Underwriter’s User library. They then presented their
+            findings to the respective business heads on Tuesday.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <section id="section-4" class="pagesection reveal fade">
+
+    <div class="containarization container">
+
+      <div class="content">
+        <div class="descriptions">
+          <div class="title">
+            Time-to-value
+          </div>
+          <div class="highlight">
+            Valluu creates time-to-value by dramatically by enabling the creation of the required data workloads by the
+            respective business user and data scientist partner.
+          </div>
+          <div class="text">
+            Valluu removes the need for or reliance on the IT Function, by giving the Business User the ability to
+            create new data workloads without the need to code. They can then be scheduled to run automatically, at the
+            first available opportunity, through real-time monitoring of server capacity availability.
+          </div>
+        </div>
+        <div class="visuals">
+          <img src="/img/timetovalue.svg" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="section-5" class="pagesection reveal fade">
+
+    <div class="democratization container">
+
+      <div class="content">
+        <div class="visuals">
+          <img src="/img/reducedcomplexity.svg" alt="">
+          <!--
+          <i class="fa fa-balance-scale"></i>
+          <div>E2E Lifecycle Management</div>
+          <div>Centralised Governance</div>
+          -->
+        </div>
+        <div class="descriptions">
+
+          <div class="title">
+            Advantages
+          </div>
+          <div class="subtitle">
+            Reduced complexity
+          </div>
+          <div class="highlight">
+            Valluu address the current complexity areas that are creating major complexity and associated cost issues,
+            namely IT infrastructure integration, IT engineering and data workload execution.
+          </div>
+          <div class="text">
+            Valluu creates and manages all the required touchpoints of the lifecycle through a single, user language
+            native interface and provides a centralised procedure for budget management, full procedural audit, data
+            compliance recording & reporting and zero trust access governance.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="containarization container">
+      <div class="content">
+        <div class="visuals">
+          <img src="/img/operationalsavings.svg" alt="">
+          <!--
+          <i class="fa fa-money-bill-alt"></i>
+          <div>$25M</div>
+          <div>Annual operating saving</div>
+          -->
+        </div>
+        <div class="descriptions">
+          <div class="subtitle">
+            Operational savings
+          </div>
+          <div class="highlight">
+            Valluu achieves operational savings for the business, by reducing time, effort and resource costs, currently
+            being wasted on data workload development and lifecycle management.
+          </div>
+          <div class="text">
+            Valluu allows us to put the use cases through the value estimator, and for a medium size enterprise, the
+            estimated saving is $25M per annum in operational costs. In addition, data workload management, without
+            Valluu, carries high data governance risk and recent fines have averaged between $20-$35M.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="containarization container">
+
+      <div class="content">
+        <div class="visuals">
+          <img src="/img/co2savings2.svg" alt="">
+          <!--
+          <div class="descriptions">
+            <div>Equivalent annual saving</div>
+          </div>
+          <div>
+            <i class="fa fa-car"></i>
+            <div>50K Car Miles</div>
+          </div>
+          <div>
+            <i class="fa fa-tree"></i>
+            <div>961 Trees Planted</div>
+          </div>
+          -->
+        </div>
+        <div class="descriptions">
+          <div class="subtitle">
+            CO2 Savings
+          </div>
+          <div class="highlight">
+            The energy required by IT Infrastructure, according to governmental studies (USA, Australia, UK) it is
+            estimated 82.5% of energy is lost from the power station to the requesting server.
+          </div>
+          <div class="text">
+            Valluu directly reduces the amount of Data Centre resources consumed by fully utilising physical & virtual
+            servers up to the potential maximum of 80%, thereby reducing the amount of CO2 produced by the energy
+            wasted. For a medium size enterprise, this is the equivalent of 50,000 Car Miles saved or 961 number of
+            trees planted to offset CO2 emissions.
+          </div>
+        </div>
+      </div>
+
+  </section>
+
+
+
+  <!-- Questions  -->
 
   <section id="questions" class="questions">
     <image class="reveal fade" src="img/contactquestions.svg"></image>
@@ -165,12 +552,21 @@
     </div>
   </section>
 
+  <!-- Footer  -->
+
   <section class="footer">
-    <image src="img/valluu.svg"> </image>
+    <image src="img/valluu.svg"></image>
     <span class="footerlinks">
-      <a id="footerlink1" href="/estimator.html"><span>Valluu Estimator</span></a>
-      <a id="footerlink2" href="#intro"><span>Privacy Policy</span></a>
-      <a id="footerlink3" href="#estimator"><span>Get Started <i class="fas fa-angle-right"></i></span></a>
+      <a id="footerlink1" href="/estimator.html">
+        <span>Valluu Estimator</span>
+      </a>
+      <a id="footerlink2" href="#intro">
+        <span>Privacy Policy</span>
+      </a>
+      <a id="footerlink3" href="#estimator">
+        <span>Get Started <i class="fas fa-angle-right"></i>
+        </span>
+      </a>
     </span>
   </section>
 
@@ -178,20 +574,6 @@
     <image src="img/contactbutton.svg"></image>
   </a>
 
-  <!--
-    <div id="color-1">#e84249</div>
-    <div id="color-2">#ed686d</div>
-    <div id="color-3">#f18e92</div>
-
-    <div id="color-4">#62bda4</div>
-    <div id="color-5">#82cab6</div>
-
-    <div id="color-6">#092168</div>
-    <div id="color-7">#3a4d86</div>
-
-    <div id="color-8">#dbd1be</div>
-    <div id="color-9">#e3dacb</div>
-    -->
 </body>
 
 <script src="js/app.js"></script>

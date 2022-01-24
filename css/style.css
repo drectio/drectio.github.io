@@ -1,194 +1,106 @@
-/*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
 
-/* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
-/*
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
+/** Sections **/
 
-/* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
+.pagesection {
+  padding: 40px 10vw;
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
 
-@font-face {
+.container {
   font-family: graphik-regular;
-  src: url("../fonts/Graphik-Regular.otf") format("opentype");
-}
-
-@font-face {
-  font-family: graphik;
-  src: url("../fonts/Graphik-Medium.otf") format("opentype");
-}
-
-@font-face {
-  font-family: lora-italic;
-  src: url("../fonts/Lora-Italic-VariableFont_wght.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: lora;
-  src: url("../fonts/Lora-VariableFont_wght.ttf") format("truetype");
-}
-
-html {
+  font-size: 14px;
+  padding-top: 10px;
+  line-height: 24px;
   color: #222;
-  font-size: 1em;
-  line-height: 1.4;
-  scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
 }
 
-/*
- * Remove text-shadow in selection highlight:
- * https://twitter.com/miketaylr/status/12228805301
- *
- * Customize the background color to match your design.
- */
-
-::-moz-selection {
-  background: #b3d4fc;
-  text-shadow: none;
+.content {
+  padding: 25px 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
-::selection {
-  background: #b3d4fc;
-  text-shadow: none;
+.descriptions {
+  flex-basis: 60%;
 }
 
-/*
- * A better looking default horizontal rule
- */
-
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
+.visuals {
+  flex-basis: 40%;
 }
 
-a:link,
-a:visited,
-a:hover,
-a:active {
-  color: #000000;
-  text-decoration: none;
+.title {
+  font-family: lora;
+  font-size: 3em;
+  line-height: normal;
+  color: #092168;
+  margin-bottom: 20px;
 }
 
-/*
- * Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
- * https://github.com/h5bp/html5-boilerplate/issues/440
- */
-
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-  vertical-align: middle;
+.subtitle {
+  font-family: lora-italic;
+  font-size: 2em;
+  line-height: normal;
+  color: #e84249;
+  margin-bottom: 10px;
 }
 
-/*
- * Remove default fieldset styles.
- */
-
-fieldset {
-  border: 0;
-  margin: 0;
-  padding: 0;
+.bluebox {
+  font-family: lora-italic;
+  font-size: 20px;
+  background-color: #092168;
+  color: white;
+  padding: 20px 20px;
+  margin-bottom: 10px;
 }
 
-/*
- * Allow only vertical resizing of textareas.
- */
-
-textarea {
-  resize: vertical;
+.highlight {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-
-/*
- * Hide visually and from screen readers
- */
-
-.hidden,
-[hidden] {
-  display: none !important;
+.text {
+  margin-bottom: 20px;
 }
 
-/*
- * Hide only visually, but have it available for screen readers:
- * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
- *
- * 1. For long content, line feeds are not interpreted as spaces and small width
- *    causes content to wrap 1 word per line:
- *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
- */
-
-.visually-hidden {
-  border: 0;
-  clip: rect(0, 0, 0, 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-  /* 1 */
+.notes {
+  font-size: 10px;
+  margin-bottom: 20px;
 }
 
-/*
- * Extends the .visually-hidden class to allow the element
- * to be focusable when navigated to via the keyboard:
- * https://www.drupal.org/node/897638
- */
-
-.visually-hidden.focusable:active,
-.visually-hidden.focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  white-space: inherit;
-  width: auto;
+.button {
+  font-family: graphik-regular;
+  font-size: 12px;
+  background-color: #092168;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin-bottom: 50px;
 }
 
-/*
- * Hide visually and from screen readers, but maintain layout
- */
-
-.invisible {
-  visibility: hidden;
+.button:hover {
+  box-shadow: 0 0 5px rgba(12, 10, 10, 0.8); 
 }
 
-/*
- * Clearfix: contain floats
- *
- * The use of `table` rather than `block` is only necessary if using
- * `::before` to contain the top-margins of child elements.
- */
-
-.clearfix::before,
-.clearfix::after {
-  content: "";
-  display: table;
+a.button {
+  color: white;
 }
 
-.clearfix::after {
-  clear: both;
+/** Sections with custom backgorund colors**/
+
+#section-1, #section-3, #section-5, #section-7, #section-9, #introvideo {
+  background-color: rgba(227, 218, 203, 0.5);
 }
+
+
+/** Intro **/ 
 
 .intro {
   position: relative;
@@ -249,44 +161,36 @@ textarea {
   bottom: 10px;
 }
 
-.introheader.sticky {
+/** Intro Header Bar**/ 
+
+.introheader {
   z-index: 999;
   position: fixed;
-  width: 100%;
   top: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #e84249;
+  line-height: 60px;
+  opacity: 0;
+}
+
+.introheader.sticky {
+  opacity: 1;
 }
 
 .introheader .content {
-  opacity: 0;
-  padding: 10px 10vw 10px 10vw;
-}
-
-.introheader {
-  background-color: #e84249;
-}
-
-.button:hover {
-  box-shadow: 0 0 5px rgba(12, 10, 10, 0.8); 
+    padding: 0px 0px;
+    justify-content: space-between;
+    margin: 0px 10vw;
 }
 
 .introheader .logo img {
-  padding: 10px 10px;
-  width: 10vh;
+  height: 35px;
 }
 
-.introheader .button.navestimator {
-  font-size: 12px;
-  padding: 5px 30px 5px 30px;
-  font-family: graphik-regular;
-  border-radius: 20px;
+.introheader .button {
   background-color: white;
-  float: right;
-  margin-top: 15px;
-
-}
-
-.about {
-  position: relative;
+  color: #092168;
 }
 
 .arrowdown {
@@ -300,170 +204,147 @@ textarea {
 
 }
 
-.about img {
-  position: absolute;
-  top: 120px;
-  left: 8vw;
-  width: 50vw;
-  max-width: 900px;
-}
+/**  Intro **/
 
-.about .abouttext {
-  padding: 200px 0px 40px 50vw;
-  max-width: 40vw;
-}
-
-.about .abouttext1 {
-  font-family: lora;
-  font-size: calc(4vw);
+#intro .navestimator {
   color: #092168;
 }
 
-.about .abouttext2 {
-  font-family: lora-italic;
-  font-size: 20px;
-  background-color: #092168;
-  color: white;
-  padding: 20px 20px;
+/** About **/ 
+
+#about {
+  text-align: left;
 }
 
-.about .abouttext3,
-.about .abouttext4 {
-  font-family: graphik-regular;
-  font-size: 14px;
-  padding-top: 10px;
+#about .estimatorlink {
+  margin-top: 25px;
 }
 
-.about .abouttext5 {
-  font-family: graphik-regular;
-  font-size: 10px;
-  padding-top: 10px;
+#about .descriptions, #about .visuals  {
+  max-width: 50%;
 }
 
-.salesdeck {
-  padding: 0px 10vw 0px 10vw;
-  position: relative;
-  background-color: rgba(227, 218, 203, 0.5);
-  color: #092168;
+#about img {
+  width: 100%;
+}
+
+/** Estimator **/ 
+
+#estimator {
+  text-align: left;
+}
+
+#estimator .contactlink {
   text-align: center;
-  font-size: 60px;
-  line-height: 200px;
+}
+/*
+#estimator .descriptions {
+  flex-basis: 40%;
 }
 
-.estimator {
-  position: relative;
-  padding: 100px 10vw 100px 10vw;
-  background-color: white;
+#estimator .visuals {
+  flex-basis: 40%;
 }
 
-.estimator img {
-  width: 40vw;
-  max-width: 600px;
-  position: absolute;
-  top: 40px;
-  right: 0px;
+#estimator .overview {
+  min-width: 400px;
+}
+*/
+#estimator .estimatorlink {
+  margin-top: 25px;
 }
 
-.estimator .estimatortext {
-  width: 40vw;
-  margin: 50px 0px 40px 0px;
-  max-width: 800px;
-}
-
-.estimator .estimatortext1 {
-  font-family: lora-italic;
-  font-size: 40px;
-  color: #092168;
-
-}
-.estimator .estimatortext2 {
-  font-family: lora-italic;
-  font-size: 40px;
-  color: #e84249;
-}
-
-.estimator .estimatortext3 {
-  font-family: graphik-regular;
-  font-size: 20px;
-  color: #222;
-}
-
-.estimator .navestimator {
-  width: 150px;
-  text-align: center;
-  font-size: 16px;
-  padding: 10px 30px 10px 30px;
-  font-family: graphik-regular;
-  border-radius: 20px;
+#estimator .estimatorlink .button{
   background-color: #e84249;
-  color: white;
 }
 
-.estimator .estimatorcontactslink a {
-  width: 150px;
-  text-align: center;
-  font-size: 14px;
-  padding: 8px 20px 8px 20px;
-  font-family: graphik-regular;
-  border-radius: 20px;
-  background-color: #092168;
-  color: white;
+
+/** Estimator Calcs **/
+
+#overview {
+  background-color: whitesmoke;
+  padding: 20px 20px;
+  margin: 10px 0px;
 }
 
-.estimator .navestimator a {
-color: white;
+#overview p {
+  margin: 0px 0px;
 }
 
-.estimator .estimatorbuttonwrapper {
-  margin-top: 40px;
+.costsaving {
+  font-size: 60px;
+  line-height: 60px;
+  color: var(--vred);
+  font-weight: bold;
 }
 
-.estimator .estimatorcontactslink {
-  margin-top: 150px;
-  text-align: center;
-  font-family: graphik-regular;
-  font-size: 20px;
-  color: #222;
+#ptv span.note {
+  font-size: 13px;
 }
 
-.introvideo {
+#cost_per_fte {
+  font-size: 13px;
+}
+
+#cost_per_fte input {
+  max-width: 60px;
+}
+
+.summary {
+  font-size: 10px;
+  color: #444444;
+}
+
+#bars {
+  box-sizing: border-box;
+  margin: 10px 0 10px 0;
+
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  align-items: center;
+  column-gap: 5px;
+  row-gap: 10px;
+}
+
+.bar-container {
+  height: 20px;
+  width: 100%;
+}
+
+.bar1{
+  background-color: var(--c, #646464);
+  color: #ffffff;
+  border-radius: 10px;
+  width: 100%;
+  height: 20px;
+  opacity: 0.7;
+}
+
+.bar2 {
+  background-color: var(--c, #646464);
+  opacity: 1;
+  border-radius: 10px;
+  height: 20px;
+  width: 0%;
   position: relative;
-  padding: 50px 10vw 50px 10vw;
-  min-height: 400px;
-  border: solid 1px rgba(227, 218, 203, 0.5);
+  top: -20px;
 }
 
-.introvideo video{
-  width: 50%;
-  max-width: 500px;
-  position: absolute;
-  left: 10vw;
-  top: 80px;
+.saving-perc {
+  font-size: 12px;
+  margin-left: 10px;
+  color: #ffffff;
+  position: relative;
+  top: -42px;
 }
 
-.introvideo .introvideotext {
-  margin-top: 30px;
-  max-width: 40%;
-  text-align: center;
-  float:right
+/** Video **/
+
+#introvideo video {
+  width: 100%;
 }
 
-.introvideo .introvideotext1 {
-  margin: 0px 0px 0px 0px;
-  padding: 40px 0px 20px 0px;
-  font-family: lora;
-  font-size: calc(3vw);
-  color: #092168;
-  line-height: 5px;
-}
-
-.introvideo .introvideotext2 {
-  margin: 0px 0px 0px 0px;
-  padding: 0px 0px 20px 0px;
-  font-family: lora-italic;
-  font-size: calc(2vw);
-  color: #e84249;
-}
+/** Questions **/ 
 
 .questions {
   position: relative;
@@ -542,6 +423,41 @@ color: white;
   margin-bottom: 50px;
 }
 
+/** Sales Section **/ 
+
+.cfs-wrapper {
+  font-family: graphik-regular;
+  font-size: 12px;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cfs {
+  width: 200px;
+}
+
+.cfs-logo {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #444444;
+    line-height: 20px;
+    border-radius: 40px;
+    padding: 10px;
+    margin: 10px auto;
+  }
+
+.cfs-text {
+  margin-bottom: 20px;
+}
+
+.cfs-logo i{
+  color: #444444;
+}
+
+/** Footer **/ 
+
 .footer {
   padding: 140px 10vw 50px 10vw;
   background-color: #62bda4;
@@ -569,6 +485,11 @@ color: white;
   bottom: 40px;
   right: 40px;
 }
+
+
+
+
+
 
 #color-1 {
   background-color: #e84249;
@@ -604,4 +525,70 @@ color: white;
 
 #color-9 {
   background-color: #e3dacb;
+}
+
+
+/** Sales Deck **/ 
+
+.visuals img {
+  max-width: 400px;
+}
+
+/** Timeline **/
+.timeline {
+  position: relative;
+  margin: 0px 50px;
+}
+
+.timeline label {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  /* identical to box height */
+  margin-left: 66px;
+  margin-top: 10px;
+  color: #FFFFFF;
+}
+
+.timeline  .tlcontainer {
+  width: 100%;
+}
+
+.timeline  .tlcontainer .cards {
+  margin-left: 12px;
+}
+
+.timeline .tlcontainer .cards .card {
+  z-index: inherit;
+  height: 55px;
+  padding: 10px 30px;
+  margin-bottom: 12px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 0px 16px 15px -10px rgb(105 96 215 / 30%);
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 15%;
+}
+
+.card:nth-child(1) .fa-truck-moving {
+  color: #e84249
+}
+
+.card .fa-truck-moving {
+  font-size: 18px;
+  color: #62bda4
+}
+
+.card > div {
+  line-height: 19px;
 }
