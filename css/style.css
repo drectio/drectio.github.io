@@ -490,44 +490,6 @@ a.button {
 
 
 
-
-#color-1 {
-  background-color: #e84249;
-}
-
-#color-2 {
-  background-color: #ed686d;
-}
-
-#color-3 {
-  background-color: #f18e92;
-}
-
-#color-4 {
-  background-color: #62bda4;
-}
-
-#color-5 {
-  background-color: #82cab6;
-}
-
-#color-6 {
-  background-color: #092168;
-}
-
-#color-7 {
-  background-color: #3a4d86;
-}
-
-#color-8 {
-  background-color: #dbd1be;
-}
-
-#color-9 {
-  background-color: #e3dacb;
-}
-
-
 /** Sales Deck **/ 
 
 .visuals img {
@@ -591,4 +553,57 @@ a.button {
 
 .card > div {
   line-height: 19px;
+}
+
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--vgrey-light); 
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(221, 69, 75, 0.7);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(221, 69, 75, 1);
+}
+
+
+
+
+#color-1 {
+  background-color: #e84249;
+}
+
+#color-2 {
+  background-color: #ed686d;
+}
+
+#color-3 {
+  background-color: #f18e92;
+}
+
+#color-4 {
+  background-color: #62bda4;
+}
+
+#color-5 {
+  background-color: #82cab6;
+}
+
+#color-6 {
+  background-color: #092168;
+}
+
+#color-7 {
+  background-color: #3a4d86;
+}
+
+#color-8 {
+  background-color: #dbd1be;
+}
+
+#color-9 {
+  background-color: #e3dacb;
 }

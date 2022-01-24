@@ -112,11 +112,21 @@
     width: 100%;
   }
   
+  .descriptions {
+    order: 1;
+  }
+
+  .visuals {
+    order: 2;
+  }
+
   #estimator .overview {
     min-width: 0px;
   }
-  
 
+  .cfs {
+    width: 160px;
+  }
 
   .intro {
     position: relative;
@@ -193,6 +203,11 @@
     position: absolute;
     left: 20%;
   }
+
+
+
+
+
 
   .about {
     text-align: center;
