@@ -102,9 +102,16 @@ p {
   box-sizing: border-box;
   width: 100px;
   height: 100px;
-  padding: 15px 10px 10px 10px;
+  padding: 10px;
   text-align: center;
 
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  grid-template-columns: 1fr;
+  justify-items: center;
+  justify-content: center;
+  align-content: center;
+  gap: 5px;
   /* display: flex; */
   /* align-items: center; */
   /* justify-content: center; */
@@ -124,6 +131,7 @@ p {
   transition: 0.25s; 
 
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 
@@ -132,12 +140,17 @@ p {
   background-color: var(--c, #000000);
 }
 
+ 
+/* .usecase:hover:not(.selected) {
+  border-radius: 30%;
+} */
+
 #usecases {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(3, 1fr);
-  justify-items: center;
-  justify-content: center;
+  grid-template-rows: repeat(3, auto);
+  /* justify-items: center; */
+  /* justify-content: center; */
   align-content: start;
 }
 
@@ -147,8 +160,9 @@ p {
 
 #display {
   box-sizing: border-box;
-  width: 95%;
+  width: 100%;
   max-width: 400px;
+  /* width: 400px; */
 }
 
 #overview {
@@ -172,13 +186,15 @@ p {
 
 #estimator {
   box-sizing: border-box;
-  width: 95%;
+  width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(auto, 1fr) 1fr;
+  grid-template-rows: auto auto;
   justify-items: center;
   justify-content: center;
   align-content: start;
-  gap: 10px;
+  column-gap: 50px;
+  row-gap: 45px;
 }
 
 .clickable:hover, .button:hover {
@@ -186,6 +202,7 @@ p {
 }
 
 .button {
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -195,18 +212,19 @@ p {
   font-weight: bold;
   border: 1px solid var(--vgrey);
   border-radius: 15px;
-  font-size: 15px;
+  font-size: 14px;
   background-color: var(--c, #ffffff);
   color: var(--t, var(--vgrey));
+  padding: 0 10px;
 }
 
 .button-group {
   display: grid;
-  grid-template-columns: repeat(var(--n, 2), 1fr);
+  grid-template-columns: repeat(var(--n, 2), auto);
   justify-items: center;
   justify-content: center;
   gap: 10px;
-  margin-top: 60px;
+  /* margin-top: 60px; */
 }
 
 #finish-buttons {
@@ -221,8 +239,8 @@ p {
 #adder {
   box-sizing: border-box;
   display: none;
-  width: 80%;
-  max-width: 400px;
+  width: 540px;
+  padding: 0 50px;
 }
 
 #adder .title {
@@ -240,6 +258,10 @@ p {
 #adder .prompt {
   font-size: 13px;
   color: var(--vgrey);
+}
+
+#mob-grid-button {
+  position: relative;
 }
 
 #infobox {
@@ -326,10 +348,45 @@ p {
   background-color: var(--c, var(--vgrey));
   color: #ffffff;
   font-size: 12px;
+  cursor: pointer;
 
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.info-box {
+  display: none;
+  position: absolute;
+  color: #ffffff;
+  background-color: var(--c, var(--vgrey));
+  width: 250px;
+  font-size: 13px;
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+  z-index: 1;
+}
+
+.info-box-arrow {
+  display: none;
+  position: absolute;
+  box-sizing: border-box;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid var(--c, var(--vgrey));
+  /* box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19); */
+  z-index: 1;
+}
+
+#complexities .info:hover + .info-box {
+  display: block;
+}
+
+#complexities .info:hover ~ .info-box-arrow {
+  display: block;
 }
 
 .selector-group {
@@ -362,37 +419,34 @@ p {
 #u-nav {
   margin-top: 60px;
   display: grid;
-  grid-template-columns: 35px 115px 1fr;
+  /* grid-template-columns: 35px 115px 1fr; */
+  grid-template-columns: repeat(3, auto);
   gap: 20px;
   justify-content: center;
   align-items: center;
 }
 
-#arrow-buttons {
+.arrow-buttons {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, auto);
   justify-content: center;
   align-items: center;
   gap: 5px;
 }
 
-#arrow-buttons div {
-  background-color: var(--vgreen);
+.arrow-buttons div {
+  box-sizing: border-box;
+  background-color: var(--c, var(--vgreen));
   color: #ffffff;
   height: 35px;
   border-radius: 17.5px;
+  width: auto;
+  min-width: 35px;
+  padding: 0 12px;
 
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-#arrow-buttons div.left {
-  width: 35px;
-}
-
-#arrow-buttons div.right {
-  width: 80px;
 }
 
 #mini-cases {
@@ -413,32 +467,36 @@ p {
 .mini-group{
   justify-self: left;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(var(--n, 5), 1fr);
   justify-items: center;
   justify-content: center;
   gap: 2px;
 }
 
 .mini-case{
+  box-sizing: border-box;
   font-size: 0px;
   color: #ffffff;
   text-align: center;
   box-sizing: border-box;
-  border: 3px solid var(--c, var(--vgrey));
+  border: 3.5px solid var(--c, var(--vgrey));
   border-radius: 20%;
-  height: 18px;
-  width: 18px;
+  height: 20px;
+  width: 20px;
+  opacity: 0.7;
   /* display: flex;
   align-items: center; */
 }
 
 .mini-case.active {
   background-color: var(--c, var(--vgrey));
+  opacity: 1;
 }
 
 .mini-case.selected:not(.active) {
   background-color: var(--c, var(--vgrey));
   font-size: 10px;
+  opacity: 1;
 }
 
 .selector:hover {
@@ -449,7 +507,7 @@ input[type="number"]:disabled {
   color: var(--grey-mid);
 }
 
-button, input[type=submit] {
+/* button, input[type=submit] {
   font-family: Helvetica, sans-serif; 
   border: none;
   border-radius: 5%;
@@ -458,7 +516,7 @@ button, input[type=submit] {
   color: #ffffff;
   border-color: var(--company-color);
   cursor: pointer;
-}
+} */
 
 .button_div {
   text-align: center;
@@ -541,12 +599,14 @@ button, input[type=submit] {
 }
 
 #popup {
+  box-sizing: border-box;
   position: fixed;
   top: 5%;
   padding: 20px;
-  background-color: #ffffff;
+  background-color: var(--vblue);
+  color: #ffffff;
   width: 90%;
-  max-width: 500px;
+  max-width: 350px;
   max-height: 90%;
   overflow: auto;
   border: 1px solid var(--grey-mid);
@@ -559,25 +619,181 @@ button, input[type=submit] {
 }
 
 #popup h2 {
-  color: var(--company-color);
+  font-style: italic;
 }
 
-#popup form {
+#popup p {
+  color: #ffffff;
+}
+
+/* #popup form {
   border: 0.5px solid rgba(85, 12, 161, 0.25);
   border-radius: 10px;
   padding: 10px;
+} */
+
+#popup label {
+  font-size: 15px;
 }
 
 #popup form input[type=text],
 #popup form input[type=email] {
-  min-width: 250px;
-  width: 90%;
+  /* min-width: 250px; */
+  color: #000000;
+  box-sizing: border-box;
+  height: 40px;
+  width: 100%;
+  border-radius: 20px;
+  padding-left: 15px;
+  margin-bottom: 10px;
+  /* border-width: 0; */
 }
 
 #reportviewer {
   transform: scale(1);
   animation: pulse 2s infinite;
 }
+
+/* .des-b {
+  display: block;
+}
+.des-g {
+  display: grid;
+}
+.des-f {
+  display: flex;
+} */
+
+.mob-b, .mob-g, .mob-f {
+  display: none !important;
+}
+
+/* For smaller screens, run the categories vertically */
+@media screen and (max-width: 910px) {
+  #usecases {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    justify-content: center;
+    align-content: start;
+  }
+  .category-group {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    justify-items: center;
+    justify-content: center;
+  }
+  #mini-cases {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: repeat(4, 1fr);
+    /* justify-items: center; */
+    justify-content: center;
+    gap: 2px;
+  }
+  .mini-group {
+    /* justify-self: start; */
+    align-self: start;
+    display: grid;
+    grid-template-rows: repeat(var(--n, 4), 1fr);
+    grid-template-columns: 1fr;
+    /* justify-items: start;
+    justify-content: start;
+    align-content: start; */
+    gap: 2px;
+  }
+  #case-count {
+    grid-column: span 4;
+  }
+  #adder {
+    max-width: 320px;
+    padding: 0 10px;
+  }
+}
+
+
+/* For even smaller screens, put the savings display below the usecase selector, and so on. */
+/* This is the view for mobiles, or other small windows. */
+@media screen and (max-width: 670px) {
+  #estimator {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 25px;
+  }
+
+  .v {
+    font-size: 40px;
+  }
+
+  #welcome-note {
+    max-width: 340px;
+    margin: 0 auto 60px auto;
+  }
+
+  .button-group {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    margin-top: 25px;
+  }
+
+  #u-nav {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: center;
+    align-items: center;
+  }
+
+  #mini-cases{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(3, auto);
+    /* justify-content: normal; */
+  }
+
+  .mini-group {
+    /* justify-self: start; */
+    align-self: start;
+    display: grid;
+    grid-template-columns: repeat(var(--n, 4), 1fr);
+    grid-template-rows: 1fr;
+    /* justify-items: start;
+    justify-content: start;
+    align-content: start; */
+    gap: 2px;
+  }
+
+  .arrow-buttons div {
+    height: 25px;
+    border-radius: 12.5px;
+    min-width: 25px;
+    padding: 0;
+  }
+
+  #adder {
+    width: 100%;
+  }
+
+  .mob-b {
+    display: block !important;
+  }
+  .mob-g {
+    display: grid !important;
+  }
+  .mob-f {
+    display: flex !important;
+  }
+
+  .des-b, .des-g, .des-f {
+    display: none !important;
+  }
+
+}
+
 
 @-webkit-keyframes spin {
   0% {
@@ -594,22 +810,5 @@ button, input[type=submit] {
   }
   100% {
     transform: rotate(360deg);
-  }
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(0.9);
-    box-shadow: 0 0 0 0 rgba(38, 109, 147, 0.7);
-  }
-
-  70% {
-    transform: scale(1);
-    box-shadow: 0 0 0 10px rgba(38, 109, 147, 0);
-  }
-
-  100% {
-    transform: scale(0.9);
-    box-shadow: 0 0 0 0 rgba(38, 109, 147, 0);
   }
 }
