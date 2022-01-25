@@ -21,7 +21,7 @@ let data = [
         ],
         "levels": {
             "low": {
-                "example": "Integrate with third-party systems MS Teams, Slack, etc.",
+                "example": "Integrate with third-party systems - MS Teams, Slack, etc.",
                 "times": {
                     "Project Manager": { "before": 120, "after": 40 },
                     "SW Developer": { "before": 720, "after": 240 },
@@ -355,7 +355,7 @@ let data = [
         "category": "sust",
         "base": "money",
         "ESC": false,
-        "description": "Risk exposure reduced by replacement of manual processes with automation.",
+        "description": "Risk exposure reduced by 60% through replacement of manual processes with automation.",
         "pretext": "By controlling the probability of Incidence, through increasing the footprint of Controlled Group from Uncontrolled Group by 60%, the coverage of process Automated by the Solution.",
         "posttext": "The method used to produce the calculation is Relative Risk. This can be defined as a metric that is taken into use for the measurement of risk-taking place in a particular group and comparing the results obtained from the same with the results of the measurement of a similar risk-taking place in another group.",
         "value": {
@@ -590,15 +590,31 @@ for (let i=0; i<data.length; i++) {
 
 const default_cost_per_fte = 660;  // $
 let cost_per_fte = default_cost_per_fte;
-const min_bar_widths = {"before": 30, "after": 10};  // px
 
-const bar_animation_time = 1500;  // ms
-const fading_animation_time = 250;  // ms
+// When the screen is resized, some adjustments need to be made with jQuery. This pair of functions
+// ensures that those procedures are not done with every pixel drag during a resizing process.
 
-$(window).on("resize", () => {
-    // When the window is resized, the bars might need to be rescaled, so refresh the display.
-    updateDisplay(null);
+let resize_time;
+let timeout = false;
+let time_allowed = 250;
+$(window).resize(function() {
+    resize_time = new Date();
+    if (!timeout) {
+        timeout = true;
+        setTimeout(resize_end, time_allowed);
+    }
 });
+
+function resize_end() {
+    if (new Date() - resize_time < time_allowed) {
+        setTimeout(resize_end, time_allowed);
+    } else {
+        timeout = false;
+        
+        // Resize activities here
+        $("#mob-grid-button").css("left", ($("#adder").innerWidth()-35)+"px");
+    }               
+}
 
 // This way of doing things does not seem to work when integrated with the Hugo website.
 // New method at end of file.
@@ -608,21 +624,23 @@ $(window).on("resize", () => {
 
 function loadingTasks() {
     $("#cpfte").html(formatNumber(cost_per_fte));
-    $("#adder").css("max-height", ""+(($(window).height())*0.9)+"px")
-        .css("max-width", ""+Math.min(($(window).width())*0.9, 750)+"px");
+    // $("#adder").css("max-height", ""+(($(window).height())*0.9)+"px")
+        // .css("max-width", ""+Math.min(($(window).width())*0.9, 750)+"px");
 
     // Populate the display with the categories and their usecases.
 
     let c = ``;
+    let cat_count = 0;
     for (let i=0; i<cats.length; i++) {
         c += `<div class="category-group">`;
         c += `
             <div class="category" id="`+cats[i]["short"]+`-usecases" style="--c: `+cats[i]["colour"]+`;">
-                <img src="../img/icon2-`+cats[i]["short"]+`.svg" style="height:30px;" />
-                <p style="color: #ffffff;">`+cats[i]["name"]+`</p>
+                <img src="img/icon2-`+cats[i]["short"]+`.png" style="height:30px;" />
+                <span style="color: #ffffff;">`+cats[i]["name"]+`</span>
             </div>`;
         for (let j=0; j<data.length; j++) {
             if (data[j]["category"] == cats[i]["short"]) {
+                cat_count++;
                 c += `
                     <div class="usecase clickable" id="case-`+j+`" onclick="openAdder('`+j+`')" style="--c: `+cats[i]["colour"]+`;">
                         `+data[j]["name"]+`
@@ -631,6 +649,8 @@ function loadingTasks() {
             }
         }
         c += `</div>`;
+        cats[i]["count"] = cat_count;
+        cat_count = 0;
     }
     $("#usecases").html(c);
 
@@ -639,12 +659,12 @@ function loadingTasks() {
     c = ``;
     for (let i=0; i<cats.length; i++) {
         c += `
-            <img src="../img/icon-`+cats[i]["short"]+`.svg" style="width:20px;" />
+            <img src="img/icon-`+cats[i]["short"]+`.png" style="width:20px;" />
 
             <div class="bar-container" style="--c: `+cats[i]["colour"]+`;">
                 <div class="bar1" style="--c: `+cats[i]["colour"]+`;"></div>
                 <div class="bar2" id="bar-`+cats[i]["short"]+`" style="--c: `+cats[i]["colour"]+`;"></div>
-                <span class="saving-perc"><span id="per-`+cats[i]["short"]+`">0</span>% `+cats[i]["name"].split(" ")[0]+` Costs Saved</span>
+                <span class="saving-perc"><span id="per-`+cats[i]["short"]+`">0</span>% <span class="des-b">`+cats[i]["name"].split(" ")[0]+` Costs </span>Saved</span>
 
             </div>
             `;
@@ -652,16 +672,38 @@ function loadingTasks() {
     $("#bars").html(c);
 }
 
+function reset() {
+    // let c = `<span>Confirm?</span>`;
+    // $("#reset-button").html(c).on("click", () => { location.reload(); });
+    $("#reset-button").hide();
+    $("#confirm-reset-button").show();
+    setTimeout(() => {
+        // c = `<img src="img/reset.png" /><span>Reset</span>`;
+        // $("#reset-button").on("click", () => { reset(); }).html(c);
+        $("#reset-button").show();
+        $("#confirm-reset-button").hide();
+    }, 5000);
+}
+
+function confirm_reset() {
+    location.reload();
+}
+
 function editCostPerFTE() {
-    $("#cpfte").html('<input id="new-cpfte" type="number" step="100" value="'+cost_per_fte+'" />');
+    $("#cpfte").html('<input autofocus id="new-cpfte" type="number" step="100" value="'+cost_per_fte+'" onfocusout="setCostPerFTE();" style="box-sizing: border-box; height: 22px; border-radius: 11px;" />');
     $("#edit-cpfte").html('<i onclick="setCostPerFTE();" class="clickable fas fa-check"></i>');
+    $("#new-cpfte").keyup( (event) => {
+        if(event.keyCode == 13) {
+            setCostPerFTE();
+        }
+    });    
 }
 
 function setCostPerFTE() {
     cost_per_fte = parseInt($("#new-cpfte").val());
     $("#cpfte").html(formatNumber(cost_per_fte));
     $("#edit-cpfte").html('<i onclick="editCostPerFTE();" class="clickable fas fa-pencil-alt"></i>');
-    updateDisplay(null);
+    updateDisplay();
 }
 
 function closePopup() {
@@ -683,11 +725,10 @@ function generateReport_step2() {
     // PDF report.
 
     $("#inforeq, #reportdone, #reporterror").hide(1000);
-    $("#reportloading").show(1000);
+    $("#reportdone").show(1000);
 
     $.ajax({
         type: "POST",
-        // url: "/report",
         url: "https://drectio-estimator-reports.herokuapp.com/report",
         data: {
             "company": $("#usrinfo #company").val(),
@@ -708,12 +749,12 @@ function generateReport_step2() {
         //     $("#reporterror").show(1000);
         // }
         success: (data2, status, jqXHR) => {
-            $("#reportloading").hide(1000);
-            $("#reportdone").show(1000);
+            // $("#reportloading").hide(1000);
+            // $("#reportdone").show(1000);
         },
         error: (xhr, ajaxOptions, thrownError) => {
-            $("#reportloading").hide(1000);
-            $("#reportdone").show(1000);
+            // $("#reportloading").hide(1000);
+            // $("#reportdone").show(1000);
         }
     });
 }
@@ -724,12 +765,16 @@ function closeAdder(num) {
     addCase(num);
 }
 
-function setOption(checked, num, comp) {
+function setOption(checked, num, comp, refresh) {
     const mfs = data[num]["mfs"];
     if (checked) {
         $("#sg-"+num+"-"+comp).css("display", "block");
     } else {
         $("#sg-"+num+"-"+comp).css("display", "none");
+    }
+
+    if (typeof refresh == "undefined") {
+        addCase(num);
     }
 }
 
@@ -764,7 +809,7 @@ function showInfoBox(num, marker) {
     $("#infobox").css("left", left+"px");
 }
 
-function updateDisplay(num, casesOnly) {
+function updateDisplay() {
     // Updates the display part of the estimator, which comprises the Potential Cost Saving and the
     // bars.
     
@@ -806,12 +851,6 @@ function updateDisplay(num, casesOnly) {
         
     }
     
-    if (typeof casesOnly !== "undefined"){
-        if (casesOnly) {
-            return null;
-        }
-    }
-    
     // Calculate the total "Potential Cost Saving" from the accumulated before and after costs, and
     // display this figure.
 
@@ -820,10 +859,9 @@ function updateDisplay(num, casesOnly) {
     const total_value = total_cost_before - total_cost_after;
 
     if (total_value == 0) {
-        $("#welcome-note").css("display", "block");
         $("#finish-buttons").css("display", "none");
     } else {
-        $("#welcome-note").css("display", "none");
+        $("#welcome-note.des-b").hide(1500);
         $("#finish-buttons").css("display", "grid");
     }
 
@@ -854,26 +892,16 @@ function updateDisplay(num, casesOnly) {
             $("#bar-"+cats[i]["short"]).animate({width: "0%"}, 1500);
         }
     }
-
-    // Scroll to the top of the display, as this will probably be out of view from the user having
-    // scrolled down to the adder section.
    
     // $("html, body").animate({
     //     scrollTop: $("#display").offset().top
     // }, 0);
-
-    // Update the bars.
-    
-    // updateBars(num, costs_before, costs_after, total_cost_before, total_cost_after);
-    
 }
 
 function addCase(num) {
     num = parseInt(num);
     // Updates the use-cases with the values of the use-case of index `num`, based upon the user's
     // input.
-
-    console.log(num, typeof(num));
 
     if (data[num]["base"] == "time") {
         for (let comp=0; comp<3; comp++) {
@@ -894,7 +922,7 @@ function addCase(num) {
         usecases[num] = val;
     }
 
-    updateDisplay(num);
+    updateDisplay();
     // closeAdder();
 }
 
@@ -912,9 +940,12 @@ function openAdder(num) {
     let colour = cats[cat_num]["colour"];
 
     let c = `
+        <div id="mob-grid-button" class="mob-b">
+            <img src="img/grid-button.png" style="height: 35px;" class="clickable" onclick="closeAdder('`+num+`');" />
+        </div>
         <div style="display: grid; grid-template-columns: 30px 1fr; gap: 10px;">
             <div style="background-color: `+colour+`; height: 30px; width: 30px; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
-                <img src="../img/icon2-`+cats[cat_num]["short"]+`.svg" style="max-height: 15px; max-width: 15px;" />
+                <img src="img/icon2-`+cats[cat_num]["short"]+`.png" style="max-height: 15px; max-width: 15px;" />
             </div>
             <p class="title" style="--c: `+colour+`;">`+data[num]["name"]+`</p>
         </div>
@@ -946,7 +977,9 @@ function openAdder(num) {
                             />
                             <span class="checkmark" style="--c: `+colour+`;"></span>
                         </label>
-                        <div class="info" style="--c: `+colour+`;">i</div>
+                        <div id="i-`+i+`" class="info" style="--c: `+colour+`;">i</div>
+                        <div id="ib-`+i+`" class="info-box" style="--c: `+colour+`;">e.g. `+data[num]["levels"][complexity_labels[i]]["example"]+`</div>
+                        <div id="iba-`+i+`" class="info-box-arrow" style="--c: `+colour+`;"></div>
                     </div>
                     <div class="selector-group" id="sg-`+num+`-`+complexity+`">
                     `;
@@ -962,6 +995,7 @@ function openAdder(num) {
                             id="mf-`+num+`-`+complexity+`-`+i+`"
                             value="`+mfs[i]["default"]+`"
                             style="--c: `+colour+`;"
+                            onfocusout="addCase('`+num+`');"
                         />
                         <br />
                         <br />
@@ -992,29 +1026,29 @@ function openAdder(num) {
                     id="mf-`+num+`"
                     value="0"
                     style="--c: `+colour+`;"
+                    onfocusout="addCase('`+num+`');"
                 />
             </div>
             `;
     }
-
     // Add usecase navigation
     c += `
         <div id="u-nav">
-            <div id="grid-button">
-                <img src="../img/grid-button.svg" style="height: 35px;" class="clickable" onclick="closeAdder('`+num+`');" />
+            <div class="des-b">
+                <img src="img/grid-button.png" style="height: 35px;" class="clickable" onclick="closeAdder('`+num+`');" />
             </div>
-            <div id="arrow-buttons">
+            <div class="arrow-buttons">
         `;
-    if (num > 0) c += `<div class="left clickable" onclick="switchCase('`+num+`', '`+(parseInt(num)-1)+`');">‹</div>`;
-    if (num < data.length-1) c += `<div class="right clickable" onclick="switchCase('`+num+`', '`+(parseInt(num)+1)+`');">Next ›</div>`;
+    if (num > 0) c += `<div class="clickable" onclick="switchCase('`+num+`', '`+(parseInt(num)-1)+`');" style="--c: `+colour+`;">˂</div>`;
+    if (num < data.length-1) c += `<div class="clickable des-f" onclick="switchCase('`+num+`', '`+(parseInt(num)+1)+`');" style="--c: `+colour+`; min-width: 75px;">Next ˃</div>`;
     c += `
         </div>
         <div id="mini-cases">
-            <div><span>Use-case `+(parseInt(num)+1)+`/`+data.length+`</span></div>
+            <div class="des-b" id="case-count" ><span>Use-case `+(parseInt(num)+1)+`/`+data.length+`</span></div>
         `;
 
     for (let i=0; i<cats.length; i++) {
-        c += `<div class="mini-group">`;
+        c += `<div class="mini-group" style="--n: `+cats[i]["count"]+`;">`;
         for (let j=0; j<data.length; j++) {
             if (data[j]["category"] == cats[i]["short"]) {
                 c += `
@@ -1027,12 +1061,32 @@ function openAdder(num) {
         c += `</div>`;
     }
 
-    c += `
-        </div>
-        </div>
-        `;
+    c += `</div>`;
+    if (num < data.length-1) c += `<div class="arrow-buttons mob-g"><div class="clickable" onclick="switchCase('`+num+`', '`+(parseInt(num)+1)+`');" style="--c: `+colour+`;">˃</div></div>`;
+    c += `</div>`;
 
     $("#adder").html(c);
+    $("#mob-grid-button").css("left", ($("#adder").innerWidth()-35)+"px");
+    $("#adder input[type='number']").keyup( (event) => {
+        if(event.keyCode == 13) {
+            $("#"+event.target.id).trigger("blur");
+        }
+    });
+
+    $(".info").mouseenter( (event) => {
+        const info_id = "#" + event.target.id;
+        const box_num = info_id.substring(3);
+        const box_id = "#ib-" + box_num;
+        const arrow_id = "#iba-" + box_num;
+        const offset = $(info_id).offset();
+        let left = offset["left"] - $(box_id).outerWidth() + 50;
+        let top = offset["top"] - $(box_id).outerHeight() - 15;
+        $(box_id).css("top", top+"px").css("left", left+"px");
+
+        left = offset["left"] + $(info_id).outerWidth()/2 - $(arrow_id).outerWidth()/2;
+        top = offset["top"] - $(arrow_id).outerHeight() - 5;
+        $(arrow_id).css("top", top+"px").css("left", left+"px");
+    });
 
     // Colour the mini boxes where inputs have been given
 
@@ -1065,7 +1119,7 @@ function openAdder(num) {
             for (let mf=0; mf<mfs.length; mf++) {
                 const val = usecases[num][complexity][mf];
                 if (val > 0) {
-                    setOption(true, num, complexity);
+                    setOption(true, num, complexity, false);
                     $("#sel-"+num+"-"+complexity).prop("checked", true);
                     $("#mf-"+num+"-"+complexity+"-"+mf).val(val);
                     $("#sg-"+num+"-"+complexity).css("display", "block");
