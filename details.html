@@ -16,6 +16,9 @@
 
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
+  <link rel="stylesheet" href="css/cookie-consent.css"/>
+  <script src="js/cookie-consent.js"></script>
+
   <link rel="stylesheet" href="css/generic.css" />
   <link rel="stylesheet" href="css/normalize.css" />
   <link rel="stylesheet" href="css/style.css" />
@@ -32,13 +35,14 @@
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2T8GTHMK28"></script>
+  <!-- Only if consent accepted
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-2T8GTHMK28');
   </script>
-
+  -->
 
 </head>
 
@@ -48,27 +52,27 @@
 
   <section id="intro" class="intro">
     <div class="databasecloud ">
-      <image src="img/databasecloud.svg"></image>
+      <image src="img/speed-3.png"></image>
     </div>
     <div class="introdesc">
       <div class="logo">
         <image src="img/valluu.svg"></image>
       </div>
-      <div class="title">Data Workload Democratisation in Kubernetes</div>
+      <div class="title">What is it and how it wors?</div>
 
       <div class="navigation">
-        <a href="#about">
+        <a href="/index.html">
           <span class="button navabout">
-            <i class="fas fa-angle-down"></i> What it is?</span>
+            <i class="fas fa-angle-left"></i> Back to home?</span>
         </a>
-        <a href="/index.html#estimator">
+        <a href="/estimator.html">
           <span class="button navestimator">Valluu estimator <i class="fas fa-angle-right"></i>
           </span>
         </a>
       </div>
     </div>
     <div class="arrow">
-      <a href="#about">
+      <a href="#section-2">
         <image src="img/arrowdown.svg"></image>
       </a>
     </div>
@@ -81,8 +85,8 @@
       <span class="logo">
         <image src="img/valluu.svg"></image>
       </span>
-      <a class="navestimator" href="#estimator">
-        <span class="button">Valluu estimator</span>
+      <a class="navestimator" href="/index.html">
+        <span class="button">Back to home</span>
       </a>
     </div>
   </section>

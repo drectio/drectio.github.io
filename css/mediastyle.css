@@ -83,8 +83,10 @@
 }
 
 
+
+
 /* Smartphones (portrait and landscape) ----------- */
-@media only screen and (min-width: 0px) and (max-width: 800px) and (orientation: portrait) {
+@media only screen and (min-width: 0px) and (max-width: 768px) and (orientation: portrait) {
   /* Styles */
 
   .content {
@@ -149,7 +151,7 @@
     color: #092168;
     width: 80vw;
     max-width: 600px;
-    font-size: calc(10vw);
+    font-size: 3em;
   }
 
   .intro .introdesc .navigation {
@@ -469,6 +471,19 @@
   }
 }
 
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-width: 0px) and (max-width: 400px) and (orientation: portrait) {
+  /* Styles */
+  
+  .intro .introdesc .title {
+    font-family: lora-italic;
+    color: #092168;
+    width: 80vw;
+    max-width: 600px;
+    font-size: 2em;
+  }
+}
 
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-height: 0px) and (max-height: 600px) and (orientation: landscape) {

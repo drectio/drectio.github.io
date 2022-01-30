@@ -692,6 +692,10 @@ input[type="number"]:disabled {
   animation: pulse 2s infinite;
 }
 
+.hidden {
+  display: none;
+}
+
 /* .des-b {
   display: block;
 }

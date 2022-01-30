@@ -1,3 +1,4 @@
+
 var intro = document.getElementById("intro");
 var introheader = document.getElementById("introheader");
 var introheadercontent = document.getElementById("introheadercontent");
@@ -18,13 +19,12 @@ function reveal() {
     }
   }
 
-  console.log(window.pageYOffset, introoffset)
   if (window.pageYOffset > introoffset) {
     introheader.classList.add("sticky");
-    introheadercontent.classList.add("show");
+    //introheadercontent.classList.add("show");
   } else {
     introheader.classList.remove("sticky");
-    introheadercontent.classList.remove("show");
+    //introheadercontent.classList.remove("show");
   }
 }
 

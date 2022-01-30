@@ -1,9 +1,12 @@
 
 /** Sections **/
 
+section {
+  position: relative;
+}
+
 .pagesection {
   padding: 40px 10vw;
-  position: relative;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -93,6 +96,12 @@ a.button {
   color: white;
 }
 
+.contactlink {
+  margin: 15px 0px;
+}
+
+
+
 /** Sections with custom backgorund colors**/
 
 #section-1, #section-3, #section-5, #section-7, #section-9, #introvideo {
@@ -145,7 +154,6 @@ a.button {
 
 .intro .introdesc .navestimator {
   background-color: white;
-
 }
 
 .intro .databasecloud img {
@@ -156,16 +164,9 @@ a.button {
 }
 
 
-#about .arrow img {
+.arrow img {
   position: absolute;
-  left: 20%;
-  bottom: 10px;
-  width: 50px;
-}
-
-.intro .arrow img {
-  position: absolute;
-  left: 20%;
+  left: calc(100vw * 0.20);
   bottom: 10px;
 }
 
@@ -220,20 +221,41 @@ a.button {
 
 /** About **/ 
 
-#about {
-  text-align: left;
-}
-
 #about .estimatorlink {
   margin-top: 25px;
 }
 
 #about .descriptions, #about .visuals  {
   max-width: 50%;
+
 }
 
-#about img {
-  width: 100%;
+#about .bestaction {
+  /*left: calc((100vw * 0.20 ) - 10vw);*/
+  font-family: lora;
+    font-size: 2em;
+    line-height: normal;
+    color: #092168;
+    margin-bottom: 20px;
+
+    font-family: lora-italic;
+    font-size: 2em;
+    line-height: normal;
+    color: #e84249;
+    margin-bottom: 10px;
+}
+
+#about .bestactiontitle {
+  width: 26vw;
+}
+
+#about .bestactionarrow {
+  margin-top: 10px;
+}
+
+#about .bestactionarrow img {
+  position: absolute;
+  left: 10vw;
 }
 
 /** Estimator **/ 
