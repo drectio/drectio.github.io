@@ -225,7 +225,7 @@ var cookieConsentProps = {
   content: {
     // the content in all needed languages
     en: {
-      title: "Cookie settings",
+      title: "Your privacy is important for us",
       body:
         "We use cookies to personalize content and analyze access to our website. " +
         "You can choose whether you only accept cookies that are necessary for the functioning of the website " +
