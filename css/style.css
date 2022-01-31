@@ -370,8 +370,8 @@ a.button {
 
 /** Video **/
 
-#introvideo video {
-  width: 100%;
+ video {
+  width: 90%;
 }
 
 /** Questions **/ 
