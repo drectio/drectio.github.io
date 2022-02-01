@@ -82,9 +82,6 @@
   }
 }
 
-
-
-
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-width: 0px) and (max-width: 768px) and (orientation: portrait) {
   /* Styles */
@@ -185,6 +182,13 @@
 
   .intro .databasecloud img {
     height: 70vw;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+
+  .intro .dataworkloadslifecycle img {
+    height: 60vw;
     position: absolute;
     right: 0px;
     top: 0px;
@@ -568,6 +572,14 @@
     right: 0px;
     top: 0px;
   }
+
+  .intro .dataworkloadslifecycle img {
+    height: 50vh;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  
 
   .intro .arrow img {
     display: none;

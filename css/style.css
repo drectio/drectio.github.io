@@ -14,7 +14,7 @@ section {
 
 .container {
   font-family: graphik-regular;
-  font-size: 14px;
+  font-size: 16px;
   padding-top: 10px;
   line-height: 24px;
   color: #222;
@@ -44,6 +44,7 @@ section {
   line-height: normal;
   color: #092168;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .subtitle {
@@ -100,14 +101,11 @@ a.button {
   margin: 15px 0px;
 }
 
-
-
 /** Sections with custom backgorund colors**/
 
 #section-1, #section-3, #section-5, #section-7, #section-9, #introvideo {
   background-color: rgba(227, 218, 203, 0.5);
 }
-
 
 /** Intro **/ 
 
@@ -133,6 +131,7 @@ a.button {
   width: 40vw;
   max-width: 600px;
   font-size: calc(4vw);
+  text-align: left;
 }
 
 .intro .introdesc .navigation {
@@ -158,6 +157,13 @@ a.button {
 
 .intro .databasecloud img {
   height: 70vh;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+
+.intro .dataworkloadslifecycle img {
+  height: 50vh;
   position: absolute;
   right: 0px;
   top: 0px;
