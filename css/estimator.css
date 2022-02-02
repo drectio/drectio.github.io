@@ -14,65 +14,65 @@
   --company-color-medium-dark: #611175;
   --company-color-dark: #4f0d5f;
   --card-selected: #8512a1;
-  --vred: #E84249;
-  --vgreen: #62BDA4;
+  --vred: #e84249;
+  --vgreen: #62bda4;
   --vblue: #092168;
   --vgrey: #606060;
   --vgrey-light: #e9e9e9;
 }
 
- #estimatorsection html  {
+#estimatorsection html {
   scroll-behavior: smooth;
 }
 
- #estimatorsection  {
+#estimatorsection {
   font-family: graphik-regular;
   -webkit-font-smoothing: antialiased;
   font-size: 16px;
   color: #777777;
 }
 
- #estimatorsection p  {
+#estimatorsection p {
   color: #000000;
 }
 
- #estimatorsection #pos-left  {
+#estimatorsection #pos-left {
   display: inline;
 }
 
- #estimatorsection #pos-above  {
+#estimatorsection #pos-above {
   display: none;
 }
 
- #estimatorsection .header  {
+#estimatorsection .header {
   font-weight: bold;
 }
 
- #estimatorsection .v  {
+#estimatorsection .v {
   font-size: 60px;
   /* text-align: center; */
   color: var(--vred);
   font-weight: bold;
 }
 
- #estimatorsection #ptv span.note  {
+#estimatorsection #ptv span.note {
   font-size: 13px;
 }
 
- #estimatorsection #cost_per_fte  {
+#estimatorsection #cost_per_fte {
   font-size: 13px;
 }
 
- #estimatorsection #cost_per_fte input  {
+#estimatorsection #cost_per_fte input {
   max-width: 60px;
 }
 
- #estimatorsection .summary  {
+#estimatorsection .summary {
   font-size: 10px;
   color: #444444;
 }
 
- #estimatorsection .category-group  {
+#estimatorsection .category-group {
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: repeat(5, 1fr);
@@ -80,7 +80,7 @@
   justify-content: center;
 }
 
- #estimatorsection .category  {
+#estimatorsection .category {
   border-radius: 20%;
   font-size: 13px;
   background-color: var(--c, #ffffff);
@@ -102,8 +102,8 @@
   /* justify-content: center; */
 }
 
- #estimatorsection .usecase  {
-  font-size: 14px;
+#estimatorsection .usecase {
+  font-size: 12px;
   border-radius: 20%;
   color: #000000;
   border: 3px solid var(--c, #000000);
@@ -112,19 +112,19 @@
   height: 100px;
   padding: 10px;
   text-align: center;
-  transition: 0.25s; 
+  transition: 0.25s;
 
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
- #estimatorsection .usecase.selected  {
+#estimatorsection .usecase.selected {
   color: #ffffff;
   background-color: var(--c, #000000);
 }
 
- #estimatorsection #usecases  {
+#estimatorsection #usecases {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, auto);
@@ -133,16 +133,17 @@
   align-content: start;
 }
 
- #estimatorsection #usecases, #estimatorsection .category-group  {
+#estimatorsection #usecases,
+#estimatorsection .category-group {
   gap: 10px;
 }
 
- #estimatorsection #display  {
+#estimatorsection #display {
   box-sizing: border-box;
   width: 100%;
 }
 
- #estimatorsection #overview  {
+#estimatorsection #overview {
   box-sizing: border-box;
   width: 100%;
   padding: 15px;
@@ -150,18 +151,18 @@
   background-color: var(--grey-light);
 }
 
- #estimatorsection #overview p  {
+#estimatorsection #overview p {
   margin-top: 0;
   margin-bottom: 0;
 }
 
- #estimatorsection #form  {
+#estimatorsection #form {
   float: left;
   width: 50%;
   margin: 0 auto;
 }
 
- #estimatorsection #estimator  {
+#estimatorsection #estimator {
   box-sizing: border-box;
   width: 100%;
   display: grid;
@@ -174,11 +175,12 @@
   row-gap: 45px;
 }
 
- #estimatorsection .clickable:hover, #estimatorsection .button:hover  {
+#estimatorsection .clickable:hover,
+#estimatorsection .button:hover {
   cursor: pointer;
 }
 
- #estimatorsection .button  {
+#estimatorsection .button {
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -194,7 +196,7 @@
   padding: 0 10px;
 }
 
- #estimatorsection .button-group  {
+#estimatorsection .button-group {
   display: grid;
   grid-template-columns: repeat(var(--n, 2), auto);
   justify-items: center;
@@ -203,48 +205,48 @@
   /* margin-top: 60px; */
 }
 
- #estimatorsection #finish-buttons  {
+#estimatorsection #finish-buttons {
   display: none;
 }
 
- #estimatorsection .button img  {
+#estimatorsection .button img {
   height: 15px;
   margin-right: 10px;
 }
 
- #estimatorsection #adder  {
+#estimatorsection #adder {
   box-sizing: border-box;
   display: none;
   width: 500px;
   padding: 0 50px;
 }
 
-#estimatorsection .title  {
+#estimatorsection .title {
   text-align: left;
 }
 
- #estimatorsection #adder .title  {
+#estimatorsection #adder .title {
   font-size: 22px;
   margin: 0px;
   color: var(--c, #505050);
   font-weight: bold;
 }
 
- #estimatorsection #adder .description  {
+#estimatorsection #adder .description {
   font-size: 16px;
   color: var(--vgrey);
 }
 
- #estimatorsection #adder .prompt  {
+#estimatorsection #adder .prompt {
   font-size: 13px;
   color: var(--vgrey);
 }
 
- #estimatorsection #mob-grid-button  {
+#estimatorsection #mob-grid-button {
   position: relative;
 }
 
- #estimatorsection #infobox  {
+#estimatorsection #infobox {
   font-size: 16px;
   box-sizing: border-box;
   padding: 10px;
@@ -257,18 +259,18 @@
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 }
 
- #estimatorsection #infobox .title  {
+#estimatorsection #infobox .title {
   font-family: graphik-regular;
   color: var(--company-color);
   padding: 5px;
   text-align: center;
 }
 
- #estimatorsection #infobox p  {
+#estimatorsection #infobox p {
   margin: 3px 0px;
 }
 
- #estimatorsection .complexity  {
+#estimatorsection .complexity {
   display: grid;
   grid-template-columns: 1fr 30px;
   column-gap: 5px;
@@ -277,7 +279,7 @@
 }
 
 /* Checkbox container */
- #estimatorsection .complexity-container  {
+#estimatorsection .complexity-container {
   display: block;
   position: relative;
   padding-left: 25px;
@@ -291,7 +293,7 @@
 }
 
 /* Hide the browser's default checkbok */
- #estimatorsection .complexity-container input  {
+#estimatorsection .complexity-container input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
@@ -300,7 +302,7 @@
 }
 
 /* Show our custom checkbox */
- #estimatorsection .checkmark  {
+#estimatorsection .checkmark {
   position: absolute;
   top: 0;
   left: 0;
@@ -311,16 +313,16 @@
 }
 
 /* Make checkbox background grey on hover */
- #estimatorsection .complexity-container:hover input ~ .checkmark  {
+#estimatorsection .complexity-container:hover input ~ .checkmark {
   background-color: var(--grey-light);
 }
 
 /* Fill checkbox with solid custom colour when checked */
- #estimatorsection .complexity-container input:checked ~ .checkmark  {
+#estimatorsection .complexity-container input:checked ~ .checkmark {
   background-color: var(--c, var(--vgrey));
 }
 
- #estimatorsection #complexities .info  {
+#estimatorsection #complexities .info {
   height: 15px;
   width: 15px;
   border-radius: 50%;
@@ -334,7 +336,7 @@
   justify-content: center;
 }
 
- #estimatorsection .info-box  {
+#estimatorsection .info-box {
   display: none;
   position: absolute;
   color: #ffffff;
@@ -347,7 +349,7 @@
   z-index: 1;
 }
 
- #estimatorsection .info-box-arrow  {
+#estimatorsection .info-box-arrow {
   display: none;
   position: absolute;
   box-sizing: border-box;
@@ -360,24 +362,25 @@
   z-index: 1;
 }
 
- #estimatorsection #complexities .info:hover + .info-box  {
+#estimatorsection #complexities .info:hover + .info-box {
   display: block;
 }
 
- #estimatorsection #complexities .info:hover ~ .info-box-arrow  {
+#estimatorsection #complexities .info:hover ~ .info-box-arrow {
   display: block;
 }
 
- #estimatorsection .selector-group  {
+#estimatorsection .selector-group {
   display: none;
   font-size: 13px;
 }
 
- #estimatorsection .money-value  {
+#estimatorsection .money-value {
   font-size: 13px;
 }
 
- #estimatorsection .selector-group input, #estimatorsection .money-value input  {
+#estimatorsection .selector-group input,
+#estimatorsection .money-value input {
   border: 1px solid var(--c, var(--vgrey));
   height: 24px;
   width: 50%;
@@ -387,15 +390,15 @@
   padding-left: 10px;
 }
 
- #estimatorsection #complexities  {
+#estimatorsection #complexities {
   margin-top: 20px;
 }
 
- #estimatorsection #complexities p  {
+#estimatorsection #complexities p {
   margin: 0;
 }
 
- #estimatorsection #u-nav  {
+#estimatorsection #u-nav {
   margin-top: 60px;
   display: grid;
   /* grid-template-columns: 35px 115px 1fr; */
@@ -405,7 +408,7 @@
   align-items: center;
 }
 
- #estimatorsection .arrow-buttons  {
+#estimatorsection .arrow-buttons {
   display: grid;
   grid-template-columns: repeat(2, auto);
   justify-content: center;
@@ -413,7 +416,7 @@
   gap: 5px;
 }
 
- #estimatorsection .arrow-buttons div  {
+#estimatorsection .arrow-buttons div {
   box-sizing: border-box;
   background-color: var(--c, var(--vgreen));
   color: #ffffff;
@@ -428,7 +431,7 @@
   justify-content: center;
 }
 
- #estimatorsection #mini-cases  {
+#estimatorsection #mini-cases {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(4, 1fr);
@@ -437,13 +440,13 @@
   gap: 2px;
 }
 
- #estimatorsection #mini-cases span  {
+#estimatorsection #mini-cases span {
   font-size: 12px;
   /* justify-self: left; */
   /* align-self: left; */
 }
 
- #estimatorsection .mini-group  {
+#estimatorsection .mini-group {
   justify-self: left;
   display: grid;
   grid-template-columns: repeat(var(--n, 5), 1fr);
@@ -452,7 +455,7 @@
   gap: 2px;
 }
 
- #estimatorsection .mini-case  {
+#estimatorsection .mini-case {
   box-sizing: border-box;
   font-size: 0px;
   color: #ffffff;
@@ -467,35 +470,35 @@
   align-items: center; */
 }
 
- #estimatorsection .mini-case.active  {
+#estimatorsection .mini-case.active {
   background-color: var(--c, var(--vgrey));
   opacity: 1;
 }
 
- #estimatorsection .mini-case.selected:not(.active)  {
+#estimatorsection .mini-case.selected:not(.active) {
   background-color: var(--c, var(--vgrey));
   font-size: 10px;
   opacity: 1;
 }
 
- #estimatorsection .selector:hover  {
+#estimatorsection .selector:hover {
   cursor: pointer;
 }
 
- #estimatorsection input[type="number"]:disabled  {
+#estimatorsection input[type="number"]:disabled {
   color: var(--grey-mid);
 }
 
- #estimatorsection .button_div  {
+#estimatorsection .button_div {
   text-align: center;
 }
 
- #estimatorsection .note  {
+#estimatorsection .note {
   font-size: 10px;
   font-style: italic;
 }
 
- #estimatorsection #bars  {
+#estimatorsection #bars {
   box-sizing: border-box;
   margin: 10px 0 10px 0;
 
@@ -506,12 +509,12 @@
   row-gap: 10px;
 }
 
- #estimatorsection .bar-container  {
+#estimatorsection .bar-container {
   height: 20px;
   width: 100%;
 }
 
- #estimatorsection .bar1 {
+#estimatorsection .bar1 {
   background-color: var(--c, #646464);
   color: #ffffff;
   border-radius: 10px;
@@ -520,7 +523,7 @@
   opacity: 0.7;
 }
 
- #estimatorsection .bar2  {
+#estimatorsection .bar2 {
   background-color: var(--c, #646464);
   opacity: 1;
   border-radius: 10px;
@@ -531,7 +534,7 @@
   top: -20px;
 }
 
- #estimatorsection .saving-perc  {
+#estimatorsection .saving-perc {
   font-size: 12px;
   margin-left: 10px;
   color: #ffffff;
@@ -540,7 +543,7 @@
   line-height: 24px;
 }
 
- #estimatorsection .loader  {
+#estimatorsection .loader {
   display: inline-block;
   margin: 0px 5px 0px 0px;
   border: 3px solid var(--grey-light);
@@ -552,7 +555,7 @@
   animation: spin 1.5s linear infinite;
 }
 
- #estimatorsection #overlay  {
+#estimatorsection #overlay {
   position: fixed;
   display: none;
   width: 100%;
@@ -567,7 +570,7 @@
   transition: 0.25s;
 }
 
- #estimatorsection #popup  {
+#estimatorsection #popup {
   box-sizing: border-box;
   position: fixed;
   top: 5%;
@@ -586,20 +589,20 @@
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 }
 
- #estimatorsection #popup h2  {
+#estimatorsection #popup h2 {
   font-style: italic;
 }
 
- #estimatorsection #popup p  {
+#estimatorsection #popup p {
   color: #ffffff;
 }
 
- #estimatorsection #popup label  {
+#estimatorsection #popup label {
   font-size: 15px;
 }
 
-#popup form input[type=text],
- #estimatorsection #popup form input[type=email]  {
+#popup form input[type="text"],
+#estimatorsection #popup form input[type="email"] {
   /* min-width: 250px; */
   color: #000000;
   box-sizing: border-box;
@@ -611,18 +614,20 @@
   /* border-width: 0; */
 }
 
- #estimatorsection #reportviewer  {
+#estimatorsection #reportviewer {
   transform: scale(1);
   animation: pulse 2s infinite;
 }
 
- #estimatorsection .mob-b, #estimatorsection .mob-g, #estimatorsection .mob-f  {
+#estimatorsection .mob-b,
+#estimatorsection .mob-g,
+#estimatorsection .mob-f {
   display: none !important;
 }
 
 /* For smaller screens, run the categories vertically */
 @media screen and (max-width: 1080px) {
- #estimatorsection   #usecases  {
+  #estimatorsection #usecases {
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: repeat(3, 1fr);
@@ -630,14 +635,14 @@
     justify-content: center;
     align-content: start;
   }
- #estimatorsection   .category-group  {
+  #estimatorsection .category-group {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(5, 1fr);
     justify-items: center;
     justify-content: center;
   }
- #estimatorsection   #mini-cases  {
+  #estimatorsection #mini-cases {
     display: grid;
     grid-template-rows: auto auto;
     grid-template-columns: repeat(4, 1fr);
@@ -645,7 +650,7 @@
     justify-content: center;
     gap: 2px;
   }
- #estimatorsection   .mini-group  {
+  #estimatorsection .mini-group {
     /* justify-self: start; */
     align-self: start;
     display: grid;
@@ -656,41 +661,40 @@
     align-content: start; */
     gap: 2px;
   }
- #estimatorsection   #case-count  {
+  #estimatorsection #case-count {
     grid-column: span 4;
   }
- #estimatorsection   #adder  {
+  #estimatorsection #adder {
     padding: 0 10px;
   }
 }
 
-
 /* For even smaller screens, put the savings display below the usecase selector, and so on. */
 /* This is the view for mobiles, or other small windows. */
 @media screen and (max-width: 670px) {
- #estimatorsection   #estimator  {
+  #estimatorsection #estimator {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
     gap: 25px;
   }
 
- #estimatorsection   .v  {
+  #estimatorsection .v {
     font-size: 40px;
   }
 
- #estimatorsection   #welcome-note  {
+  #estimatorsection #welcome-note {
     margin: 0 auto 60px auto;
   }
 
- #estimatorsection   .button-group  {
+  #estimatorsection .button-group {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
     margin-top: 25px;
   }
 
- #estimatorsection   #u-nav  {
+  #estimatorsection #u-nav {
     margin-top: 40px;
     display: grid;
     grid-template-columns: repeat(3, auto);
@@ -698,14 +702,14 @@
     align-items: center;
   }
 
- #estimatorsection   #mini-cases {
+  #estimatorsection #mini-cases {
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: repeat(3, auto);
     /* justify-content: normal; */
   }
 
- #estimatorsection   .mini-group  {
+  #estimatorsection .mini-group {
     /* justify-self: start; */
     align-self: start;
     display: grid;
@@ -717,31 +721,32 @@
     gap: 2px;
   }
 
- #estimatorsection   .arrow-buttons div  {
+  #estimatorsection .arrow-buttons div {
     height: 25px;
     border-radius: 12.5px;
     min-width: 25px;
     padding: 0;
   }
 
- #estimatorsection   #adder  {
+  #estimatorsection #adder {
     width: 100%;
   }
 
- #estimatorsection   .mob-b  {
+  #estimatorsection .mob-b {
     display: block !important;
   }
- #estimatorsection   .mob-g  {
+  #estimatorsection .mob-g {
     display: grid !important;
   }
- #estimatorsection   .mob-f  {
+  #estimatorsection .mob-f {
     display: flex !important;
   }
 
- #estimatorsection   .des-b, .des-g, .des-f  {
+  #estimatorsection .des-b,
+  .des-g,
+  .des-f {
     display: none !important;
   }
-
 }
 
 @-webkit-keyframes spin {
