@@ -169,7 +169,6 @@ a.button {
   top: 0px;
 }
 
-
 .arrow img {
   position: absolute;
   left: calc(100vw * 0.20);
@@ -204,8 +203,10 @@ a.button {
 }
 
 .introheader .button {
+  /*
   background-color: white;
   color: #092168;
+  */
 }
 
 .arrowdown {

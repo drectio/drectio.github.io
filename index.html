@@ -16,7 +16,6 @@
 
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
-  
   <link rel="stylesheet" href="css/cookie-consent.css" />
   <script src="js/cookie-consent.js"></script>
 
@@ -39,7 +38,7 @@
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
-   <!-- modernizer --> 
+  <!-- modernizer -->
   <script src="js/vendor/modernizr-3.11.8.min.js"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -318,7 +317,7 @@
     <div class="title">
       Value Estimator
     </div>
-    <div id="estimatorsection" >
+    <div id="estimatorsection">
       <div id="overlay" onclick="closePopup();"></div>
       <div id="popup">
         <div id="inforeq">
@@ -327,40 +326,12 @@
           <!-- This overlay is used for capturing user information before generating the report -->
           <form id="usrinfo" onsubmit="generateReport_step2(); return false;">
             <!-- <label for="company">Company</label><br /> -->
-            <input
-              type="text"
-              id="company"
-              name="company"
-              placeholder="Company"
-              required
-            />
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Name"
-              required
-            />
-            <input
-              type="text"
-              id="role"
-              name="role"
-              placeholder="Job title"
-              required
-            />
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Email address"
-              required
-            />
-            <input
-              type="submit"
-              value="Submit"
-              class="button"
-              style="background-color: #72bda4; width: 50%; color: #ffffff"
-            />
+            <input type="text" id="company" name="company" placeholder="Company" required />
+            <input type="text" id="name" name="name" placeholder="Name" required />
+            <input type="text" id="role" name="role" placeholder="Job title" required />
+            <input type="email" id="email" name="email" placeholder="Email address" required />
+            <input type="submit" value="Submit" class="button"
+              style="background-color: #72bda4; width: 50%; color: #ffffff" />
           </form>
         </div>
         <div id="reportloading" style="display: none">
@@ -388,7 +359,7 @@
       <div id="infobox"></div>
 
       <div class="des-b"><br /><br /><br /><br /></div>
-      
+
       <div id="main">
         <div id="welcome-note" class="mob-b">
           <br />
@@ -411,12 +382,7 @@
               </div>
               <div class="note" id="cost_per_fte">
                 Average daily cost per FTE: $<span id="cpfte"></span>
-                <span id="edit-cpfte"
-                  ><i
-                    onclick="editCostPerFTE();"
-                    class="clickable fas fa-pencil-alt"
-                  ></i
-                ></span>
+                <span id="edit-cpfte"><i onclick="editCostPerFTE();" class="clickable fas fa-pencil-alt"></i></span>
               </div>
             </div>
             <div>
@@ -436,20 +402,10 @@
               <img src="img/reset.png" />
               <span>Reset</span>
             </div>
-            <div
-              id="confirm-reset-button"
-              class="button des-f"
-              onclick="confirm_reset();"
-              style="display: none"
-            >
+            <div id="confirm-reset-button" class="button des-f" onclick="confirm_reset();" style="display: none">
               <span>Confirm?</span>
             </div>
-            <div
-              id="report-button"
-              class="button"
-              onclick="generateReport();"
-              style="--c: #16296c; --t: #ffffff"
-            >
+            <div id="report-button" class="button" onclick="generateReport();" style="--c: #16296c; --t: #ffffff">
               <img src="img/pdf.png" />
               <span>Generate Report</span>
             </div>
@@ -458,6 +414,24 @@
       </div>
     </div>
 
+  </section>
+
+  <!-- Solution link   -->
+
+  <section id="section-5" class="pagesection">
+    <div class="democratization container">
+      <div class="descriptions reveal fade">
+        <div class="title">
+          Now that you understand the value, do you still have questions on the solution?
+        </div>
+        <div class="subtitle">
+          Click the button below to get further details!
+        </div>
+        <div class="contactlink">
+          <a class="button estimatorcontact" href="/solution.html"> Further details</a>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Questions  -->
@@ -503,6 +477,5 @@
 </body>
 
 <script src="js/app.js"></script>
-
 
 </html>
