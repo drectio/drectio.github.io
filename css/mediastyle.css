@@ -487,6 +487,7 @@
     max-width: 600px;
     font-size: 2em;
   }
+
 }
 
 /* Smartphones (portrait and landscape) ----------- */
@@ -869,13 +870,47 @@
 
 /* iPads (portrait and landscape) ----------- */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
+
   /* Styles */
+
+  #section-1 .highlight, #section-1 .text, #section-1 .title, #section-1 .subtitle,
+  #section-3 .highlight, #section-3 .text, #section-3 .title, #section-3 .subtitle,
+  #section-5 .highlight, #section-5 .text, #section-5 .title, #section-5 .subtitle,
+  #section-7 .highlight, #section-7 .text, #section-7 .title, #section-7 .subtitle,
+  #section-9 .highlight, #section-9 .text, #section-9 .title, #section-9 .subtitle {
+    text-align: right;
+  }
+  
+  #section-2 .highlight, #section-2 .text, #section-2 .title, #section-2 .subtitle,
+  #section-4 .highlight, #section-4 .text, #section-4 .title, #section-4 .subtitle,
+  #section-6 .highlight, #section-6 .text, #section-6 .title, #section-6 .subtitle,
+  #section-8 .highlight, #section-8 .text, #section-8 .title, #section-8 .subtitle,
+  #about .highlight, #about .text,  #about .title,  #about .subtitle {
+    text-align: left;
+  }
+  
 }
 
 /* iPads (landscape) ----------- */
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
   /* Styles */
 
+  #section-1 .highlight, #section-1 .text, #section-1 .title, #section-1 .subtitle,
+  #section-3 .highlight, #section-3 .text, #section-3 .title, #section-3 .subtitle,
+  #section-5 .highlight, #section-5 .text, #section-5 .title, #section-5 .subtitle,
+  #section-7 .highlight, #section-7 .text, #section-7 .title, #section-7 .subtitle,
+  #section-9 .highlight, #section-9 .text, #section-9 .title, #section-9 .subtitle {
+    text-align: right;
+  }
+  
+  #section-2 .highlight, #section-2 .text, #section-2 .title, #section-2 .subtitle,
+  #section-4 .highlight, #section-4 .text, #section-4 .title, #section-4 .subtitle,
+  #section-6 .highlight, #section-6 .text, #section-6 .title, #section-6 .subtitle,
+  #section-8 .highlight, #section-8 .text, #section-8 .title, #section-8 .subtitle,
+  #about .highlight, #about .text,  #about .title,  #about .subtitle {
+    text-align: left;
+  }
+  
   .intro {
     position: relative;
     background-color: #e84249;
@@ -1008,8 +1043,24 @@
 }
 
 /* Desktops and laptops ----------- */
-@media only screen and (min-width: 1224px) {
+@media only screen and (min-width: 768px) {
   /* Styles */
+
+  #section-1 .highlight, #section-1 .text, #section-1 .title, #section-1 .subtitle,
+  #section-3 .highlight, #section-3 .text, #section-3 .title, #section-3 .subtitle,
+  #section-5 .highlight, #section-5 .text, #section-5 .title, #section-5 .subtitle,
+  #section-7 .highlight, #section-7 .text, #section-7 .title, #section-7 .subtitle,
+  #section-9 .highlight, #section-9 .text, #section-9 .title, #section-9 .subtitle {
+    text-align: right;
+  }
+  
+  #section-2 .highlight, #section-2 .text, #section-2 .title, #section-2 .subtitle,
+  #section-4 .highlight, #section-4 .text, #section-4 .title, #section-4 .subtitle,
+  #section-6 .highlight, #section-6 .text, #section-6 .title, #section-6 .subtitle,
+  #section-8 .highlight, #section-8 .text, #section-8 .title, #section-8 .subtitle,
+  #about .highlight, #about .text,  #about .title,  #about .subtitle {
+    text-align: left;
+  }
 }
 
 /* Large screens ----------- */
