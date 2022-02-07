@@ -119,6 +119,10 @@
   align-items: center;
 }
 
+#estimatorsection .usecase:hover {
+  box-shadow: 0 0 5px rgb(12 10 10 / 80%);
+}
+
 #estimatorsection .usecase.selected {
   color: #ffffff;
   background-color: var(--c, #000000);
