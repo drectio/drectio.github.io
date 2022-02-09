@@ -970,7 +970,7 @@ function openAdder(num) {
             <div style="background-color: `+colour+`; height: 30px; width: 30px; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
                 <img src="img/icon2-`+cats[cat_num]["short"]+`.png" style="max-height: 15px; max-width: 15px;" />
             </div>
-            <p class="title" style="--c: `+colour+`;">`+data[num]["name"]+`</p>
+            <p class="title2" style="--c: `+colour+`;">`+data[num]["name"]+`</p>
         </div>
 
         <p class="description">
