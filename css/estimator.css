@@ -14,19 +14,15 @@
   --company-color-medium-dark: #611175;
   --company-color-dark: #4f0d5f;
   --card-selected: #8512a1;
-  --vred: #e84249;
-  --vgreen: #62bda4;
+  --vred: #E84249;
+  --vgreen: #62BDA4;
   --vblue: #092168;
   --vgrey: #606060;
   --vgrey-light: #e9e9e9;
 }
 
-#estimatorsection html {
-  scroll-behavior: smooth;
-}
-
 #estimatorsection {
-  font-family: graphik-regular;
+  font-family: century-gothic, sans-serif;
   -webkit-font-smoothing: antialiased;
   font-size: 16px;
   color: #777777;
@@ -49,7 +45,7 @@
 }
 
 #estimatorsection .v {
-  font-size: 60px;
+  font-size: 40px;
   /* text-align: center; */
   color: var(--vred);
   font-weight: bold;
@@ -105,6 +101,7 @@
 #estimatorsection .usecase {
   font-size: 12px;
   border-radius: 20%;
+  font-weight: bold;
   color: #000000;
   border: 3px solid var(--c, #000000);
   box-sizing: border-box;
@@ -112,20 +109,21 @@
   height: 100px;
   padding: 10px;
   text-align: center;
-  transition: 0.25s;
+  transition: 0.25s; 
 
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#estimatorsection .usecase:hover {
-  box-shadow: 0 0 5px rgb(12 10 10 / 80%);
-}
-
 #estimatorsection .usecase.selected {
   color: #ffffff;
   background-color: var(--c, #000000);
+}
+
+#estimatorsection .usecase:hover {
+  /* border: 1px solid var(--c, #000000); */
+  box-shadow: 0 0 8px rgb(12 10 10 / 80%);
 }
 
 #estimatorsection #usecases {
@@ -137,14 +135,15 @@
   align-content: start;
 }
 
-#estimatorsection #usecases,
-#estimatorsection .category-group {
+#estimatorsection #usecases, #estimatorsection .category-group {
   gap: 10px;
 }
 
 #estimatorsection #display {
   box-sizing: border-box;
   width: 100%;
+  max-width: 400px;
+  /* width: 400px; */
 }
 
 #estimatorsection #overview {
@@ -179,8 +178,15 @@
   row-gap: 45px;
 }
 
-#estimatorsection .clickable:hover,
-#estimatorsection .button:hover {
+#estimatorsection #welcome-note {
+  width: 90%;
+  /* max-width: 540px; */
+  max-width: 210px;
+  font-size: 13px;
+  /* margin: 0 auto; */
+}
+
+#estimatorsection .clickable:hover, #estimatorsection .button:hover {
   cursor: pointer;
 }
 
@@ -192,9 +198,10 @@
   height: 30px;
   /* width: 180px; */
   width: 100%;
+  font-weight: bold;
   border: 1px solid var(--vgrey);
   border-radius: 15px;
-  font-size: 16px;
+  font-size: 14px;
   background-color: var(--c, #ffffff);
   color: var(--t, var(--vgrey));
   padding: 0 10px;
@@ -211,6 +218,7 @@
 
 #estimatorsection #finish-buttons {
   display: none;
+  margin-top: 50px;
 }
 
 #estimatorsection .button img {
@@ -221,12 +229,8 @@
 #estimatorsection #adder {
   box-sizing: border-box;
   display: none;
-  width: 500px;
+  width: 540px;
   padding: 0 50px;
-}
-
-#estimatorsection .title {
-  text-align: left;
 }
 
 #estimatorsection #adder .title {
@@ -237,7 +241,7 @@
 }
 
 #estimatorsection #adder .description {
-  font-size: 16px;
+  font-size: 14px;
   color: var(--vgrey);
 }
 
@@ -251,8 +255,9 @@
 }
 
 #estimatorsection #infobox {
-  font-size: 16px;
+  font-size: 14px;
   box-sizing: border-box;
+  max-width: 300px;
   padding: 10px;
   position: absolute;
   display: none;
@@ -264,7 +269,7 @@
 }
 
 #estimatorsection #infobox .title {
-  font-family: graphik-regular;
+  font-family: lato,sans-serif;
   color: var(--company-color);
   padding: 5px;
   text-align: center;
@@ -383,8 +388,7 @@
   font-size: 13px;
 }
 
-#estimatorsection .selector-group input,
-#estimatorsection .money-value input {
+#estimatorsection .selector-group input, #estimatorsection .money-value input {
   border: 1px solid var(--c, var(--vgrey));
   height: 24px;
   width: 50%;
@@ -544,7 +548,6 @@
   color: #ffffff;
   position: relative;
   top: -42px;
-  line-height: 24px;
 }
 
 #estimatorsection .loader {
@@ -582,6 +585,7 @@
   background-color: var(--vblue);
   color: #ffffff;
   width: 90%;
+  max-width: 350px;
   max-height: 90%;
   overflow: auto;
   border: 1px solid var(--grey-mid);
@@ -605,8 +609,8 @@
   font-size: 15px;
 }
 
-#popup form input[type="text"],
-#estimatorsection #popup form input[type="email"] {
+#estimatorsection #popup form input[type=text],
+#estimatorsection #popup form input[type=email] {
   /* min-width: 250px; */
   color: #000000;
   box-sizing: border-box;
@@ -618,35 +622,40 @@
   /* border-width: 0; */
 }
 
+#estimatorsection #carbon {
+  /* display: none; */
+  opacity: 1;
+  font-size: 13px;
+  margin-top: 30px;
+}
+
 #estimatorsection #reportviewer {
   transform: scale(1);
   animation: pulse 2s infinite;
 }
 
-#estimatorsection .mob-b,
-#estimatorsection .mob-g,
-#estimatorsection .mob-f {
+#estimatorsection .mob-b, #estimatorsection .mob-g, #estimatorsection .mob-f {
   display: none !important;
 }
 
 /* For smaller screens, run the categories vertically */
-@media screen and (max-width: 1080px) {
-  #estimatorsection #usecases {
+@media screen and (max-width: 910px) {
+#estimatorsection #usecases {
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: repeat(3, 1fr);
-    justify-items: center;
-    justify-content: center;
-    align-content: start;
+    /* justify-items: center; */
+    /* justify-content: center; */
+    /* align-content: start; */
   }
-  #estimatorsection .category-group {
+#estimatorsection .category-group {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(5, 1fr);
     justify-items: center;
     justify-content: center;
   }
-  #estimatorsection #mini-cases {
+#estimatorsection #mini-cases {
     display: grid;
     grid-template-rows: auto auto;
     grid-template-columns: repeat(4, 1fr);
@@ -654,7 +663,7 @@
     justify-content: center;
     gap: 2px;
   }
-  #estimatorsection .mini-group {
+#estimatorsection .mini-group {
     /* justify-self: start; */
     align-self: start;
     display: grid;
@@ -665,40 +674,46 @@
     align-content: start; */
     gap: 2px;
   }
-  #estimatorsection #case-count {
+#estimatorsection #case-count {
     grid-column: span 4;
   }
-  #estimatorsection #adder {
+#estimatorsection #adder {
+    max-width: 320px;
     padding: 0 10px;
   }
+  #estimatorsection #welcome-note {
+    max-width: 320px;
+  }
 }
+
 
 /* For even smaller screens, put the savings display below the usecase selector, and so on. */
 /* This is the view for mobiles, or other small windows. */
 @media screen and (max-width: 670px) {
-  #estimatorsection #estimator {
+#estimatorsection #estimator {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
     gap: 25px;
   }
 
-  #estimatorsection .v {
-    font-size: 40px;
+#estimatorsection .v {
+    font-size: 30px;
   }
 
-  #estimatorsection #welcome-note {
+#estimatorsection #welcome-note {
+    max-width: 340px;
     margin: 0 auto 60px auto;
   }
 
-  #estimatorsection .button-group {
+#estimatorsection .button-group {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
     margin-top: 25px;
   }
 
-  #estimatorsection #u-nav {
+#estimatorsection #u-nav {
     margin-top: 40px;
     display: grid;
     grid-template-columns: repeat(3, auto);
@@ -706,14 +721,14 @@
     align-items: center;
   }
 
-  #estimatorsection #mini-cases {
+#estimatorsection #mini-cases {
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: repeat(3, auto);
     /* justify-content: normal; */
   }
 
-  #estimatorsection .mini-group {
+#estimatorsection .mini-group {
     /* justify-self: start; */
     align-self: start;
     display: grid;
@@ -725,33 +740,33 @@
     gap: 2px;
   }
 
-  #estimatorsection .arrow-buttons div {
+#estimatorsection .arrow-buttons div {
     height: 25px;
     border-radius: 12.5px;
     min-width: 25px;
     padding: 0;
   }
 
-  #estimatorsection #adder {
+#estimatorsection #adder {
     width: 100%;
   }
 
-  #estimatorsection .mob-b {
+#estimatorsection .mob-b {
     display: block !important;
   }
-  #estimatorsection .mob-g {
+#estimatorsection .mob-g {
     display: grid !important;
   }
-  #estimatorsection .mob-f {
+#estimatorsection .mob-f {
     display: flex !important;
   }
 
-  #estimatorsection .des-b,
-  .des-g,
-  .des-f {
+#estimatorsection .des-b, .des-g, .des-f {
     display: none !important;
   }
+
 }
+
 
 @-webkit-keyframes spin {
   0% {
