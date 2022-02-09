@@ -784,37 +784,6 @@ function setOption(checked, num, comp, refresh) {
     }
 }
 
-function showInfoBox(num, marker) {
-    // Shows the "info-box", which appears when the user hovers the mouse over the bars.
-
-    const costs = getCostsForUsecase(num);
-    const cost_before = costs["before"];
-    const cost_after = costs["after"];
-
-    let c = '<p class="title">'+data[num]["name"]+'</p>';
-    if (marker == "b") {
-        c += '<p>Cost before: $'+formatNumber(cost_before)+'</p>';
-    } else {
-        c += '<p>Cost with D.Rectio: $'+formatNumber(cost_after)+'</p>';
-    }
-    $("#infobox").html(c);
-    $("#infobox").show().css("opacity", 1);
-
-    const offset = $("#"+marker+"-"+num).offset();
-    let top = 0;
-    if (marker == "b") {
-        top = offset["top"] - $("#infobox").outerHeight() - 5;
-    } else {
-        top = offset["top"] + $("#"+marker+"-"+num).outerHeight() + 5;
-    }
-    const left1 = offset["left"] + 5;
-    const left2 = $(window).width() - 5 - $("#infobox").outerWidth();
-    const left = Math.min(left1, left2);
-
-    $("#infobox").css("top", top+"px");
-    $("#infobox").css("left", left+"px");
-}
-
 function updateDisplay() {
     // Updates the display part of the estimator, which comprises the Potential Cost Saving,
     // the bars, and the CO2 savings (where applicable).
@@ -997,7 +966,7 @@ function openAdder(num) {
         <div id="mob-grid-button" class="mob-b">
             <img src="img/grid-button.png" style="height: 35px;" class="clickable" onclick="closeAdder('`+num+`');" />
         </div>
-        <div style="display: grid; grid-template-columns: 30px 1fr; gap: 10px;">
+        <div style="display: grid; grid-template-columns: 30px 1fr; align-items: center; gap: 10px;">
             <div style="background-color: `+colour+`; height: 30px; width: 30px; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
                 <img src="img/icon2-`+cats[cat_num]["short"]+`.png" style="max-height: 15px; max-width: 15px;" />
             </div>
@@ -1136,7 +1105,8 @@ function openAdder(num) {
         const box_num = info_id.substring(3);
         const box_id = "#ib-" + box_num;
         const arrow_id = "#iba-" + box_num;
-        const offset = $(info_id).offset();
+        // const offset = $(info_id).offset();
+        const offset = $(info_id).position();
         let left = offset["left"] - $(box_id).outerWidth() + 50;
         let top = offset["top"] - $(box_id).outerHeight() - 15;
         $(box_id).css("top", top+"px").css("left", left+"px");
