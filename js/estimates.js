@@ -409,19 +409,19 @@ const cats = [
         "short": "prod",
         "name": "Productivity",
         "icon": "fas fa-rocket",
-        "colour": "#DD454B"
+        "colour": "#E84249"
     },
     {
         "short": "sust",
         "name": "Sustainability",
         "icon": "fas fa-leaf",
-        "colour": "#72BDA4"
+        "colour": "#62BDA4"
     },
     {
         "short": "oper",
         "name": "Operational Costs",
         "icon": "fas fa-money-check-alt",
-        "colour": "#16296C"
+        "colour": "#092168"
     }
 ];
 
@@ -591,6 +591,11 @@ for (let i=0; i<data.length; i++) {
 const default_cost_per_fte = 660;  // $
 let cost_per_fte = default_cost_per_fte;
 
+// Reference data for CO2 calculation
+const kg_CO2_equiv_per_kwh = 0.5;
+const tree_kgs_CO2_pa = 21;
+const car_kgs_CO2_pmile = 0.404;
+
 // When the screen is resized, some adjustments need to be made with jQuery. This pair of functions
 // ensures that those procedures are not done with every pixel drag during a resizing process.
 
@@ -635,7 +640,7 @@ function loadingTasks() {
         c += `<div class="category-group">`;
         c += `
             <div class="category" id="`+cats[i]["short"]+`-usecases" style="--c: `+cats[i]["colour"]+`;">
-                <img src="img/icon2-`+cats[i]["short"]+`.png" style="height:30px;" />
+                <img src="resources/icon2-`+cats[i]["short"]+`.png" style="height:30px;" />
                 <span style="color: #ffffff;">`+cats[i]["name"]+`</span>
             </div>`;
         for (let j=0; j<data.length; j++) {
@@ -659,7 +664,7 @@ function loadingTasks() {
     c = ``;
     for (let i=0; i<cats.length; i++) {
         c += `
-            <img src="img/icon-`+cats[i]["short"]+`.png" style="width:20px;" />
+            <img src="resources/icon-`+cats[i]["short"]+`.png" style="width:20px;" />
 
             <div class="bar-container" style="--c: `+cats[i]["colour"]+`;">
                 <div class="bar1" style="--c: `+cats[i]["colour"]+`;"></div>
@@ -678,7 +683,7 @@ function reset() {
     $("#reset-button").hide();
     $("#confirm-reset-button").show();
     setTimeout(() => {
-        // c = `<img src="img/reset.png" /><span>Reset</span>`;
+        // c = `<img src="resources/reset.png" /><span>Reset</span>`;
         // $("#reset-button").on("click", () => { reset(); }).html(c);
         $("#reset-button").show();
         $("#confirm-reset-button").hide();
@@ -729,7 +734,8 @@ function generateReport_step2() {
 
     $.ajax({
         type: "POST",
-        url: "https://drectio-estimator-reports.herokuapp.com/report",
+        url: "/report",
+        // url: "https://drectio-estimator-reports.herokuapp.com/report",
         data: {
             "company": $("#usrinfo #company").val(),
             "name": $("#usrinfo #name").val(),
@@ -810,11 +816,12 @@ function showInfoBox(num, marker) {
 }
 
 function updateDisplay() {
-    // Updates the display part of the estimator, which comprises the Potential Cost Saving and the
-    // bars.
+    // Updates the display part of the estimator, which comprises the Potential Cost Saving,
+    // the bars, and the CO2 savings (where applicable).
     
     let costs_before = [];
     let costs_after = [];
+    let num_workloads_pa = 0;
     
     // In this FOR loop, go through each use-case and show the correct summary of inputted data in
     // each use-case box, and accumulate the before and after costs.
@@ -844,6 +851,24 @@ function updateDisplay() {
             const time_after = minsToFTEs(times["after"]);
             costs_before.push(time_before * cost_per_fte);
             costs_after.push(time_after * cost_per_fte);
+
+            // Note number of implied data workloads p.a. for CO2 calculation
+            if (data[i]["ESC"]) {
+                const num_complexities = usecases[i].length;
+				for (let j=0; j<num_complexities; j++) {
+					const num_mfs = usecases[i][j].length;
+					let factor = 1;
+					for (let k=0; k<num_mfs; k++){
+						let local_factor = usecases[i][j][k];
+						if (data[i]["mfs"][k]["monthly"]) {
+							local_factor *= 12;
+						}
+						factor *= local_factor;
+					}
+					num_workloads_pa += factor;
+				}
+            }
+        
         } else {
             costs_before.push(usecases[i]);
             costs_after.push(Math.round(usecases[i] * (1-data[i]["value"]["discounting_factor"])));
@@ -890,6 +915,35 @@ function updateDisplay() {
             // $("#ov-"+cats[i]["short"]+".overview").css("opacity", 0);
             $("#per-"+cats[i]["short"]).html(0);
             $("#bar-"+cats[i]["short"]).animate({width: "0%"}, 1500);
+        }
+    }
+
+    // Show CO2 savings, if applicable
+    if (num_workloads_pa == 0) {
+        // $("#carbon").animate({
+        //     opacity: 0
+        // }, 1000);
+    } else {
+        const kwh_pa = 67.3 * num_workloads_pa;  // Total kWh per annum saved
+
+        if ($("#elec-saving").html() != formatNumber(Math.round(kwh_pa))) {
+            const CO2_equiv_pa = kwh_pa * kg_CO2_equiv_per_kwh;
+            const equiv_trees = Math.round(CO2_equiv_pa / tree_kgs_CO2_pa);
+            const equiv_carMiles = Math.round(CO2_equiv_pa / car_kgs_CO2_pmile);
+
+            $("#elec-saving").html(formatNumber(Math.round(kwh_pa)));
+            $("#num-trees").html(formatNumber(equiv_trees));
+            $("#num-miles").html(formatNumber(equiv_carMiles));
+            if ($("#carbon").css("opacity") != "1") {
+                $("#carbon").animate({
+                    opacity: 1
+                }, 2000);
+            } else {
+                $("#elec-saving, #num-trees, #num-miles").css("opacity", "0");
+                $("#elec-saving, #num-trees, #num-miles").animate({
+                    opacity: 1
+                }, 1000);
+            }
         }
     }
    
@@ -941,11 +995,11 @@ function openAdder(num) {
 
     let c = `
         <div id="mob-grid-button" class="mob-b">
-            <img src="img/grid-button.png" style="height: 35px;" class="clickable" onclick="closeAdder('`+num+`');" />
+            <img src="resources/grid-button.png" style="height: 35px;" class="clickable" onclick="closeAdder('`+num+`');" />
         </div>
         <div style="display: grid; grid-template-columns: 30px 1fr; gap: 10px;">
             <div style="background-color: `+colour+`; height: 30px; width: 30px; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
-                <img src="img/icon2-`+cats[cat_num]["short"]+`.png" style="max-height: 15px; max-width: 15px;" />
+                <img src="resources/icon2-`+cats[cat_num]["short"]+`.png" style="max-height: 15px; max-width: 15px;" />
             </div>
             <p class="title" style="--c: `+colour+`;">`+data[num]["name"]+`</p>
         </div>
@@ -1035,12 +1089,16 @@ function openAdder(num) {
     c += `
         <div id="u-nav">
             <div class="des-b">
-                <img src="img/grid-button.png" style="height: 35px;" class="clickable" onclick="closeAdder('`+num+`');" />
+                <img src="resources/grid-button.png" style="height: 35px;" class="clickable" onclick="closeAdder('`+num+`');" />
             </div>
             <div class="arrow-buttons">
         `;
     if (num > 0) c += `<div class="clickable" onclick="switchCase('`+num+`', '`+(parseInt(num)-1)+`');" style="--c: `+colour+`;">˂</div>`;
-    if (num < data.length-1) c += `<div class="clickable des-f" onclick="switchCase('`+num+`', '`+(parseInt(num)+1)+`');" style="--c: `+colour+`; min-width: 75px;">Next ˃</div>`;
+    if (num < data.length-1) {
+        c += `<div class="clickable des-f" onclick="switchCase('`+num+`', '`+(parseInt(num)+1)+`');" style="--c: `+colour+`; min-width: 75px;">Next ˃</div>`;
+    } else {
+        c += `<div class="clickable des-f" onclick="closeAdder('`+num+`');" style="--c: `+colour+`; min-width: 75px;">Next ˃</div>`;        
+    }
     c += `
         </div>
         <div id="mini-cases">
