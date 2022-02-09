@@ -233,7 +233,7 @@
   padding: 0 50px;
 }
 
-#estimatorsection #adder .title {
+#estimatorsection #adder .title2 {
   font-size: 22px;
   margin: 0px;
   color: var(--c, #505050);
@@ -547,7 +547,7 @@
   margin-left: 10px;
   color: #ffffff;
   position: relative;
-  top: -42px;
+  top: -40.5px;
 }
 
 #estimatorsection .loader {
