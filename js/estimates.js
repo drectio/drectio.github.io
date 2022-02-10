@@ -640,7 +640,7 @@ function loadingTasks() {
         c += `<div class="category-group">`;
         c += `
             <div class="category" id="`+cats[i]["short"]+`-usecases" style="--c: `+cats[i]["colour"]+`;">
-                <img src="img/icon2-`+cats[i]["short"]+`.png" style="height:30px;" />
+                <img src="resources/icon2-`+cats[i]["short"]+`.png" style="height:30px;" />
                 <span style="color: #ffffff;">`+cats[i]["name"]+`</span>
             </div>`;
         for (let j=0; j<data.length; j++) {
@@ -664,7 +664,7 @@ function loadingTasks() {
     c = ``;
     for (let i=0; i<cats.length; i++) {
         c += `
-            <img src="img/icon-`+cats[i]["short"]+`.png" style="width:20px;" />
+            <img src="resources/icon-`+cats[i]["short"]+`.png" style="width:20px;" />
 
             <div class="bar-container" style="--c: `+cats[i]["colour"]+`;">
                 <div class="bar1" style="--c: `+cats[i]["colour"]+`;"></div>
@@ -683,7 +683,7 @@ function reset() {
     $("#reset-button").hide();
     $("#confirm-reset-button").show();
     setTimeout(() => {
-        // c = `<img src="img/reset.png" /><span>Reset</span>`;
+        // c = `<img src="resources/reset.png" /><span>Reset</span>`;
         // $("#reset-button").on("click", () => { reset(); }).html(c);
         $("#reset-button").show();
         $("#confirm-reset-button").hide();
@@ -964,11 +964,11 @@ function openAdder(num) {
 
     let c = `
         <div id="mob-grid-button" class="mob-b">
-            <img src="img/grid-button.png" style="height: 35px;" class="clickable" onclick="closeAdder('`+num+`');" />
+            <img src="resources/grid-button.png" style="height: 35px;" class="clickable" onclick="closeAdder('`+num+`');" />
         </div>
         <div style="display: grid; grid-template-columns: 30px 1fr; align-items: center; gap: 10px;">
             <div style="background-color: `+colour+`; height: 30px; width: 30px; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
-                <img src="img/icon2-`+cats[cat_num]["short"]+`.png" style="max-height: 15px; max-width: 15px;" />
+                <img src="resources/icon2-`+cats[cat_num]["short"]+`.png" style="max-height: 15px; max-width: 15px;" />
             </div>
             <p class="title2" style="--c: `+colour+`;">`+data[num]["name"]+`</p>
         </div>
@@ -1058,7 +1058,7 @@ function openAdder(num) {
     c += `
         <div id="u-nav">
             <div class="des-b">
-                <img src="img/grid-button.png" style="height: 35px;" class="clickable" onclick="closeAdder('`+num+`');" />
+                <img src="resources/grid-button.png" style="height: 35px;" class="clickable" onclick="closeAdder('`+num+`');" />
             </div>
             <div class="arrow-buttons">
         `;
@@ -1105,10 +1105,11 @@ function openAdder(num) {
         const box_num = info_id.substring(3);
         const box_id = "#ib-" + box_num;
         const arrow_id = "#iba-" + box_num;
-        // const offset = $(info_id).offset();
         const offset = $(info_id).position();
         let left = offset["left"] - $(box_id).outerWidth() + 50;
         let top = offset["top"] - $(box_id).outerHeight() - 15;
+        // let left = position["left"];
+        // let top = position["top"];
         $(box_id).css("top", top+"px").css("left", left+"px");
 
         left = offset["left"] + $(info_id).outerWidth()/2 - $(arrow_id).outerWidth()/2;
