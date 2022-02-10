@@ -887,32 +887,26 @@ function updateDisplay() {
         }
     }
 
-    // Show CO2 savings, if applicable
-    if (num_workloads_pa == 0) {
-        // $("#carbon").animate({
-        //     opacity: 0
-        // }, 1000);
-    } else {
-        const kwh_pa = 67.3 * num_workloads_pa;  // Total kWh per annum saved
+    // Show CO2 savings
+    const kwh_pa = 67.3 * num_workloads_pa;  // Total kWh per annum saved
 
-        if ($("#elec-saving").html() != formatNumber(Math.round(kwh_pa))) {
-            const CO2_equiv_pa = kwh_pa * kg_CO2_equiv_per_kwh;
-            const equiv_trees = Math.round(CO2_equiv_pa / tree_kgs_CO2_pa);
-            const equiv_carMiles = Math.round(CO2_equiv_pa / car_kgs_CO2_pmile);
+    if ($("#elec-saving").html() != formatNumber(Math.round(kwh_pa))) {
+        const CO2_equiv_pa = kwh_pa * kg_CO2_equiv_per_kwh;
+        const equiv_trees = Math.round(CO2_equiv_pa / tree_kgs_CO2_pa);
+        const equiv_carMiles = Math.round(CO2_equiv_pa / car_kgs_CO2_pmile);
 
-            $("#elec-saving").html(formatNumber(Math.round(kwh_pa)));
-            $("#num-trees").html(formatNumber(equiv_trees));
-            $("#num-miles").html(formatNumber(equiv_carMiles));
-            if ($("#carbon").css("opacity") != "1") {
-                $("#carbon").animate({
-                    opacity: 1
-                }, 2000);
-            } else {
-                $("#elec-saving, #num-trees, #num-miles").css("opacity", "0");
-                $("#elec-saving, #num-trees, #num-miles").animate({
-                    opacity: 1
-                }, 1000);
-            }
+        $("#elec-saving").html(formatNumber(Math.round(kwh_pa)));
+        $("#num-trees").html(formatNumber(equiv_trees));
+        $("#num-miles").html(formatNumber(equiv_carMiles));
+        if ($("#carbon").css("opacity") != "1") {
+            $("#carbon").animate({
+                opacity: 1
+            }, 2000);
+        } else {
+            $("#elec-saving, #num-trees, #num-miles").css("opacity", "0");
+            $("#elec-saving, #num-trees, #num-miles").animate({
+                opacity: 1
+            }, 1000);
         }
     }
    
