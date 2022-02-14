@@ -1083,7 +1083,11 @@ function openAdder(num) {
     }
 
     c += `</div>`;
-    if (num < data.length-1) c += `<div class="arrow-buttons mob-g"><div class="clickable" onclick="switchCase('`+num+`', '`+(parseInt(num)+1)+`');" style="--c: `+colour+`;">˃</div></div>`;
+    if (num < data.length-1) {
+      c += `<div class="arrow-buttons mob-g"><div class="clickable" onclick="switchCase('`+num+`', '`+(parseInt(num)+1)+`');" style="--c: `+colour+`;">˃</div></div>`;
+    } else {
+      c += `<div class="arrow-buttons mob-g"><div class="clickable" onclick="closeAdder('`+num+`', '`+(parseInt(num)+1)+`');" style="--c: `+colour+`;">˃</div></div>`;
+    }
     c += `</div>`;
 
     $("#adder").html(c);
